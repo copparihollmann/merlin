@@ -1,3 +1,9 @@
 [submodule "third_party/iree"]
 	path = third_party/iree
 	url = https://github.com/iree-org/iree.git
+[submodule "third_party/llama.cpp"]
+	path = third_party/llama.cpp
+	url = https://github.com/ggml-org/llama.cpp.git
+[submodule "third_party/shark_ai"]
+	path = third_party/shark_ai
+	url = https://github.com/nod-ai/shark-ai.git
