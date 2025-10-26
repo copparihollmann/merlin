@@ -1,3 +1,6 @@
 [submodule "third_party/iree"]
 	path = third_party/iree
 	url = https://github.com/iree-org/iree.git
+[submodule "third_party/KernelBench"]
+	path = third_party/KernelBench
+	url = https://github.com/ScalingIntelligence/KernelBench.git
