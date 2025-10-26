@@ -72,13 +72,21 @@ except ImportError as e:
 #   }
 #
 TARGET_DEFINITIONS = {
+    "LOCAL": {
+        "name": "Local Machine (auto-detect)",
+        "hal_target_backends": ["llvm-cpu"],
+        "hal_target_device": "local",
+        "extra_flags": ["--iree-llvmcpu-target-cpu-features=host"],
+        "export_precision": torch.float32,
+        "compiler_precision_flags": []#"--iree-input-demote-f32-to-f16"],
+    },
     "A100": {
         "name": "A100",
         "hal_target_backends": ["cuda"],
         "hal_target_device": "cuda",
         "extra_flags": ["--iree-cuda-target=sm_80"],
-        "export_precision": torch.float16,
-        "compiler_precision_flags": ["--iree-input-demote-f32-to-f16"],
+        "export_precision": torch.float32,
+        "compiler_precision_flags": []#"--iree-input-demote-f32-to-f16"],
     },
     "A6000": {
         "name": "A6000",
@@ -171,7 +179,7 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument(
         "--targets",
         nargs="+",
-        default=["A100"],
+        default=["LOCAL"],
         choices=list(TARGET_DEFINITIONS.keys()),
         help=f"List of target names to compile for (default: A100). Choices: {', '.join(TARGET_DEFINITIONS.keys())}"
     )
@@ -578,7 +586,7 @@ def main():
             # --- 1. Load Module (once per kernel) ---
             try:
                 # Set to f32 globally *before* loading
-                torch.set_default_dtype(torch.float32)
+                #torch.set_default_dtype(torch.float32)
 
                 kernel_module = load_kernel_module(kernel_file)
 
@@ -635,7 +643,7 @@ def main():
                 try:
                     target_precision = target_def["export_precision"]
                     logging.debug(f"Setting default torch dtype to {target_precision}")
-                    torch.set_default_dtype(target_precision)
+                    #torch.set_default_dtype(target_precision)
                     
                     # Re-instantiate model and inputs with the target precision
                     model = model_class(*init_args)
@@ -675,7 +683,8 @@ def main():
                     continue # Skip to next target
                 finally:
                     # ALWAYS reset default dtype
-                    torch.set_default_dtype(torch.float32)
+                    #torch.set_default_dtype(torch.float32)
+                    DUMMY = 0
 
                 # --- 2c. Compile MLIR (iree-compile) ---
                 try:
