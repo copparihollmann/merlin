@@ -39,3 +39,22 @@
 
 # debug information files
 *.dwo
+
+# build directories
+/build/
+/build-*/
+
+# cahce files from python
+__pycache__/
+*.pyc
+*.pyo
+
+# Benchmark results
+benchmark/KernelBench/results/*
+
+# Toochains
+riscv-tools-*/
+
+# Ignore compilation phases and report
+compilation_phases_*
+report_pt_export
