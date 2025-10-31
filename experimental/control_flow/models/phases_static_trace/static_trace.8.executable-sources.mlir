@@ -1,0 +1,1638 @@
+#composite_of_8960b = #util.composite<8960xi8, [
+    dense<"0xA4E062BD6F10A2BDF988443C9D175DBDC10D0BBEE2788DBD3D23A9BD501B7A3DA06B673DC090123EF900C63D2A100ABEC0E7D43D7E941CBC25580B3ECD8EBABD075D0E3EA3222C3D1ADEF53D6FAFC0BCE158683DC8F0F03BAD63CBBD0E57183DBEEE97BDDAE7F3BA769EDC3C7374EB3D4E39B33D106142BD382EA7BC892A01BEC026C63D1087BB3DA69D783D32427B3D4213F93D30DA0CBEC15A803DF17AB63D8A1A043EB867E7BDC529363D951A0CBE2FA62C3B565E043E93A9C5BC14469A3B0C6CA6BD2E66EEBD108FEDBDF4DAAA3DF64DA6BD55D2463C0EAE90BD2ECE43BD0402B7BD4844D8BC6FEF45BD8F289ABD724E2DBD35E2F53DD861BDBD345DAF3DBCD10E3E38A27F3C7362293D0C6787BD20FA3CBD035807BE2FA4EEBD66790DBCE11EA53DFADE123EB6D10C3E0BBD13BE6545C63D6335D93D3D61033E6D6313BDFDE110BE6E7C403DBF1E653BF4A2603D250A513D106844BD843DA53D1EE2823DECBBC4BD3035AFBC2A51A63D959BB63D03F5183D25A672BDE20DE33DEA84133EB5EFB1BC290708BEBC93E9BB850E793BAD14FDBDE95801BE330F883DD6C4E83DF8E2F0BD204E84BDFE1802BEC88B8A3C4F33AA3D706DA93CB7B0EF3D6DA8E9BD819AE23D24AF903DC74412BE545F0A3E52894C3D993BAC3D01D7453DAB55D03D34A2373DDDAD8CBD9FFE25BDBEF4CB3D3B399BBDE380CEBD195A2CBD5990CDBDC062AEBDBEE2E2BD96D8543D963567BC07AFE23CE3069F3D99A7013EF655EEBDE95BB5BB57B72BBD1A3AEDBD6ED50C3EA362E2BDBAE2BD3C7886133E4D0F7E3C3EA8F93CAA7AECBD0B22933BF532A0BD3CEE07BE9653ADBD3F8FA6BD9D507EBC8FF6C0BC19C801BE67E590BDA26D3FBC72EEA33D0902DE3D12F202BE97988B3D4FFB15BCD53E803DC446B9BC82C31B3D47FFD4BD581A843D8623133EE83DB6BD58094ABDDC2CE23DEDBC133E3172CE3D21125EBD29347B3D386DFBBDD03723BD11A8B4396362003ECBE981BC8A04A5BC947CC43DA4E7873DC3AFF8BC490EDF3CD3388BBDC1773B3D12F16FBDBECEE1BDB86F18BDB030243CD6E4E2BDCF2D7B3C"> : tensor<4x3x4x4xf32>,
+    dense<"0x8800513D90CB91BC000000000000000000000000000000000000000000000000587D7D3D8CE6C33C000000000000000000000000000000000000000000000000A2654FBDA4CA443D00000000000000000000000000000000000000000000000092003D3D002AF3BA000000000000000000000000000000000000000000000000A051473D3C04263D0000000000000000000000000000000000000000000000005EC04ABD189B60BD0000000000000000000000000000000000000000000000006A8B0CBDF0CA64BD00000000000000000000000000000000000000000000000024D915BD445727BD000000000000000000000000000000000000000000000000D8974D3C14997DBD0000000000000000000000000000000000000000000000001029F3BBF8602ABC0000000000000000000000000000000000000000000000002C48AA3CDE5269BD00000000000000000000000000000000000000000000000080DC47BC4433B43C0000000000000000000000000000000000000000000000004AEF113D9CD882BC000000000000000000000000000000000000000000000000384EB23CF4408BBC00000000000000000000000000000000000000000000000004E760BDDAB55B3D000000000000000000000000000000000000000000000000F845C4BCA040893C000000000000000000000000000000000000000000000000943F593D647796BC000000000000000000000000000000000000000000000000B29F1BBD307FF4BC0000000000000000000000000000000000000000000000004827E53C08B0493D000000000000000000000000000000000000000000000000C6975F3DA0831EBC000000000000000000000000000000000000000000000000BCD0F43C58B62B3C000000000000000000000000000000000000000000000000143D94BCE43A2F3D000000000000000000000000000000000000000000000000A0745B3B4088CE3C0000000000000000000000000000000000000000000000006CB6843C300CDCBC00000000000000000000000000000000000000000000000070D1EA3CA29D57BD000000000000000000000000000000000000000000000000C06C15BC82A8543D000000000000000000000000000000000000000000000000708A483D001CA439000000000000000000000000000000000000000000000000E8501FBC963745BD000000000000000000000000000000000000000000000000004CD838D42CD13C000000000000000000000000000000000000000000000000807BB4BC809D2C3B000000000000000000000000000000000000000000000000D877703D941CEFBC00000000000000000000000000000000000000000000000034F2A8BC660A24BD000000000000000000000000000000000000000000000000740C093D56D8463D00000000000000000000000000000000000000000000000030D68F3C402C03BC000000000000000000000000000000000000000000000000C0DDAFBAA4FEFB3C0000000000000000000000000000000000000000000000006884F53C80C2F4BC00000000000000000000000000000000000000000000000094BFA7BC9CF60DBD0000000000000000000000000000000000000000000000008A3E1CBD60C9453B0000000000000000000000000000000000000000000000008062753AC0F334BB000000000000000000000000000000000000000000000000F065543C3C3422BD00000000000000000000000000000000000000000000000064FF76BD5A1E3D3D0000000000000000000000000000000000000000000000001436253DC025353B000000000000000000000000000000000000000000000000ACB803BD14372ABD0000000000000000000000000000000000000000000000003050A73B0AE554BD000000000000000000000000000000000000000000000000520D423DA8D50EBC00000000000000000000000000000000000000000000000074A2C5BC7098503D000000000000000000000000000000000000000000000000A4C8D53CD81685BC00000000000000000000000000000000000000000000000000CC223C7CB2AA3C00000000000000000000000000000000000000000000000040621ABD7A75653D000000000000000000000000000000000000000000000000C029CEBB3048CD3B000000000000000000000000000000000000000000000000D8D22F3DF030623D00000000000000000000000000000000000000000000000054F4E0BC66332A3D000000000000000000000000000000000000000000000000784F63BD4A46123D000000000000000000000000000000000000000000000000A04B4F3CF000033D0000000000000000000000000000000000000000000000000277443DC49378BD000000000000000000000000000000000000000000000000804CD73A364E323D000000000000000000000000000000000000000000000000603F71BDF8D60E3C000000000000000000000000000000000000000000000000145A563D8092AA3C000000000000000000000000000000000000000000000000ACF850BDC2E5013D0000000000000000000000000000000000000000000000003AE1023D5C4C85BC000000000000000000000000000000000000000000000000FC9A4ABD942F453D00000000000000000000000000000000000000000000000080BA4A3CE06A6BBC000000000000000000000000000000000000000000000000BC508BBCAA0A4ABD0000000000000000000000000000000000000000000000000CE1B13C9A086ABD0000000000000000000000000000000000000000000000004C15F6BCDE273E3D00000000000000000000000000000000000000000000000008FBF0BC3CECB4BC000000000000000000000000000000000000000000000000F09F1CBD0C2A883C000000000000000000000000000000000000000000000000B4A1ED3C40D16DBB0000000000000000000000000000000000000000000000003024133D90FFAABC0000000000000000000000000000000000000000000000005AA269BD247B9ABC000000000000000000000000000000000000000000000000D0E22E3C30F3A23C00000000000000000000000000000000000000000000000052486DBD04853B3D0000000000000000000000000000000000000000000000008CFBC73CEC42683D0000000000000000000000000000000000000000000000008403EA3CC87E83BC0000000000000000000000000000000000000000000000005884F4BC381C123D000000000000000000000000000000000000000000000000CA397C3D2CA2CB3C000000000000000000000000000000000000000000000000A6E569BDFA8050BD000000000000000000000000000000000000000000000000168A00BD8A23213D000000000000000000000000000000000000000000000000BEDA6FBD86CF2CBD0000000000000000000000000000000000000000000000009E5654BD3443393D000000000000000000000000000000000000000000000000346AC7BC345A883C000000000000000000000000000000000000000000000000205D3FBC48CC263C000000000000000000000000000000000000000000000000B053063D1AF131BD000000000000000000000000000000000000000000000000BCAA7EBD9E753FBD000000000000000000000000000000000000000000000000D03EABBCE07FB43B000000000000000000000000000000000000000000000000844339BD84D745BD000000000000000000000000000000000000000000000000463A093D986AD23C0000000000000000000000000000000000000000000000008CB5243DA8EC293C00000000000000000000000000000000000000000000000092827EBDB2E0623D000000000000000000000000000000000000000000000000508DE9BC28597ABC000000000000000000000000000000000000000000000000FA7C22BD260F42BD000000000000000000000000000000000000000000000000D46FCD3CC86108BD000000000000000000000000000000000000000000000000B00D78BC18D3443C000000000000000000000000000000000000000000000000A8693A3DA074933C000000000000000000000000000000000000000000000000682370BC98E83C3D00000000000000000000000000000000000000000000000090D04A3C5CE0DC3C000000000000000000000000000000000000000000000000FC473C3D8C3D77BD00000000000000000000000000000000000000000000000060AE9CBCD6A0403D000000000000000000000000000000000000000000000000A00DDEBC9E2912BD000000000000000000000000000000000000000000000000F0D05CBC90A8A2BB000000000000000000000000000000000000000000000000207FB3BB7C6582BC000000000000000000000000000000000000000000000000D4F8AF3C286B4E3D000000000000000000000000000000000000000000000000001692391E7F39BD0000000000000000000000000000000000000000000000008CCC453D2CF021BD000000000000000000000000000000000000000000000000E4F2F0BCFC8522BD000000000000000000000000000000000000000000000000FAF1543DE450A9BC000000000000000000000000000000000000000000000000B06BEFBBEC98423D000000000000000000000000000000000000000000000000FCAF4C3D80467EBB000000000000000000000000000000000000000000000000D431B3BC48F6513D000000000000000000000000000000000000000000000000380B45BCBE02133D00000000000000000000000000000000000000000000000060DB6B3C209CAABC00000000000000000000000000000000000000000000000068393EBD605606BD000000000000000000000000000000000000000000000000E89CA3BC1612323D0000000000000000000000000000000000000000000000001C98483DB07D673D000000000000000000000000000000000000000000000000906A57BDE4FEB9BC000000000000000000000000000000000000000000000000B0ABA7BB801A75BA000000000000000000000000000000000000000000000000524D343DE4CE34BD000000000000000000000000000000000000000000000000426074BD1E605B3D0000000000000000000000000000000000000000000000005469393D40B1B9BC0000000000000000000000000000000000000000000000000A9922BD566C2E3D00000000000000000000000000000000000000000000000030418DBBA8EB253C000000000000000000000000000000000000000000000000924119BD60578DBC0000000000000000000000000000000000000000000000003422D0BC1004BC3C000000000000000000000000000000000000000000000000003D443C40AF1EBC0000000000000000000000000000000000000000000000004CEAFBBC30F9FA3C0000000000000000000000000000000000000000000000001C339EBC00B1B03C000000000000000000000000000000000000000000000000E468143DB49A883C0000000000000000000000000000000000000000000000008C10B3BC1C46773D000000000000000000000000000000000000000000000000C0638BBA969343BD000000000000000000000000000000000000000000000000C2C61BBD20A0723D0000000000000000000000000000000000000000000000001C30103D7066E13C00000000000000000000000000000000000000000000000020BD7A3BD82628BD000000000000000000000000000000000000000000000000B84FE63C5A261B3D0000000000000000000000000000000000000000000000002082DD3CB6A71DBD00000000000000000000000000000000000000000000000046C3533D3C313A3D0000000000000000000000000000000000000000000000008CE002BDD883503C00000000000000000000000000000000000000000000000064017BBD50AA98BB00000000000000000000000000000000000000000000000028BB283C18A27FBC00000000000000000000000000000000000000000000000000041B3B10D43B3C00000000000000000000000000000000000000000000000002972B3DDA8C28BD00000000000000000000000000000000000000000000000030A4BCBB441643BD00000000000000000000000000000000000000000000000020FD2BBD00E3A1B9000000000000000000000000000000000000000000000000800423BDFC7985BC000000000000000000000000000000000000000000000000BE2239BD98C5B3BC000000000000000000000000000000000000000000000000380718BDC090DBBA000000000000000000000000000000000000000000000000F0E03ABC4A9229BD000000000000000000000000000000000000000000000000004E6F3D120C173D000000000000000000000000000000000000000000000000389E4B3D609F59BB000000000000000000000000000000000000000000000000A22B6BBD48CA643D0000000000000000000000000000000000000000000000001079B3BBF871A53C0000000000000000000000000000000000000000000000003C6BD43C16E219BD000000000000000000000000000000000000000000000000C6E800BD148F2BBD000000000000000000000000000000000000000000000000E02908BC34CDA23C00000000000000000000000000000000000000000000000000E9FF3B861F623D00000000000000000000000000000000000000000000000010E4E13BACCD54BD000000000000000000000000000000000000000000000000C06F643CF06597BB000000000000000000000000000000000000000000000000741A25BD8E4E23BD0000000000000000000000000000000000000000000000001A8262BDA00B003C000000000000000000000000000000000000000000000000CA2C3EBDF41F04BD000000000000000000000000000000000000000000000000F05950BC305165BC000000000000000000000000000000000000000000000000A8083E3CD61610BD0000000000000000000000000000000000000000000000007CF8D43CA84945BD000000000000000000000000000000000000000000000000D8EFC23C2CDF8EBC00000000000000000000000000000000000000000000000074D8AEBC283C903C000000000000000000000000000000000000000000000000F0230BBD60AB12BB000000000000000000000000000000000000000000000000F23F04BDAC108BBC000000000000000000000000000000000000000000000000683D2EBC7A225B3D000000000000000000000000000000000000000000000000806062BD6C1F1DBD000000000000000000000000000000000000000000000000905DFEBCF0CF34BC000000000000000000000000000000000000000000000000A092D33B3068CD3C000000000000000000000000000000000000000000000000303A593C542BF33C0000000000000000000000000000000000000000000000004EC0283DC8C9773D00000000000000000000000000000000000000000000000028A6763CFA6533BD0000000000000000000000000000000000000000000000003E72263D34CE093D000000000000000000000000000000000000000000000000B43E5F3DC0B5C13A0000000000000000000000000000000000000000000000007A4F0DBD0CF3BCBC000000000000000000000000000000000000000000000000A69403BDEEC353BD00000000000000000000000000000000000000000000000010EE85BCE09CA8BB000000000000000000000000000000000000000000000000C02FC8BC903EBDBB000000000000000000000000000000000000000000000000D8EB833CE022673C0000000000000000000000000000000000000000000000006059CF3BB01F36BC0000000000000000000000000000000000000000000000005411373D926E323D000000000000000000000000000000000000000000000000A042B03CD42E5B3D0000000000000000000000000000000000000000000000008CF34B3DFA0558BD000000000000000000000000000000000000000000000000707A733CE82261BD000000000000000000000000000000000000000000000000D039963C580BC23C000000000000000000000000000000000000000000000000E8E4523C209137BD00000000000000000000000000000000000000000000000036B02E3DC0E501BD0000000000000000000000000000000000000000000000009C30823C6414BCBC00000000000000000000000000000000000000000000000002FE05BD00207D39000000000000000000000000000000000000000000000000903EDA3C6A31253D000000000000000000000000000000000000000000000000388DCABC7AB8473D0000000000000000000000000000000000000000000000006008DDBB40075FBB00000000000000000000000000000000000000000000000030D8233D2C91D13C000000000000000000000000000000000000000000000000E8A42A3D00BF543D000000000000000000000000000000000000000000000000D461E8BC34AEF8BC00000000000000000000000000000000000000000000000060F833BC4EC812BD000000000000000000000000000000000000000000000000C024963CA492E53C0000000000000000000000000000000000000000000000008E8175BD3A5F123D000000000000000000000000000000000000000000000000602F9EBCB8F076BD0000000000000000000000000000000000000000000000004031E73AAC737C3D000000000000000000000000000000000000000000000000A8B72F3C00F62FBA00000000000000000000000000000000000000000000000008CB653D607246BD000000000000000000000000000000000000000000000000D4D5743DEACF5FBD000000000000000000000000000000000000000000000000DC687E3DF4ECC03C000000000000000000000000000000000000000000000000D040763C387581BC0000000000000000000000000000000000000000000000005018A3BC5A102A3D0000000000000000000000000000000000000000000000008E4A143D80473E3D000000000000000000000000000000000000000000000000B87248BD906ADA3C0000000000000000000000000000000000000000000000008E4D743DD8C9103C000000000000000000000000000000000000000000000000529341BDDED3153D0000000000000000000000000000000000000000000000000EF84A3DB07346BD000000000000000000000000000000000000000000000000D86C4B3C44633BBD00000000000000000000000000000000000000000000000040CC753C8034B13A000000000000000000000000000000000000000000000000C0E9BA3C4499FB3C000000000000000000000000000000000000000000000000CA3C193D340918BD000000000000000000000000000000000000000000000000C20A473D3ADC7FBD00000000000000000000000000000000000000000000000050951EBD52504F3D000000000000000000000000000000000000000000000000CC96B5BC00B29BBC00000000000000000000000000000000000000000000000056466B3DB4B6763D000000000000000000000000000000000000000000000000A82472BD7C7C3CBD00000000000000000000000000000000000000000000000050AA513C50CFB7BB0000000000000000000000000000000000000000000000007A9E1FBD78CB5ABD000000000000000000000000000000000000000000000000104486BBA0F314BB0000000000000000000000000000000000000000000000001052A23CB81EB33C000000000000000000000000000000000000000000000000D2DD79BDD098BF3B000000000000000000000000000000000000000000000000B00EB6BC7436F63C00000000000000000000000000000000000000000000000036CC2CBDB227063D000000000000000000000000000000000000000000000000E80470BD4C7F333D000000000000000000000000000000000000000000000000181468BDC032EEBC00000000000000000000000000000000000000000000000008D17DBDBAED04BD000000000000000000000000000000000000000000000000B83743BCCC41793D0000000000000000000000000000000000000000000000005073AEBB90E485BC0000000000000000000000000000000000000000000000007410A83CD0B733BD000000000000000000000000000000000000000000000000842BA93C307145BD000000000000000000000000000000000000000000000000D822EABC10D5F23B00000000000000000000000000000000000000000000000040CB9CBAC84ED03C000000000000000000000000000000000000000000000000C490903C54F9D13C000000000000000000000000000000000000000000000000EC2A21BD3078423D00000000000000000000000000000000000000000000000006D552BD24DEF3BC000000000000000000000000000000000000000000000000B4F1E03CB84EAF3C0000000000000000000000000000000000000000000000003C6945BD584FE7BC000000000000000000000000000000000000000000000000E25B72BDFC47E1BC00000000000000000000000000000000000000000000000048436D3C0C59953C000000000000000000000000000000000000000000000000E039593C10E12E3C00000000000000000000000000000000000000000000000062141EBD40AE8D3A0000000000000000000000000000000000000000000000003E6835BDDC59153D000000000000000000000000000000000000000000000000A8D1D1BCB84666BC000000000000000000000000000000000000000000000000F01CD0BC8E400ABD000000000000000000000000000000000000000000000000C0821EBB48A9093D000000000000000000000000000000000000000000000000006213BCC437EDBC00000000000000000000000000000000000000000000000070DA8CBCFC62CB3C000000000000000000000000000000000000000000000000B4C42ABDB81824BC000000000000000000000000000000000000000000000000B24E32BD50865EBD000000000000000000000000000000000000000000000000743147BD2C6B9A3C000000000000000000000000000000000000000000000000E0466A3B001C06BB000000000000000000000000000000000000000000000000"> : tensor<1x256x8x1xf32>,
+]>
+#executable_target_embedded_elf_x86_64 = #hal.executable.target<"llvm-cpu", "embedded-elf-x86_64", {cpu = "znver3", cpu_features = "+prfchw,-cldemote,+avx,+aes,+sahf,+pclmul,-xop,+crc32,-amx-fp8,+xsaves,-avx512fp16,-usermsr,-sm4,-egpr,+sse4.1,-avx512ifma,+xsave,+sse4.2,-tsxldtrk,-sm3,-ptwrite,-widekl,-movrs,+invpcid,+64bit,+xsavec,-avx10.1-512,-avx512vpopcntdq,+cmov,-avx512vp2intersect,-avx512cd,+movbe,-avxvnniint8,-ccmp,-amx-int8,-kl,-avx10.1-256,-sha512,-avxvnni,-rtm,+adx,+avx2,-hreset,-movdiri,-serialize,+vpclmulqdq,-avx512vl,-uintr,-cf,+clflushopt,-raoint,-cmpccxadd,+bmi,-amx-tile,+sse,-avx10.2-256,-gfni,-avxvnniint16,-amx-fp16,-zu,-ndd,+xsaveopt,+rdrnd,-avx512f,-amx-bf16,-avx512bf16,-avx512vnni,-push2pop2,+cx8,-avx512bw,+sse3,+pku,-nf,-amx-tf32,-amx-avx512,+fsgsbase,+clzero,+mwaitx,-lwp,+lzcnt,+sha,-movdir64b,-ppx,+wbnoinvd,-enqcmd,-amx-transpose,-avx10.2-512,-avxneconvert,-tbm,-pconfig,-amx-complex,+ssse3,+cx16,+bmi2,+fma,+popcnt,-avxifma,+f16c,-avx512bitalg,+rdpru,+clwb,+mmx,+sse2,+rdseed,-avx512vbmi2,-prefetchi,-amx-movrs,+rdpid,-fma4,-avx512vbmi,+shstk,+vaes,-waitpkg,-sgx,+fxsr,-avx512dq,+sse4a", data_layout = "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-i128:128-f80:128-n8:16:32:64-S128", iree.encoding.resolver = #iree_cpu.cpu_encoding_resolver<>, max_stack_allocation_size = 32768 : i64, native_vector_size = 32 : i64, target_triple = "x86_64-unknown-unknown-eabi-elf"}>
+#map = affine_map<() -> ()>
+#map1 = affine_map<(d0, d1, d2, d3, d4, d5) -> (d3, d1 * 4 + d4, d2 * 4 + d5)>
+#map2 = affine_map<(d0, d1, d2, d3, d4, d5) -> (d0, d3, d4, d5)>
+#map3 = affine_map<(d0, d1, d2, d3, d4, d5) -> (d0, d1, d2)>
+#map4 = affine_map<(d0, d1, d2) -> (d0, d1, d2)>
+#map5 = affine_map<(d0, d1, d2) -> (d0)>
+#map6 = affine_map<(d0, d1, d2, d3, d4) -> (d0, d1 * 2 + d3, d2 * 2 + d4)>
+#map7 = affine_map<(d0, d1, d2, d3, d4) -> (d3, d4)>
+#map8 = affine_map<(d0, d1, d2, d3, d4) -> (d0, d1, d2)>
+#map9 = affine_map<(d0, d1) -> (d0, d1)>
+#map10 = affine_map<(d0) -> (d0)>
+#map11 = affine_map<(d0, d1) -> (d1)>
+#map12 = affine_map<(d0, d1) -> (d0)>
+#pipeline_layout = #hal.pipeline.layout<bindings = [#hal.pipeline.binding<storage_buffer, "ReadOnly|Indirect">, #hal.pipeline.binding<storage_buffer, "ReadOnly|Indirect">, #hal.pipeline.binding<storage_buffer, Indirect>, #hal.pipeline.binding<storage_buffer, Indirect>, #hal.pipeline.binding<storage_buffer, Indirect>], flags = Indirect>
+#pipeline_layout1 = #hal.pipeline.layout<bindings = [#hal.pipeline.binding<storage_buffer, "ReadOnly|Indirect">, #hal.pipeline.binding<storage_buffer, Indirect>], flags = Indirect>
+#pipeline_layout2 = #hal.pipeline.layout<bindings = [#hal.pipeline.binding<storage_buffer, "ReadOnly|Indirect">, #hal.pipeline.binding<storage_buffer, ReadOnly>, #hal.pipeline.binding<storage_buffer, Indirect>], flags = Indirect>
+#pipeline_layout3 = #hal.pipeline.layout<constants = 4, bindings = [#hal.pipeline.binding<storage_buffer, "ReadOnly|Indirect">, #hal.pipeline.binding<storage_buffer, Indirect>, #hal.pipeline.binding<storage_buffer, Indirect>, #hal.pipeline.binding<storage_buffer, Indirect>], flags = Indirect>
+#pipeline_layout4 = #hal.pipeline.layout<bindings = [#hal.pipeline.binding<storage_buffer, "ReadOnly|Indirect">, #hal.pipeline.binding<storage_buffer, Indirect>, #hal.pipeline.binding<storage_buffer, Indirect>], flags = Indirect>
+#pipeline_layout5 = #hal.pipeline.layout<constants = 3, bindings = [#hal.pipeline.binding<storage_buffer, "ReadOnly|Indirect">, #hal.pipeline.binding<storage_buffer, Indirect>, #hal.pipeline.binding<storage_buffer, Indirect>], flags = Indirect>
+#pipeline_layout6 = #hal.pipeline.layout<constants = 2, bindings = [#hal.pipeline.binding<storage_buffer, "ReadOnly|Indirect">, #hal.pipeline.binding<storage_buffer, Indirect>], flags = Indirect>
+#pipeline_layout7 = #hal.pipeline.layout<constants = 3, bindings = [#hal.pipeline.binding<storage_buffer, "ReadOnly|Indirect">, #hal.pipeline.binding<storage_buffer, Indirect>], flags = Indirect>
+#pipeline_layout8 = #hal.pipeline.layout<constants = 4, bindings = [#hal.pipeline.binding<storage_buffer, "ReadOnly|Indirect">, #hal.pipeline.binding<storage_buffer, Indirect>], flags = Indirect>
+#pipeline_layout9 = #hal.pipeline.layout<constants = 3, bindings = [#hal.pipeline.binding<storage_buffer, "ReadOnly|Indirect">, #hal.pipeline.binding<storage_buffer, "ReadOnly|Indirect">, #hal.pipeline.binding<storage_buffer, Indirect>], flags = Indirect>
+#device_target_local = #hal.device.target<"local", [#executable_target_embedded_elf_x86_64]> : !hal.device
+module attributes {stream.affinity.default = #hal.device.affinity<@__device_0>} {
+  util.global private @__device_0 = #device_target_local
+  hal.executable private @main_graph$async_dispatch_0 {
+    hal.executable.variant public @embedded_elf_x86_64 target(#executable_target_embedded_elf_x86_64) {
+      hal.executable.export public @main_graph$async_dispatch_0_elementwise_broadcast ordinal(0) layout(#pipeline_layout) count(%arg0: !hal.device) -> (index, index, index) {
+        %c1 = arith.constant 1 : index
+        hal.return %c1, %c1, %c1 : index, index, index
+      }
+      builtin.module {
+        func.func @main_graph$async_dispatch_0_elementwise_broadcast() {
+          %c0 = arith.constant 0 : index
+          %cst = arith.constant 9.99999974E-5 : f32
+          %cst_0 = arith.constant 2.000000e+00 : f32
+          %cst_1 = arith.constant 5.000000e-01 : f32
+          %c1 = arith.constant 1 : index
+          %c2 = arith.constant 2 : index
+          %c8 = arith.constant 8 : index
+          %c4 = arith.constant 4 : index
+          %0 = hal.interface.binding.subspan layout(#pipeline_layout) binding(0) alignment(64) offset(%c0) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>>
+          %1 = hal.interface.binding.subspan layout(#pipeline_layout) binding(1) alignment(64) offset(%c0) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<3xf32>>
+          %2 = hal.interface.binding.subspan layout(#pipeline_layout) binding(2) alignment(64) offset(%c8) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          %3 = hal.interface.binding.subspan layout(#pipeline_layout) binding(3) alignment(64) offset(%c0) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          %4 = hal.interface.binding.subspan layout(#pipeline_layout) binding(4) alignment(64) offset(%c4) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          %5 = iree_tensor_ext.dispatch.tensor.load %0, offsets = [0], sizes = [2], strides = [1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>> -> tensor<2xf32>
+          %6 = iree_tensor_ext.dispatch.tensor.load %1, offsets = [0], sizes = [3], strides = [1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<3xf32>> -> tensor<3xf32>
+          %7 = tensor.empty() : tensor<f32>
+          %8 = linalg.generic {indexing_maps = [#map], iterator_types = []} outs(%7 : tensor<f32>) {
+          ^bb0(%out: f32):
+            %extracted = tensor.extract %5[%c0] : tensor<2xf32>
+            %11 = arith.mulf %extracted, %cst : f32
+            %extracted_2 = tensor.extract %5[%c1] : tensor<2xf32>
+            %12 = arith.mulf %extracted_2, %cst : f32
+            %13 = arith.addf %11, %12 : f32
+            %14 = arith.divf %13, %cst_0 : f32
+            %15 = arith.subf %12, %11 : f32
+            %16 = arith.divf %15, %cst_1 : f32
+            %extracted_3 = tensor.extract %6[%c2] : tensor<3xf32>
+            %17 = arith.divf %16, %cst_0 : f32
+            %18 = arith.addf %extracted_3, %17 : f32
+            %19 = math.sin %18 : f32
+            %20 = arith.mulf %14, %19 : f32
+            %extracted_4 = tensor.extract %6[%c1] : tensor<3xf32>
+            %21 = arith.addf %extracted_4, %20 : f32
+            linalg.yield %21 : f32
+          } -> tensor<f32>
+          %9 = linalg.generic {indexing_maps = [#map], iterator_types = []} outs(%7 : tensor<f32>) {
+          ^bb0(%out: f32):
+            %extracted = tensor.extract %5[%c0] : tensor<2xf32>
+            %11 = arith.mulf %extracted, %cst : f32
+            %extracted_2 = tensor.extract %5[%c1] : tensor<2xf32>
+            %12 = arith.mulf %extracted_2, %cst : f32
+            %13 = arith.addf %11, %12 : f32
+            %14 = arith.divf %13, %cst_0 : f32
+            %15 = arith.subf %12, %11 : f32
+            %16 = arith.divf %15, %cst_1 : f32
+            %extracted_3 = tensor.extract %6[%c2] : tensor<3xf32>
+            %17 = arith.divf %16, %cst_0 : f32
+            %18 = arith.addf %extracted_3, %17 : f32
+            %19 = math.cos %18 : f32
+            %20 = arith.mulf %14, %19 : f32
+            %extracted_4 = tensor.extract %6[%c0] : tensor<3xf32>
+            %21 = arith.addf %extracted_4, %20 : f32
+            linalg.yield %21 : f32
+          } -> tensor<f32>
+          %10 = linalg.generic {indexing_maps = [#map], iterator_types = []} outs(%7 : tensor<f32>) {
+          ^bb0(%out: f32):
+            %extracted = tensor.extract %5[%c0] : tensor<2xf32>
+            %11 = arith.mulf %extracted, %cst : f32
+            %extracted_2 = tensor.extract %5[%c1] : tensor<2xf32>
+            %12 = arith.mulf %extracted_2, %cst : f32
+            %13 = arith.subf %12, %11 : f32
+            %14 = arith.divf %13, %cst_1 : f32
+            %extracted_3 = tensor.extract %6[%c2] : tensor<3xf32>
+            %15 = arith.addf %extracted_3, %14 : f32
+            linalg.yield %15 : f32
+          } -> tensor<f32>
+          iree_tensor_ext.dispatch.tensor.store %10, %2, offsets = [], sizes = [], strides = [] : tensor<f32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          iree_tensor_ext.dispatch.tensor.store %9, %3, offsets = [], sizes = [], strides = [] : tensor<f32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          iree_tensor_ext.dispatch.tensor.store %8, %4, offsets = [], sizes = [], strides = [] : tensor<f32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          return
+        }
+      }
+    }
+  }
+  hal.executable private @main_graph$async_dispatch_1 {
+    hal.executable.variant public @embedded_elf_x86_64 target(#executable_target_embedded_elf_x86_64) {
+      hal.executable.export public @main_graph$async_dispatch_1_slow_memcpy ordinal(0) layout(#pipeline_layout1) count(%arg0: !hal.device) -> (index, index, index) {
+        %x, %y, %z = iree_tensor_ext.dispatch.workgroup_count_from_slice()
+        hal.return %x, %y, %z : index, index, index
+      }
+      builtin.module {
+        func.func @main_graph$async_dispatch_1_slow_memcpy() {
+          %c0 = arith.constant 0 : index
+          %0 = hal.interface.binding.subspan layout(#pipeline_layout1) binding(0) alignment(64) offset(%c0) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<3x64x64xf32>>
+          %1 = hal.interface.binding.subspan layout(#pipeline_layout1) binding(1) alignment(64) offset(%c0) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<readwrite:tensor<3x66x66xf32>>
+          %2 = iree_tensor_ext.dispatch.tensor.load %0, offsets = [0, 0, 0], sizes = [3, 64, 64], strides = [1, 1, 1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<3x64x64xf32>> -> tensor<3x64x64xf32>
+          iree_tensor_ext.dispatch.tensor.store %2, %1, offsets = [0, 1, 1], sizes = [3, 64, 64], strides = [1, 1, 1] : tensor<3x64x64xf32> -> !iree_tensor_ext.dispatch.tensor<readwrite:tensor<3x66x66xf32>>
+          return
+        }
+      }
+    }
+  }
+  hal.executable private @main_graph$async_dispatch_2 {
+    hal.executable.variant public @embedded_elf_x86_64 target(#executable_target_embedded_elf_x86_64) {
+      hal.executable.export public @main_graph$async_dispatch_2_conv_4x16x16x3x4x4_f32 ordinal(0) layout(#pipeline_layout2) count(%arg0: !hal.device) -> (index, index, index) {
+        %x, %y, %z = iree_tensor_ext.dispatch.workgroup_count_from_slice()
+        hal.return %x, %y, %z : index, index, index
+      }
+      builtin.module {
+        func.func @main_graph$async_dispatch_2_conv_4x16x16x3x4x4_f32() {
+          %cst = arith.constant 0.000000e+00 : f32
+          %cst_0 = arith.constant dense<[-0.0291617829, 0.0185516253, -0.0336317755, 0.0323117375]> : tensor<4xf32>
+          %c0 = arith.constant 0 : index
+          %c52288 = arith.constant 52288 : index
+          %0 = hal.interface.binding.subspan layout(#pipeline_layout2) binding(0) alignment(64) offset(%c0) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<3x66x66xf32>>
+          %1 = hal.interface.binding.subspan layout(#pipeline_layout2) binding(1) alignment(64) offset(%c0) flags(ReadOnly) : !iree_tensor_ext.dispatch.tensor<readonly:tensor<4x3x4x4xf32>>
+          %2 = hal.interface.binding.subspan layout(#pipeline_layout2) binding(2) alignment(64) offset(%c52288) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<4x16x16xf32>>
+          %3 = iree_tensor_ext.dispatch.tensor.load %0, offsets = [0, 0, 0], sizes = [3, 66, 66], strides = [1, 1, 1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<3x66x66xf32>> -> tensor<3x66x66xf32>
+          %4 = iree_tensor_ext.dispatch.tensor.load %1, offsets = [0, 0, 0, 0], sizes = [4, 3, 4, 4], strides = [1, 1, 1, 1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<4x3x4x4xf32>> -> tensor<4x3x4x4xf32>
+          %5 = tensor.empty() : tensor<4x16x16xf32>
+          %6 = linalg.fill ins(%cst : f32) outs(%5 : tensor<4x16x16xf32>) -> tensor<4x16x16xf32>
+          %7 = linalg.generic {indexing_maps = [#map1, #map2, #map3], iterator_types = ["parallel", "parallel", "parallel", "reduction", "reduction", "reduction"]} ins(%3, %4 : tensor<3x66x66xf32>, tensor<4x3x4x4xf32>) outs(%6 : tensor<4x16x16xf32>) {
+          ^bb0(%in: f32, %in_1: f32, %out: f32):
+            %9 = arith.mulf %in, %in_1 : f32
+            %10 = arith.addf %out, %9 : f32
+            linalg.yield %10 : f32
+          } -> tensor<4x16x16xf32>
+          %8 = linalg.generic {indexing_maps = [#map4, #map5, #map4], iterator_types = ["parallel", "parallel", "parallel"]} ins(%7, %cst_0 : tensor<4x16x16xf32>, tensor<4xf32>) outs(%5 : tensor<4x16x16xf32>) {
+          ^bb0(%in: f32, %in_1: f32, %out: f32):
+            %9 = arith.addf %in, %in_1 : f32
+            %10 = arith.cmpf ugt, %9, %cst : f32
+            %11 = arith.select %10, %9, %cst : f32
+            linalg.yield %11 : f32
+          } -> tensor<4x16x16xf32>
+          iree_tensor_ext.dispatch.tensor.store %8, %2, offsets = [0, 0, 0], sizes = [4, 16, 16], strides = [1, 1, 1] : tensor<4x16x16xf32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<4x16x16xf32>>
+          return
+        }
+      }
+    }
+  }
+  hal.executable private @main_graph$async_dispatch_3 {
+    hal.executable.variant public @embedded_elf_x86_64 target(#executable_target_embedded_elf_x86_64) {
+      hal.executable.export public @main_graph$async_dispatch_3_conv_4x8x8x2x2_f32 ordinal(0) layout(#pipeline_layout1) count(%arg0: !hal.device) -> (index, index, index) {
+        %x, %y, %z = iree_tensor_ext.dispatch.workgroup_count_from_slice()
+        hal.return %x, %y, %z : index, index, index
+      }
+      builtin.module {
+        func.func @main_graph$async_dispatch_3_conv_4x8x8x2x2_f32() {
+          %cst = arith.constant 0xFF800000 : f32
+          %c52288 = arith.constant 52288 : index
+          %c0 = arith.constant 0 : index
+          %0 = hal.interface.binding.subspan layout(#pipeline_layout1) binding(0) alignment(64) offset(%c52288) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<4x16x16xf32>>
+          %1 = hal.interface.binding.subspan layout(#pipeline_layout1) binding(1) alignment(64) offset(%c0) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<4x8x8xf32>>
+          %2 = iree_tensor_ext.dispatch.tensor.load %0, offsets = [0, 0, 0], sizes = [4, 16, 16], strides = [1, 1, 1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<4x16x16xf32>> -> tensor<4x16x16xf32>
+          %3 = tensor.empty() : tensor<4x8x8xf32>
+          %4 = tensor.empty() : tensor<2x2xf32>
+          %5 = linalg.fill ins(%cst : f32) outs(%3 : tensor<4x8x8xf32>) -> tensor<4x8x8xf32>
+          %6 = linalg.generic {indexing_maps = [#map6, #map7, #map8], iterator_types = ["parallel", "parallel", "parallel", "reduction", "reduction"]} ins(%2, %4 : tensor<4x16x16xf32>, tensor<2x2xf32>) outs(%5 : tensor<4x8x8xf32>) {
+          ^bb0(%in: f32, %in_0: f32, %out: f32):
+            %7 = arith.maximumf %out, %in : f32
+            linalg.yield %7 : f32
+          } -> tensor<4x8x8xf32>
+          iree_tensor_ext.dispatch.tensor.store %6, %1, offsets = [0, 0, 0], sizes = [4, 8, 8], strides = [1, 1, 1] : tensor<4x8x8xf32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<4x8x8xf32>>
+          return
+        }
+      }
+    }
+  }
+  hal.executable private @main_graph$async_dispatch_4 {
+    hal.executable.variant public @embedded_elf_x86_64 target(#executable_target_embedded_elf_x86_64) {
+      hal.executable.export public @main_graph$async_dispatch_4_mmt4d_1x1x256x1x8x1_f32 ordinal(0) layout(#pipeline_layout2) count(%arg0: !hal.device) -> (index, index, index) {
+        %x, %y, %z = iree_tensor_ext.dispatch.workgroup_count_from_slice()
+        hal.return %x, %y, %z : index, index, index
+      }
+      builtin.module {
+        func.func @main_graph$async_dispatch_4_mmt4d_1x1x256x1x8x1_f32() {
+          %cst = arith.constant 0.000000e+00 : f32
+          %c0 = arith.constant 0 : index
+          %c768 = arith.constant 768 : index
+          %c1152 = arith.constant 1152 : index
+          %0 = hal.interface.binding.subspan layout(#pipeline_layout2) binding(0) alignment(64) offset(%c0) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<1x256x1x1xf32>>
+          %1 = hal.interface.binding.subspan layout(#pipeline_layout2) binding(1) alignment(64) offset(%c768) flags(ReadOnly) : !iree_tensor_ext.dispatch.tensor<readonly:tensor<1x256x8x1xf32>>
+          %2 = hal.interface.binding.subspan layout(#pipeline_layout2) binding(2) alignment(64) offset(%c1152) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<1x1x1x8xf32>>
+          %3 = iree_tensor_ext.dispatch.tensor.load %0, offsets = [0, 0, 0, 0], sizes = [1, 256, 1, 1], strides = [1, 1, 1, 1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<1x256x1x1xf32>> -> tensor<1x256x1x1xf32>
+          %4 = iree_tensor_ext.dispatch.tensor.load %1, offsets = [0, 0, 0, 0], sizes = [1, 256, 8, 1], strides = [1, 1, 1, 1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<1x256x8x1xf32>> -> tensor<1x256x8x1xf32>
+          %5 = tensor.empty() : tensor<1x1x1x8xf32>
+          %6 = linalg.fill ins(%cst : f32) outs(%5 : tensor<1x1x1x8xf32>) -> tensor<1x1x1x8xf32>
+          %7 = linalg.mmt4d ins(%3, %4 : tensor<1x256x1x1xf32>, tensor<1x256x8x1xf32>) outs(%6 : tensor<1x1x1x8xf32>) -> tensor<1x1x1x8xf32>
+          iree_tensor_ext.dispatch.tensor.store %7, %2, offsets = [0, 0, 0, 0], sizes = [1, 1, 1, 8], strides = [1, 1, 1, 1] : tensor<1x1x1x8xf32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<1x1x1x8xf32>>
+          return
+        }
+      }
+    }
+  }
+  hal.executable private @main_graph$async_dispatch_5 {
+    hal.executable.variant public @embedded_elf_x86_64 target(#executable_target_embedded_elf_x86_64) {
+      hal.executable.export public @main_graph$async_dispatch_5_elementwise_broadcast ordinal(0) layout(#pipeline_layout3) count(%arg0: !hal.device) -> (index, index, index) {
+        %c1 = arith.constant 1 : index
+        hal.return %c1, %c1, %c1 : index, index, index
+      }
+      builtin.module {
+        func.func @main_graph$async_dispatch_5_elementwise_broadcast() {
+          %c1 = arith.constant 1 : index
+          %c0 = arith.constant 0 : index
+          %0 = hal.interface.constant.load layout(#pipeline_layout3) ordinal(0) : i32
+          %1 = hal.interface.constant.load layout(#pipeline_layout3) ordinal(1) : i32
+          %2 = hal.interface.constant.load layout(#pipeline_layout3) ordinal(2) : i32
+          %3 = hal.interface.constant.load layout(#pipeline_layout3) ordinal(3) : i32
+          %4 = arith.index_castui %0 : i32 to index
+          %5 = arith.index_castui %1 : i32 to index
+          %6 = arith.index_castui %2 : i32 to index
+          %7 = arith.index_castui %3 : i32 to index
+          %8:4 = util.assume.int 
+              %4[<umin = 0, umax = 0>, <umin = 192, umax = 192, udiv = 192>, <umin = 0, umax = 0>, <umin = 192, umax = 192, udiv = 192>, <umin = 0, umax = 0>, <umin = 192, umax = 192, udiv = 192>, <umin = 0, umax = 0>, <umin = 192, umax = 192, udiv = 192>, <umin = 0, umax = 0>], 
+              %5[<umin = 1024, umax = 1024, udiv = 1024>, <umin = 0, umax = 0>, <umin = 64, umax = 64, udiv = 64>, <umin = 0, umax = 0>, <umin = 64, umax = 64, udiv = 64>, <umin = 0, umax = 0>, <umin = 64, umax = 64, udiv = 64>, <umin = 0, umax = 0>, <umin = 64, umax = 64, udiv = 64>], 
+              %6[<umin = 1092, umax = 1092, udiv = 1092>, <umin = 68, umax = 68, udiv = 68>, <umin = 196, umax = 196, udiv = 196>, <umin = 68, umax = 68, udiv = 68>, <umin = 196, umax = 196, udiv = 196>, <umin = 68, umax = 68, udiv = 68>, <umin = 196, umax = 196, udiv = 196>, <umin = 68, umax = 68, udiv = 68>, <umin = 196, umax = 196, udiv = 196>], 
+              %7[<umin = 1088, umax = 1088, udiv = 1088>, <umin = 64, umax = 64, udiv = 64>, <umin = 192, umax = 192, udiv = 192>, <umin = 64, umax = 64, udiv = 64>, <umin = 192, umax = 192, udiv = 192>, <umin = 64, umax = 64, udiv = 64>, <umin = 192, umax = 192, udiv = 192>, <umin = 64, umax = 64, udiv = 64>, <umin = 192, umax = 192, udiv = 192>]
+            : index, index, index, index
+          %9 = hal.interface.binding.subspan layout(#pipeline_layout3) binding(0) alignment(64) offset(%8#0) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>>
+          %10 = hal.interface.binding.subspan layout(#pipeline_layout3) binding(1) alignment(64) offset(%8#1) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          %11 = hal.interface.binding.subspan layout(#pipeline_layout3) binding(2) alignment(64) offset(%8#2) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          %12 = hal.interface.binding.subspan layout(#pipeline_layout3) binding(3) alignment(64) offset(%8#3) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          %13 = iree_tensor_ext.dispatch.tensor.load %9, offsets = [0], sizes = [2], strides = [1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>> -> tensor<2xf32>
+          %14 = tensor.empty() : tensor<f32>
+          %15 = linalg.generic {indexing_maps = [#map], iterator_types = []} outs(%14 : tensor<f32>) {
+          ^bb0(%out: f32):
+            %extracted = tensor.extract %13[%c0] : tensor<2xf32>
+            %extracted_0 = tensor.extract %13[%c1] : tensor<2xf32>
+            %18 = arith.addf %extracted, %extracted_0 : f32
+            %19 = math.cos %18 : f32
+            %20 = math.cos %extracted : f32
+            %21 = arith.addf %20, %19 : f32
+            linalg.yield %21 : f32
+          } -> tensor<f32>
+          %16 = linalg.generic {indexing_maps = [#map], iterator_types = []} outs(%14 : tensor<f32>) {
+          ^bb0(%out: f32):
+            %extracted = tensor.extract %13[%c0] : tensor<2xf32>
+            %extracted_0 = tensor.extract %13[%c1] : tensor<2xf32>
+            %18 = arith.addf %extracted, %extracted_0 : f32
+            %19 = math.cos %18 : f32
+            linalg.yield %19 : f32
+          } -> tensor<f32>
+          %17 = linalg.generic {indexing_maps = [#map], iterator_types = []} outs(%14 : tensor<f32>) {
+          ^bb0(%out: f32):
+            %extracted = tensor.extract %13[%c0] : tensor<2xf32>
+            %extracted_0 = tensor.extract %13[%c1] : tensor<2xf32>
+            %18 = arith.addf %extracted, %extracted_0 : f32
+            %19 = math.sin %18 : f32
+            %20 = math.sin %extracted : f32
+            %21 = arith.addf %20, %19 : f32
+            linalg.yield %21 : f32
+          } -> tensor<f32>
+          iree_tensor_ext.dispatch.tensor.store %17, %10, offsets = [], sizes = [], strides = [] : tensor<f32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          iree_tensor_ext.dispatch.tensor.store %16, %11, offsets = [], sizes = [], strides = [] : tensor<f32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          iree_tensor_ext.dispatch.tensor.store %15, %12, offsets = [], sizes = [], strides = [] : tensor<f32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          return
+        }
+      }
+    }
+  }
+  hal.executable private @main_graph$async_dispatch_6 {
+    hal.executable.variant public @embedded_elf_x86_64 target(#executable_target_embedded_elf_x86_64) {
+      hal.executable.export public @main_graph$async_dispatch_6_unpack_elementwise_1x2_f32 ordinal(0) layout(#pipeline_layout4) count(%arg0: !hal.device) -> (index, index, index) {
+        %x, %y, %z = iree_tensor_ext.dispatch.workgroup_count_from_slice()
+        hal.return %x, %y, %z : index, index, index
+      }
+      builtin.module {
+        func.func @main_graph$async_dispatch_6_unpack_elementwise_1x2_f32() {
+          %cst = arith.constant dense<[[-0.0322122052, -0.0469594523]]> : tensor<1x2xf32>
+          %c1152 = arith.constant 1152 : index
+          %c0 = arith.constant 0 : index
+          %c128 = arith.constant 128 : index
+          %c192 = arith.constant 192 : index
+          %0 = hal.interface.binding.subspan layout(#pipeline_layout4) binding(0) alignment(64) offset(%c1152) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<1x1x1x8xf32>>
+          %1 = hal.interface.binding.subspan layout(#pipeline_layout4) binding(0) alignment(64) offset(%c0) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<1x2xf32>>
+          %2 = hal.interface.binding.subspan layout(#pipeline_layout4) binding(1) alignment(64) offset(%c128) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<1x2xf32>>
+          %3 = hal.interface.binding.subspan layout(#pipeline_layout4) binding(2) alignment(64) offset(%c192) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<1x2xf32>>
+          %4 = iree_tensor_ext.dispatch.tensor.load %0, offsets = [0, 0, 0, 0], sizes = [1, 1, 1, 8], strides = [1, 1, 1, 1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<1x1x1x8xf32>> -> tensor<1x1x1x8xf32>
+          %5 = iree_tensor_ext.dispatch.tensor.load %1, offsets = [0, 0], sizes = [1, 2], strides = [1, 1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<1x2xf32>> -> tensor<1x2xf32>
+          %6 = tensor.empty() : tensor<1x2xf32>
+          %unpack = linalg.unpack %4 outer_dims_perm = [0, 1] inner_dims_pos = [0, 1] inner_tiles = [1, 8] into %6 : tensor<1x1x1x8xf32> -> tensor<1x2xf32>
+          %7:2 = linalg.generic {indexing_maps = [#map9, #map9, #map9, #map9, #map9], iterator_types = ["parallel", "parallel"]} ins(%unpack, %cst, %5 : tensor<1x2xf32>, tensor<1x2xf32>, tensor<1x2xf32>) outs(%6, %6 : tensor<1x2xf32>, tensor<1x2xf32>) {
+          ^bb0(%in: f32, %in_0: f32, %in_1: f32, %out: f32, %out_2: f32):
+            %8 = arith.addf %in, %in_0 : f32
+            %9 = arith.subf %8, %in_1 : f32
+            linalg.yield %8, %9 : f32, f32
+          } -> (tensor<1x2xf32>, tensor<1x2xf32>)
+          iree_tensor_ext.dispatch.tensor.store %7#0, %2, offsets = [0, 0], sizes = [1, 2], strides = [1, 1] : tensor<1x2xf32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<1x2xf32>>
+          iree_tensor_ext.dispatch.tensor.store %7#1, %3, offsets = [0, 0], sizes = [1, 2], strides = [1, 1] : tensor<1x2xf32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<1x2xf32>>
+          return
+        }
+      }
+    }
+  }
+  hal.executable private @main_graph$async_dispatch_7 {
+    hal.executable.variant public @embedded_elf_x86_64 target(#executable_target_embedded_elf_x86_64) {
+      hal.executable.export public @main_graph$async_dispatch_7_elementwise_broadcast ordinal(0) layout(#pipeline_layout5) count(%arg0: !hal.device) -> (index, index, index) {
+        %c1 = arith.constant 1 : index
+        hal.return %c1, %c1, %c1 : index, index, index
+      }
+      builtin.module {
+        func.func @main_graph$async_dispatch_7_elementwise_broadcast() {
+          %c1 = arith.constant 1 : index
+          %cst = arith.constant -1.000000e+00 : f32
+          %c0 = arith.constant 0 : index
+          %0 = hal.interface.constant.load layout(#pipeline_layout5) ordinal(0) : i32
+          %1 = hal.interface.constant.load layout(#pipeline_layout5) ordinal(1) : i32
+          %2 = hal.interface.constant.load layout(#pipeline_layout5) ordinal(2) : i32
+          %3 = arith.index_castui %0 : i32 to index
+          %4 = arith.index_castui %1 : i32 to index
+          %5 = arith.index_castui %2 : i32 to index
+          %6:3 = util.assume.int 
+              %3[<umin = 0, umax = 0>, <umin = 192, umax = 192, udiv = 192>, <umin = 0, umax = 0>, <umin = 192, umax = 192, udiv = 192>, <umin = 0, umax = 0>, <umin = 192, umax = 192, udiv = 192>, <umin = 0, umax = 0>, <umin = 192, umax = 192, udiv = 192>, <umin = 0, umax = 0>], 
+              %4[<umin = 68, umax = 68, udiv = 68>, <umin = 4, umax = 4, udiv = 4>, <umin = 68, umax = 68, udiv = 68>, <umin = 4, umax = 4, udiv = 4>, <umin = 68, umax = 68, udiv = 68>, <umin = 4, umax = 4, udiv = 4>, <umin = 68, umax = 68, udiv = 68>, <umin = 4, umax = 4, udiv = 4>, <umin = 68, umax = 68, udiv = 68>], 
+              %5[<umin = 64, umax = 64, udiv = 64>, <umin = 0, umax = 0>, <umin = 64, umax = 64, udiv = 64>, <umin = 0, umax = 0>, <umin = 64, umax = 64, udiv = 64>, <umin = 0, umax = 0>, <umin = 64, umax = 64, udiv = 64>, <umin = 0, umax = 0>, <umin = 64, umax = 64, udiv = 64>]
+            : index, index, index
+          %7 = hal.interface.binding.subspan layout(#pipeline_layout5) binding(0) alignment(64) offset(%6#0) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>>
+          %8 = hal.interface.binding.subspan layout(#pipeline_layout5) binding(1) alignment(64) offset(%6#1) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          %9 = hal.interface.binding.subspan layout(#pipeline_layout5) binding(2) alignment(64) offset(%6#2) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          %10 = iree_tensor_ext.dispatch.tensor.load %7, offsets = [0], sizes = [2], strides = [1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>> -> tensor<2xf32>
+          %11 = tensor.empty() : tensor<f32>
+          %12 = linalg.generic {indexing_maps = [#map], iterator_types = []} outs(%11 : tensor<f32>) {
+          ^bb0(%out: f32):
+            %extracted = tensor.extract %10[%c0] : tensor<2xf32>
+            %extracted_0 = tensor.extract %10[%c1] : tensor<2xf32>
+            %14 = arith.addf %extracted, %extracted_0 : f32
+            %15 = math.sin %14 : f32
+            %16 = math.sin %extracted : f32
+            %17 = arith.mulf %16, %cst : f32
+            %18 = arith.subf %17, %15 : f32
+            linalg.yield %18 : f32
+          } -> tensor<f32>
+          %13 = linalg.generic {indexing_maps = [#map], iterator_types = []} outs(%11 : tensor<f32>) {
+          ^bb0(%out: f32):
+            %extracted = tensor.extract %10[%c0] : tensor<2xf32>
+            %extracted_0 = tensor.extract %10[%c1] : tensor<2xf32>
+            %14 = arith.addf %extracted, %extracted_0 : f32
+            %15 = math.sin %14 : f32
+            %16 = arith.mulf %15, %cst : f32
+            linalg.yield %16 : f32
+          } -> tensor<f32>
+          iree_tensor_ext.dispatch.tensor.store %13, %8, offsets = [], sizes = [], strides = [] : tensor<f32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          iree_tensor_ext.dispatch.tensor.store %12, %9, offsets = [], sizes = [], strides = [] : tensor<f32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          return
+        }
+      }
+    }
+  }
+  hal.executable private @main_graph$async_dispatch_8 {
+    hal.executable.variant public @embedded_elf_x86_64 target(#executable_target_embedded_elf_x86_64) {
+      hal.executable.export public @main_graph$async_dispatch_8_elementwise_broadcast_2_f32 ordinal(0) layout(#pipeline_layout6) count(%arg0: !hal.device) -> (index, index, index) {
+        %x, %y, %z = iree_tensor_ext.dispatch.workgroup_count_from_slice()
+        hal.return %x, %y, %z : index, index, index
+      }
+      builtin.module {
+        func.func @main_graph$async_dispatch_8_elementwise_broadcast_2_f32() {
+          %c0 = arith.constant 0 : index
+          %0 = hal.interface.constant.load layout(#pipeline_layout6) ordinal(0) : i32
+          %1 = hal.interface.constant.load layout(#pipeline_layout6) ordinal(1) : i32
+          %2 = arith.index_castui %0 : i32 to index
+          %3 = arith.index_castui %1 : i32 to index
+          %4:2 = util.assume.int 
+              %2[<umin = 0, umax = 0>, <umin = 256, umax = 256, udiv = 256>, <umin = 256, umax = 256, udiv = 256>, <umin = 256, umax = 256, udiv = 256>, <umin = 256, umax = 256, udiv = 256>, <umin = 256, umax = 256, udiv = 256>, <umin = 256, umax = 256, udiv = 256>, <umin = 256, umax = 256, udiv = 256>, <umin = 128, umax = 128, udiv = 128>], 
+              %3[<umin = 64, umax = 64, udiv = 64>, <umin = 0, umax = 0>, <umin = 64, umax = 64, udiv = 64>, <umin = 0, umax = 0>, <umin = 64, umax = 64, udiv = 64>, <umin = 0, umax = 0>, <umin = 64, umax = 64, udiv = 64>, <umin = 0, umax = 0>, <umin = 64, umax = 64, udiv = 64>]
+            : index, index
+          %5 = hal.interface.binding.subspan layout(#pipeline_layout6) binding(0) alignment(64) offset(%4#0) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2x2xf32>>
+          %6 = hal.interface.binding.subspan layout(#pipeline_layout6) binding(1) alignment(64) offset(%4#1) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<2xf32>>
+          %7 = iree_tensor_ext.dispatch.tensor.load %5, offsets = [0, 0], sizes = [2, 2], strides = [1, 1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2x2xf32>> -> tensor<2x2xf32>
+          %8 = tensor.empty() : tensor<2xf32>
+          %9 = linalg.generic {indexing_maps = [#map10], iterator_types = ["parallel"]} outs(%8 : tensor<2xf32>) {
+          ^bb0(%out: f32):
+            %10 = linalg.index 0 : index
+            %extracted = tensor.extract %7[%c0, %10] : tensor<2x2xf32>
+            linalg.yield %extracted : f32
+          } -> tensor<2xf32>
+          iree_tensor_ext.dispatch.tensor.store %9, %6, offsets = [0], sizes = [2], strides = [1] : tensor<2xf32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<2xf32>>
+          return
+        }
+      }
+    }
+  }
+  hal.executable private @main_graph$async_dispatch_9 {
+    hal.executable.variant public @embedded_elf_x86_64 target(#executable_target_embedded_elf_x86_64) {
+      hal.executable.export public @main_graph$async_dispatch_9_elementwise_broadcast ordinal(0) layout(#pipeline_layout6) count(%arg0: !hal.device) -> (index, index, index) {
+        %c1 = arith.constant 1 : index
+        hal.return %c1, %c1, %c1 : index, index, index
+      }
+      builtin.module {
+        func.func @main_graph$async_dispatch_9_elementwise_broadcast() {
+          %c0 = arith.constant 0 : index
+          %0 = hal.interface.constant.load layout(#pipeline_layout6) ordinal(0) : i32
+          %1 = hal.interface.constant.load layout(#pipeline_layout6) ordinal(1) : i32
+          %2 = arith.index_castui %0 : i32 to index
+          %3 = arith.index_castui %1 : i32 to index
+          %4:2 = util.assume.int 
+              %2[<umin = 64, umax = 64, udiv = 64>, <umin = 0, umax = 0>, <umin = 64, umax = 64, udiv = 64>, <umin = 0, umax = 0>, <umin = 64, umax = 64, udiv = 64>, <umin = 0, umax = 0>, <umin = 64, umax = 64, udiv = 64>, <umin = 0, umax = 0>, <umin = 64, umax = 64, udiv = 64>], 
+              %3[<umin = 324, umax = 324, udiv = 324>, <umin = 388, umax = 388, udiv = 388>, <umin = 388, umax = 388, udiv = 388>, <umin = 388, umax = 388, udiv = 388>, <umin = 388, umax = 388, udiv = 388>, <umin = 388, umax = 388, udiv = 388>, <umin = 388, umax = 388, udiv = 388>, <umin = 388, umax = 388, udiv = 388>, <umin = 260, umax = 260, udiv = 260>]
+            : index, index
+          %5 = hal.interface.binding.subspan layout(#pipeline_layout6) binding(0) alignment(64) offset(%4#0) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>>
+          %6 = hal.interface.binding.subspan layout(#pipeline_layout6) binding(1) alignment(64) offset(%4#1) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          %7 = iree_tensor_ext.dispatch.tensor.load %5, offsets = [0], sizes = [2], strides = [1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>> -> tensor<2xf32>
+          %8 = tensor.empty() : tensor<f32>
+          %9 = linalg.generic {indexing_maps = [#map], iterator_types = []} outs(%8 : tensor<f32>) {
+          ^bb0(%out: f32):
+            %extracted = tensor.extract %7[%c0] : tensor<2xf32>
+            linalg.yield %extracted : f32
+          } -> tensor<f32>
+          iree_tensor_ext.dispatch.tensor.store %9, %6, offsets = [], sizes = [], strides = [] : tensor<f32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          return
+        }
+      }
+    }
+  }
+  hal.executable private @main_graph$async_dispatch_10 {
+    hal.executable.variant public @embedded_elf_x86_64 target(#executable_target_embedded_elf_x86_64) {
+      hal.executable.export public @main_graph$async_dispatch_10_elementwise_broadcast_2_f32 ordinal(0) layout(#pipeline_layout6) count(%arg0: !hal.device) -> (index, index, index) {
+        %x, %y, %z = iree_tensor_ext.dispatch.workgroup_count_from_slice()
+        hal.return %x, %y, %z : index, index, index
+      }
+      builtin.module {
+        func.func @main_graph$async_dispatch_10_elementwise_broadcast_2_f32() {
+          %c1 = arith.constant 1 : index
+          %0 = hal.interface.constant.load layout(#pipeline_layout6) ordinal(0) : i32
+          %1 = hal.interface.constant.load layout(#pipeline_layout6) ordinal(1) : i32
+          %2 = arith.index_castui %0 : i32 to index
+          %3 = arith.index_castui %1 : i32 to index
+          %4:2 = util.assume.int 
+              %2[<umin = 0, umax = 0>, <umin = 256, umax = 256, udiv = 256>, <umin = 256, umax = 256, udiv = 256>, <umin = 256, umax = 256, udiv = 256>, <umin = 256, umax = 256, udiv = 256>, <umin = 256, umax = 256, udiv = 256>, <umin = 256, umax = 256, udiv = 256>, <umin = 256, umax = 256, udiv = 256>, <umin = 128, umax = 128, udiv = 128>], 
+              %3[<umin = 256, umax = 256, udiv = 256>, <umin = 64, umax = 64, udiv = 64>, <umin = 192, umax = 192, udiv = 192>, <umin = 64, umax = 64, udiv = 64>, <umin = 192, umax = 192, udiv = 192>, <umin = 64, umax = 64, udiv = 64>, <umin = 192, umax = 192, udiv = 192>, <umin = 64, umax = 64, udiv = 64>, <umin = 192, umax = 192, udiv = 192>]
+            : index, index
+          %5 = hal.interface.binding.subspan layout(#pipeline_layout6) binding(0) alignment(64) offset(%4#0) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2x2xf32>>
+          %6 = hal.interface.binding.subspan layout(#pipeline_layout6) binding(1) alignment(64) offset(%4#1) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<2xf32>>
+          %7 = iree_tensor_ext.dispatch.tensor.load %5, offsets = [0, 0], sizes = [2, 2], strides = [1, 1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2x2xf32>> -> tensor<2x2xf32>
+          %8 = tensor.empty() : tensor<2xf32>
+          %9 = linalg.generic {indexing_maps = [#map10], iterator_types = ["parallel"]} outs(%8 : tensor<2xf32>) {
+          ^bb0(%out: f32):
+            %10 = linalg.index 0 : index
+            %extracted = tensor.extract %7[%c1, %10] : tensor<2x2xf32>
+            linalg.yield %extracted : f32
+          } -> tensor<2xf32>
+          iree_tensor_ext.dispatch.tensor.store %9, %6, offsets = [0], sizes = [2], strides = [1] : tensor<2xf32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<2xf32>>
+          return
+        }
+      }
+    }
+  }
+  hal.executable private @main_graph$async_dispatch_11 {
+    hal.executable.variant public @embedded_elf_x86_64 target(#executable_target_embedded_elf_x86_64) {
+      hal.executable.export public @main_graph$async_dispatch_11_elementwise_broadcast ordinal(0) layout(#pipeline_layout6) count(%arg0: !hal.device) -> (index, index, index) {
+        %c1 = arith.constant 1 : index
+        hal.return %c1, %c1, %c1 : index, index, index
+      }
+      builtin.module {
+        func.func @main_graph$async_dispatch_11_elementwise_broadcast() {
+          %c1 = arith.constant 1 : index
+          %0 = hal.interface.constant.load layout(#pipeline_layout6) ordinal(0) : i32
+          %1 = hal.interface.constant.load layout(#pipeline_layout6) ordinal(1) : i32
+          %2 = arith.index_castui %0 : i32 to index
+          %3 = arith.index_castui %1 : i32 to index
+          %4:2 = util.assume.int 
+              %2[<umin = 256, umax = 256, udiv = 256>, <umin = 64, umax = 64, udiv = 64>, <umin = 192, umax = 192, udiv = 192>, <umin = 64, umax = 64, udiv = 64>, <umin = 192, umax = 192, udiv = 192>, <umin = 64, umax = 64, udiv = 64>, <umin = 192, umax = 192, udiv = 192>, <umin = 64, umax = 64, udiv = 64>, <umin = 192, umax = 192, udiv = 192>], 
+              %3[<umin = 384, umax = 384, udiv = 384>, <umin = 448, umax = 448, udiv = 448>, <umin = 448, umax = 448, udiv = 448>, <umin = 448, umax = 448, udiv = 448>, <umin = 448, umax = 448, udiv = 448>, <umin = 448, umax = 448, udiv = 448>, <umin = 448, umax = 448, udiv = 448>, <umin = 448, umax = 448, udiv = 448>, <umin = 384, umax = 384, udiv = 384>]
+            : index, index
+          %5 = hal.interface.binding.subspan layout(#pipeline_layout6) binding(0) alignment(64) offset(%4#0) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>>
+          %6 = hal.interface.binding.subspan layout(#pipeline_layout6) binding(1) alignment(64) offset(%4#1) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          %7 = iree_tensor_ext.dispatch.tensor.load %5, offsets = [0], sizes = [2], strides = [1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>> -> tensor<2xf32>
+          %8 = tensor.empty() : tensor<f32>
+          %9 = linalg.generic {indexing_maps = [#map], iterator_types = []} outs(%8 : tensor<f32>) {
+          ^bb0(%out: f32):
+            %extracted = tensor.extract %7[%c1] : tensor<2xf32>
+            linalg.yield %extracted : f32
+          } -> tensor<f32>
+          iree_tensor_ext.dispatch.tensor.store %9, %6, offsets = [], sizes = [], strides = [] : tensor<f32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          return
+        }
+      }
+    }
+  }
+  hal.executable private @main_graph$async_dispatch_12 {
+    hal.executable.variant public @embedded_elf_x86_64 target(#executable_target_embedded_elf_x86_64) {
+      hal.executable.export public @main_graph$async_dispatch_12_elementwise_broadcast ordinal(0) layout(#pipeline_layout7) count(%arg0: !hal.device) -> (index, index, index) {
+        %c1 = arith.constant 1 : index
+        hal.return %c1, %c1, %c1 : index, index, index
+      }
+      builtin.module {
+        func.func @main_graph$async_dispatch_12_elementwise_broadcast() {
+          %c1 = arith.constant 1 : index
+          %0 = hal.interface.constant.load layout(#pipeline_layout7) ordinal(0) : i32
+          %1 = hal.interface.constant.load layout(#pipeline_layout7) ordinal(1) : i32
+          %2 = hal.interface.constant.load layout(#pipeline_layout7) ordinal(2) : i32
+          %3 = arith.index_castui %0 : i32 to index
+          %4 = arith.index_castui %1 : i32 to index
+          %5 = arith.index_castui %2 : i32 to index
+          %6:3 = util.assume.int 
+              %3[<umin = 64, umax = 64, udiv = 64>, <umin = 0, umax = 0>, <umin = 64, umax = 64, udiv = 64>, <umin = 0, umax = 0>, <umin = 64, umax = 64, udiv = 64>, <umin = 0, umax = 0>, <umin = 64, umax = 64, udiv = 64>, <umin = 0, umax = 0>, <umin = 64, umax = 64, udiv = 64>], 
+              %4[<umin = 256, umax = 256, udiv = 256>, <umin = 64, umax = 64, udiv = 64>, <umin = 192, umax = 192, udiv = 192>, <umin = 64, umax = 64, udiv = 64>, <umin = 192, umax = 192, udiv = 192>, <umin = 64, umax = 64, udiv = 64>, <umin = 192, umax = 192, udiv = 192>, <umin = 64, umax = 64, udiv = 64>, <umin = 192, umax = 192, udiv = 192>], 
+              %5[<umin = 388, umax = 388, udiv = 388>, <umin = 452, umax = 452, udiv = 452>, <umin = 452, umax = 452, udiv = 452>, <umin = 452, umax = 452, udiv = 452>, <umin = 452, umax = 452, udiv = 452>, <umin = 452, umax = 452, udiv = 452>, <umin = 452, umax = 452, udiv = 452>, <umin = 452, umax = 452, udiv = 452>, <umin = 388, umax = 388, udiv = 388>]
+            : index, index, index
+          %7 = hal.interface.binding.subspan layout(#pipeline_layout7) binding(0) alignment(64) offset(%6#0) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>>
+          %8 = hal.interface.binding.subspan layout(#pipeline_layout7) binding(1) alignment(64) offset(%6#2) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          %9 = iree_tensor_ext.dispatch.tensor.load %7, offsets = [0], sizes = [2], strides = [1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>> -> tensor<2xf32>
+          %10 = tensor.empty() : tensor<f32>
+          %11 = linalg.generic {indexing_maps = [#map], iterator_types = []} outs(%10 : tensor<f32>) {
+          ^bb0(%out: f32):
+            %extracted = tensor.extract %9[%c1] : tensor<2xf32>
+            %12 = arith.negf %extracted : f32
+            linalg.yield %12 : f32
+          } -> tensor<f32>
+          iree_tensor_ext.dispatch.tensor.store %11, %8, offsets = [], sizes = [], strides = [] : tensor<f32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          return
+        }
+      }
+    }
+  }
+  hal.executable private @main_graph$async_dispatch_13 {
+    hal.executable.variant public @embedded_elf_x86_64 target(#executable_target_embedded_elf_x86_64) {
+      hal.executable.export public @main_graph$async_dispatch_13_elementwise_broadcast ordinal(0) layout(#pipeline_layout6) count(%arg0: !hal.device) -> (index, index, index) {
+        %c1 = arith.constant 1 : index
+        hal.return %c1, %c1, %c1 : index, index, index
+      }
+      builtin.module {
+        func.func @main_graph$async_dispatch_13_elementwise_broadcast() {
+          %c0 = arith.constant 0 : index
+          %0 = hal.interface.constant.load layout(#pipeline_layout6) ordinal(0) : i32
+          %1 = hal.interface.constant.load layout(#pipeline_layout6) ordinal(1) : i32
+          %2 = arith.index_castui %0 : i32 to index
+          %3 = arith.index_castui %1 : i32 to index
+          %4:2 = util.assume.int 
+              %2[<umin = 256, umax = 256, udiv = 256>, <umin = 64, umax = 64, udiv = 64>, <umin = 192, umax = 192, udiv = 192>, <umin = 64, umax = 64, udiv = 64>, <umin = 192, umax = 192, udiv = 192>, <umin = 64, umax = 64, udiv = 64>, <umin = 192, umax = 192, udiv = 192>, <umin = 64, umax = 64, udiv = 64>, <umin = 192, umax = 192, udiv = 192>], 
+              %3[<umin = 0, umax = 0>, <umin = 256, umax = 256, udiv = 256>, <umin = 256, umax = 256, udiv = 256>, <umin = 256, umax = 256, udiv = 256>, <umin = 256, umax = 256, udiv = 256>, <umin = 256, umax = 256, udiv = 256>, <umin = 256, umax = 256, udiv = 256>, <umin = 256, umax = 256, udiv = 256>, <umin = 128, umax = 128, udiv = 128>]
+            : index, index
+          %5 = hal.interface.binding.subspan layout(#pipeline_layout6) binding(0) alignment(64) offset(%4#0) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>>
+          %6 = hal.interface.binding.subspan layout(#pipeline_layout6) binding(1) alignment(64) offset(%4#1) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          %7 = iree_tensor_ext.dispatch.tensor.load %5, offsets = [0], sizes = [2], strides = [1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>> -> tensor<2xf32>
+          %8 = tensor.empty() : tensor<f32>
+          %9 = linalg.generic {indexing_maps = [#map], iterator_types = []} outs(%8 : tensor<f32>) {
+          ^bb0(%out: f32):
+            %extracted = tensor.extract %7[%c0] : tensor<2xf32>
+            %10 = arith.negf %extracted : f32
+            linalg.yield %10 : f32
+          } -> tensor<f32>
+          iree_tensor_ext.dispatch.tensor.store %9, %6, offsets = [], sizes = [], strides = [] : tensor<f32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          return
+        }
+      }
+    }
+  }
+  hal.executable private @main_graph$async_dispatch_14 {
+    hal.executable.variant public @embedded_elf_x86_64 target(#executable_target_embedded_elf_x86_64) {
+      hal.executable.export public @main_graph$async_dispatch_14_elementwise_2x2_f32_pack ordinal(0) layout(#pipeline_layout8) count(%arg0: !hal.device) -> (index, index, index) {
+        %x, %y, %z = iree_tensor_ext.dispatch.workgroup_count_from_slice()
+        hal.return %x, %y, %z : index, index, index
+      }
+      builtin.module {
+        func.func @main_graph$async_dispatch_14_elementwise_2x2_f32_pack() {
+          %c1 = arith.constant 1 : index
+          %cst = arith.constant 1.000000e+00 : f32
+          %cst_0 = arith.constant 0.000000e+00 : f32
+          %cst_1 = arith.constant 9.99999997E-7 : f32
+          %c0 = arith.constant 0 : index
+          %0 = hal.interface.constant.load layout(#pipeline_layout8) ordinal(0) : i32
+          %1 = hal.interface.constant.load layout(#pipeline_layout8) ordinal(1) : i32
+          %2 = hal.interface.constant.load layout(#pipeline_layout8) ordinal(2) : i32
+          %3 = hal.interface.constant.load layout(#pipeline_layout8) ordinal(3) : i32
+          %4 = arith.index_castui %0 : i32 to index
+          %5 = arith.index_castui %1 : i32 to index
+          %6 = arith.index_castui %2 : i32 to index
+          %7 = arith.index_castui %3 : i32 to index
+          %8:4 = util.assume.int 
+              %4[<umin = 64, umax = 64, udiv = 64>, <umin = 0, umax = 0>, <umin = 64, umax = 64, udiv = 64>, <umin = 0, umax = 0>, <umin = 64, umax = 64, udiv = 64>, <umin = 0, umax = 0>, <umin = 64, umax = 64, udiv = 64>, <umin = 0, umax = 0>, <umin = 64, umax = 64, udiv = 64>], 
+              %5[<umin = 256, umax = 256, udiv = 256>, <umin = 64, umax = 64, udiv = 64>, <umin = 192, umax = 192, udiv = 192>, <umin = 64, umax = 64, udiv = 64>, <umin = 192, umax = 192, udiv = 192>, <umin = 64, umax = 64, udiv = 64>, <umin = 192, umax = 192, udiv = 192>, <umin = 64, umax = 64, udiv = 64>, <umin = 192, umax = 192, udiv = 192>], 
+              %6[<umin = 0, umax = 0>, <umin = 256, umax = 256, udiv = 256>, <umin = 256, umax = 256, udiv = 256>, <umin = 256, umax = 256, udiv = 256>, <umin = 256, umax = 256, udiv = 256>, <umin = 256, umax = 256, udiv = 256>, <umin = 256, umax = 256, udiv = 256>, <umin = 256, umax = 256, udiv = 256>, <umin = 128, umax = 128, udiv = 128>], 
+              %7[<umin = 320, umax = 320, udiv = 320>, <umin = 384, umax = 384, udiv = 384>, <umin = 384, umax = 384, udiv = 384>, <umin = 384, umax = 384, udiv = 384>, <umin = 384, umax = 384, udiv = 384>, <umin = 384, umax = 384, udiv = 384>, <umin = 384, umax = 384, udiv = 384>, <umin = 384, umax = 384, udiv = 384>, <umin = 256, umax = 256, udiv = 256>]
+            : index, index, index, index
+          %9 = hal.interface.binding.subspan layout(#pipeline_layout8) binding(0) alignment(64) offset(%8#0) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>>
+          %10 = hal.interface.binding.subspan layout(#pipeline_layout8) binding(0) alignment(64) offset(%8#1) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>>
+          %11 = hal.interface.binding.subspan layout(#pipeline_layout8) binding(0) alignment(64) offset(%8#2) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2x2xf32>>
+          %12 = hal.interface.binding.subspan layout(#pipeline_layout8) binding(1) alignment(64) offset(%8#3) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<1x2x8x1xf32>>
+          %13 = iree_tensor_ext.dispatch.tensor.load %9, offsets = [0], sizes = [2], strides = [1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>> -> tensor<2xf32>
+          %14 = iree_tensor_ext.dispatch.tensor.load %10, offsets = [0], sizes = [2], strides = [1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>> -> tensor<2xf32>
+          %15 = iree_tensor_ext.dispatch.tensor.load %11, offsets = [0, 0], sizes = [2, 2], strides = [1, 1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2x2xf32>> -> tensor<2x2xf32>
+          %16 = tensor.empty() : tensor<1x2x8x1xf32>
+          %17 = tensor.empty() : tensor<2x2xf32>
+          %18 = linalg.generic {indexing_maps = [#map9, #map9], iterator_types = ["parallel", "parallel"]} ins(%15 : tensor<2x2xf32>) outs(%17 : tensor<2x2xf32>) {
+          ^bb0(%in: f32, %out: f32):
+            %extracted = tensor.extract %13[%c0] : tensor<2xf32>
+            %extracted_2 = tensor.extract %14[%c1] : tensor<2xf32>
+            %extracted_3 = tensor.extract %13[%c1] : tensor<2xf32>
+            %extracted_4 = tensor.extract %14[%c0] : tensor<2xf32>
+            %19 = arith.mulf %extracted_3, %extracted_4 : f32
+            %20 = arith.mulf %extracted, %extracted_2 : f32
+            %21 = arith.subf %20, %19 : f32
+            %22 = arith.addf %21, %cst_1 : f32
+            %23 = arith.divf %cst, %22 : f32
+            %24 = arith.mulf %in, %23 : f32
+            linalg.yield %24 : f32
+          } -> tensor<2x2xf32>
+          %pack = linalg.pack %18 padding_value(%cst_0 : f32) outer_dims_perm = [0, 1] inner_dims_pos = [0, 1] inner_tiles = [8, 1] into %16 : tensor<2x2xf32> -> tensor<1x2x8x1xf32>
+          iree_tensor_ext.dispatch.tensor.store %pack, %12, offsets = [0, 0, 0, 0], sizes = [1, 2, 8, 1], strides = [1, 1, 1, 1] : tensor<1x2x8x1xf32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<1x2x8x1xf32>>
+          return
+        }
+      }
+    }
+  }
+  hal.executable private @main_graph$async_dispatch_15 {
+    hal.executable.variant public @embedded_elf_x86_64 target(#executable_target_embedded_elf_x86_64) {
+      hal.executable.export public @main_graph$async_dispatch_15_mmt4d_1x1x2x1x8x1_f32 ordinal(0) layout(#pipeline_layout7) count(%arg0: !hal.device) -> (index, index, index) {
+        %x, %y, %z = iree_tensor_ext.dispatch.workgroup_count_from_slice()
+        hal.return %x, %y, %z : index, index, index
+      }
+      builtin.module {
+        func.func @main_graph$async_dispatch_15_mmt4d_1x1x2x1x8x1_f32() {
+          %cst = arith.constant 0.000000e+00 : f32
+          %0 = hal.interface.constant.load layout(#pipeline_layout7) ordinal(0) : i32
+          %1 = hal.interface.constant.load layout(#pipeline_layout7) ordinal(1) : i32
+          %2 = hal.interface.constant.load layout(#pipeline_layout7) ordinal(2) : i32
+          %3 = arith.index_castui %0 : i32 to index
+          %4 = arith.index_castui %1 : i32 to index
+          %5 = arith.index_castui %2 : i32 to index
+          %6:3 = util.assume.int 
+              %3[<umin = 192, umax = 192, udiv = 192>, <umin = 320, umax = 320, udiv = 320>, <umin = 320, umax = 320, udiv = 320>, <umin = 320, umax = 320, udiv = 320>, <umin = 320, umax = 320, udiv = 320>, <umin = 320, umax = 320, udiv = 320>, <umin = 320, umax = 320, udiv = 320>, <umin = 320, umax = 320, udiv = 320>, <umin = 320, umax = 320, udiv = 320>], 
+              %4[<umin = 320, umax = 320, udiv = 320>, <umin = 384, umax = 384, udiv = 384>, <umin = 384, umax = 384, udiv = 384>, <umin = 384, umax = 384, udiv = 384>, <umin = 384, umax = 384, udiv = 384>, <umin = 384, umax = 384, udiv = 384>, <umin = 384, umax = 384, udiv = 384>, <umin = 384, umax = 384, udiv = 384>, <umin = 256, umax = 256, udiv = 256>], 
+              %5[<umin = 256, umax = 256, udiv = 256>, <umin = 256, umax = 256, udiv = 256>, <umin = 64, umax = 64, udiv = 64>, <umin = 256, umax = 256, udiv = 256>, <umin = 64, umax = 64, udiv = 64>, <umin = 256, umax = 256, udiv = 256>, <umin = 64, umax = 64, udiv = 64>, <umin = 256, umax = 256, udiv = 256>, <umin = 64, umax = 64, udiv = 64>]
+            : index, index, index
+          %7 = hal.interface.binding.subspan layout(#pipeline_layout7) binding(0) alignment(64) offset(%6#0) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<1x2x1x1xf32>>
+          %8 = hal.interface.binding.subspan layout(#pipeline_layout7) binding(0) alignment(64) offset(%6#1) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<1x2x8x1xf32>>
+          %9 = hal.interface.binding.subspan layout(#pipeline_layout7) binding(1) alignment(64) offset(%6#2) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<1x1x1x8xf32>>
+          %10 = iree_tensor_ext.dispatch.tensor.load %7, offsets = [0, 0, 0, 0], sizes = [1, 2, 1, 1], strides = [1, 1, 1, 1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<1x2x1x1xf32>> -> tensor<1x2x1x1xf32>
+          %11 = iree_tensor_ext.dispatch.tensor.load %8, offsets = [0, 0, 0, 0], sizes = [1, 2, 8, 1], strides = [1, 1, 1, 1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<1x2x8x1xf32>> -> tensor<1x2x8x1xf32>
+          %12 = tensor.empty() : tensor<1x1x1x8xf32>
+          %13 = linalg.fill ins(%cst : f32) outs(%12 : tensor<1x1x1x8xf32>) -> tensor<1x1x1x8xf32>
+          %14 = linalg.mmt4d ins(%10, %11 : tensor<1x2x1x1xf32>, tensor<1x2x8x1xf32>) outs(%13 : tensor<1x1x1x8xf32>) -> tensor<1x1x1x8xf32>
+          iree_tensor_ext.dispatch.tensor.store %14, %9, offsets = [0, 0, 0, 0], sizes = [1, 1, 1, 8], strides = [1, 1, 1, 1] : tensor<1x1x1x8xf32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<1x1x1x8xf32>>
+          return
+        }
+      }
+    }
+  }
+  hal.executable private @main_graph$async_dispatch_16 {
+    hal.executable.variant public @embedded_elf_x86_64 target(#executable_target_embedded_elf_x86_64) {
+      hal.executable.export public @main_graph$async_dispatch_16_unpack_elementwise_2_f32 ordinal(0) layout(#pipeline_layout9) count(%arg0: !hal.device) -> (index, index, index) {
+        %x, %y, %z = iree_tensor_ext.dispatch.workgroup_count_from_slice()
+        hal.return %x, %y, %z : index, index, index
+      }
+      builtin.module {
+        func.func @main_graph$async_dispatch_16_unpack_elementwise_2_f32() {
+          %cst = arith.constant 1.000000e-01 : f32
+          %0 = hal.interface.constant.load layout(#pipeline_layout9) ordinal(0) : i32
+          %1 = hal.interface.constant.load layout(#pipeline_layout9) ordinal(1) : i32
+          %2 = hal.interface.constant.load layout(#pipeline_layout9) ordinal(2) : i32
+          %3 = arith.index_castui %0 : i32 to index
+          %4 = arith.index_castui %1 : i32 to index
+          %5 = arith.index_castui %2 : i32 to index
+          %6:3 = util.assume.int 
+              %3[<umin = 256, umax = 256, udiv = 256>, <umin = 256, umax = 256, udiv = 256>, <umin = 64, umax = 64, udiv = 64>, <umin = 256, umax = 256, udiv = 256>, <umin = 64, umax = 64, udiv = 64>, <umin = 256, umax = 256, udiv = 256>, <umin = 64, umax = 64, udiv = 64>, <umin = 256, umax = 256, udiv = 256>, <umin = 64, umax = 64, udiv = 64>], 
+              %4[<umin = 0, umax = 0>, <umin = 192, umax = 192, udiv = 192>, <umin = 0, umax = 0>, <umin = 192, umax = 192, udiv = 192>, <umin = 0, umax = 0>, <umin = 192, umax = 192, udiv = 192>, <umin = 0, umax = 0>, <umin = 192, umax = 192, udiv = 192>, <umin = 0, umax = 0>], 
+              %5[<umin = 192, umax = 192, udiv = 192>, <umin = 0, umax = 0>, <umin = 192, umax = 192, udiv = 192>, <umin = 0, umax = 0>, <umin = 192, umax = 192, udiv = 192>, <umin = 0, umax = 0>, <umin = 192, umax = 192, udiv = 192>, <umin = 0, umax = 0>, <umin = 128, umax = 128, udiv = 128>]
+            : index, index, index
+          %7 = hal.interface.binding.subspan layout(#pipeline_layout9) binding(0) alignment(64) offset(%6#0) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<1x8xf32>>
+          %8 = hal.interface.binding.subspan layout(#pipeline_layout9) binding(1) alignment(64) offset(%6#1) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>>
+          %9 = hal.interface.binding.subspan layout(#pipeline_layout9) binding(2) alignment(64) offset(%6#2) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<2xf32>>
+          %10 = iree_tensor_ext.dispatch.tensor.load %7, offsets = [0, 0], sizes = [1, 8], strides = [1, 1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<1x8xf32>> -> tensor<1x8xf32>
+          %11 = iree_tensor_ext.dispatch.tensor.load %8, offsets = [0], sizes = [2], strides = [1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>> -> tensor<2xf32>
+          %12 = tensor.empty() : tensor<2xf32>
+          %unpack = linalg.unpack %10 outer_dims_perm = [0] inner_dims_pos = [0] inner_tiles = [8] into %12 : tensor<1x8xf32> -> tensor<2xf32>
+          %13 = linalg.generic {indexing_maps = [#map10, #map10, #map10], iterator_types = ["parallel"]} ins(%11, %unpack : tensor<2xf32>, tensor<2xf32>) outs(%12 : tensor<2xf32>) {
+          ^bb0(%in: f32, %in_0: f32, %out: f32):
+            %14 = arith.mulf %in_0, %cst : f32
+            %15 = arith.addf %in, %14 : f32
+            linalg.yield %15 : f32
+          } -> tensor<2xf32>
+          iree_tensor_ext.dispatch.tensor.store %13, %9, offsets = [0], sizes = [2], strides = [1] : tensor<2xf32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<2xf32>>
+          return
+        }
+      }
+    }
+  }
+  hal.executable private @main_graph$async_dispatch_18 {
+    hal.executable.variant public @embedded_elf_x86_64 target(#executable_target_embedded_elf_x86_64) {
+      hal.executable.export public @main_graph$async_dispatch_18_elementwise_2_f32 ordinal(0) layout(#pipeline_layout1) count(%arg0: !hal.device) -> (index, index, index) {
+        %x, %y, %z = iree_tensor_ext.dispatch.workgroup_count_from_slice()
+        hal.return %x, %y, %z : index, index, index
+      }
+      builtin.module {
+        func.func @main_graph$async_dispatch_18_elementwise_2_f32() {
+          %c128 = arith.constant 128 : index
+          %c256 = arith.constant 256 : index
+          %c320 = arith.constant 320 : index
+          %0 = hal.interface.binding.subspan layout(#pipeline_layout1) binding(0) alignment(64) offset(%c128) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>>
+          %1 = hal.interface.binding.subspan layout(#pipeline_layout1) binding(0) alignment(64) offset(%c256) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>>
+          %2 = hal.interface.binding.subspan layout(#pipeline_layout1) binding(1) alignment(64) offset(%c320) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<2xf32>>
+          %3 = iree_tensor_ext.dispatch.tensor.load %0, offsets = [0], sizes = [2], strides = [1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>> -> tensor<2xf32>
+          %4 = iree_tensor_ext.dispatch.tensor.load %1, offsets = [0], sizes = [2], strides = [1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>> -> tensor<2xf32>
+          %5 = tensor.empty() : tensor<2xf32>
+          %6 = linalg.generic {indexing_maps = [#map10, #map10, #map10], iterator_types = ["parallel"]} ins(%3, %4 : tensor<2xf32>, tensor<2xf32>) outs(%5 : tensor<2xf32>) {
+          ^bb0(%in: f32, %in_0: f32, %out: f32):
+            %7 = arith.subf %in, %in_0 : f32
+            linalg.yield %7 : f32
+          } -> tensor<2xf32>
+          iree_tensor_ext.dispatch.tensor.store %6, %2, offsets = [0], sizes = [2], strides = [1] : tensor<2xf32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<2xf32>>
+          return
+        }
+      }
+    }
+  }
+  hal.executable private @main_graph$async_dispatch_113 {
+    hal.executable.variant public @embedded_elf_x86_64 target(#executable_target_embedded_elf_x86_64) {
+      hal.executable.export public @main_graph$async_dispatch_113_elementwise_broadcast ordinal(0) layout(#pipeline_layout4) count(%arg0: !hal.device) -> (index, index, index) {
+        %c1 = arith.constant 1 : index
+        hal.return %c1, %c1, %c1 : index, index, index
+      }
+      builtin.module {
+        func.func @main_graph$async_dispatch_113_elementwise_broadcast() {
+          %c0 = arith.constant 0 : index
+          %c1 = arith.constant 1 : index
+          %c128 = arith.constant 128 : index
+          %c4 = arith.constant 4 : index
+          %0 = hal.interface.binding.subspan layout(#pipeline_layout4) binding(0) alignment(64) offset(%c128) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>>
+          %1 = hal.interface.binding.subspan layout(#pipeline_layout4) binding(1) alignment(64) offset(%c4) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          %2 = hal.interface.binding.subspan layout(#pipeline_layout4) binding(2) alignment(64) offset(%c0) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          %3 = iree_tensor_ext.dispatch.tensor.load %0, offsets = [0], sizes = [2], strides = [1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>> -> tensor<2xf32>
+          %4 = tensor.empty() : tensor<f32>
+          %5 = linalg.generic {indexing_maps = [#map], iterator_types = []} outs(%4 : tensor<f32>) {
+          ^bb0(%out: f32):
+            %extracted = tensor.extract %3[%c0] : tensor<2xf32>
+            %extracted_0 = tensor.extract %3[%c1] : tensor<2xf32>
+            %7 = arith.addf %extracted, %extracted_0 : f32
+            %8 = math.cos %7 : f32
+            %9 = math.cos %extracted : f32
+            %10 = arith.addf %9, %8 : f32
+            linalg.yield %10 : f32
+          } -> tensor<f32>
+          %6 = linalg.generic {indexing_maps = [#map], iterator_types = []} outs(%4 : tensor<f32>) {
+          ^bb0(%out: f32):
+            %extracted = tensor.extract %3[%c0] : tensor<2xf32>
+            %extracted_0 = tensor.extract %3[%c1] : tensor<2xf32>
+            %7 = arith.addf %extracted, %extracted_0 : f32
+            %8 = math.sin %7 : f32
+            %9 = math.sin %extracted : f32
+            %10 = arith.addf %9, %8 : f32
+            linalg.yield %10 : f32
+          } -> tensor<f32>
+          iree_tensor_ext.dispatch.tensor.store %6, %1, offsets = [], sizes = [], strides = [] : tensor<f32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          iree_tensor_ext.dispatch.tensor.store %5, %2, offsets = [], sizes = [], strides = [] : tensor<f32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<f32>>
+          return
+        }
+      }
+    }
+  }
+  hal.executable private @main_graph$async_dispatch_114 {
+    hal.executable.variant public @embedded_elf_x86_64 target(#executable_target_embedded_elf_x86_64) {
+      hal.executable.export public @main_graph$async_dispatch_114_elementwise_2_f32 ordinal(0) layout(#pipeline_layout1) count(%arg0: !hal.device) -> (index, index, index) {
+        %x, %y, %z = iree_tensor_ext.dispatch.workgroup_count_from_slice()
+        hal.return %x, %y, %z : index, index, index
+      }
+      builtin.module {
+        func.func @main_graph$async_dispatch_114_elementwise_2_f32() {
+          %cst = arith.constant dense<[-2.000000e-01, 0.000000e+00]> : tensor<2xf32>
+          %c0 = arith.constant 0 : index
+          %c64 = arith.constant 64 : index
+          %0 = hal.interface.binding.subspan layout(#pipeline_layout1) binding(0) alignment(64) offset(%c0) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>>
+          %1 = hal.interface.binding.subspan layout(#pipeline_layout1) binding(1) alignment(64) offset(%c64) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<2xf32>>
+          %2 = iree_tensor_ext.dispatch.tensor.load %0, offsets = [0], sizes = [2], strides = [1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>> -> tensor<2xf32>
+          %3 = tensor.empty() : tensor<2xf32>
+          %4 = linalg.generic {indexing_maps = [#map10, #map10, #map10], iterator_types = ["parallel"]} ins(%2, %cst : tensor<2xf32>, tensor<2xf32>) outs(%3 : tensor<2xf32>) {
+          ^bb0(%in: f32, %in_0: f32, %out: f32):
+            %5 = arith.addf %in, %in_0 : f32
+            linalg.yield %5 : f32
+          } -> tensor<2xf32>
+          iree_tensor_ext.dispatch.tensor.store %4, %1, offsets = [0], sizes = [2], strides = [1] : tensor<2xf32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<2xf32>>
+          return
+        }
+      }
+    }
+  }
+  hal.executable private @main_graph$async_dispatch_115 {
+    hal.executable.variant public @embedded_elf_x86_64 target(#executable_target_embedded_elf_x86_64) {
+      hal.executable.export public @main_graph$async_dispatch_115_elementwise_broadcast_10x2_f32 ordinal(0) layout(#pipeline_layout1) count(%arg0: !hal.device) -> (index, index, index) {
+        %x, %y, %z = iree_tensor_ext.dispatch.workgroup_count_from_slice()
+        hal.return %x, %y, %z : index, index, index
+      }
+      builtin.module {
+        func.func @main_graph$async_dispatch_115_elementwise_broadcast_10x2_f32() {
+          %cst = arith.constant dense<[1.000000e+00, 0.888888895, 0.777777791, 0.666666627, 0.555555582, 0.444444418, 0.333333313, 0.222222209, 0.111111104, 0.000000e+00]> : tensor<10xf32>
+          %cst_0 = arith.constant dense<[0.000000e+00, 0.111111112, 0.222222224, 0.333333343, 0.444444448, 0.555555582, 0.666666686, 0.777777791, 0.888888895, 1.000000e+00]> : tensor<10xf32>
+          %c0 = arith.constant 0 : index
+          %c64 = arith.constant 64 : index
+          %0 = hal.interface.binding.subspan layout(#pipeline_layout1) binding(0) alignment(64) offset(%c0) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>>
+          %1 = hal.interface.binding.subspan layout(#pipeline_layout1) binding(0) alignment(64) offset(%c64) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>>
+          %2 = hal.interface.binding.subspan layout(#pipeline_layout1) binding(1) alignment(64) offset(%c64) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<10x2xf32>>
+          %3 = iree_tensor_ext.dispatch.tensor.load %0, offsets = [0], sizes = [2], strides = [1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>> -> tensor<2xf32>
+          %4 = iree_tensor_ext.dispatch.tensor.load %1, offsets = [0], sizes = [2], strides = [1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>> -> tensor<2xf32>
+          %5 = tensor.empty() : tensor<10x2xf32>
+          %6 = linalg.generic {indexing_maps = [#map11, #map12, #map11, #map12, #map9], iterator_types = ["parallel", "parallel"]} ins(%3, %cst, %4, %cst_0 : tensor<2xf32>, tensor<10xf32>, tensor<2xf32>, tensor<10xf32>) outs(%5 : tensor<10x2xf32>) {
+          ^bb0(%in: f32, %in_1: f32, %in_2: f32, %in_3: f32, %out: f32):
+            %7 = arith.mulf %in_2, %in_3 : f32
+            %8 = arith.mulf %in, %in_1 : f32
+            %9 = arith.addf %8, %7 : f32
+            linalg.yield %9 : f32
+          } -> tensor<10x2xf32>
+          iree_tensor_ext.dispatch.tensor.store %6, %2, offsets = [0, 0], sizes = [10, 2], strides = [1, 1] : tensor<10x2xf32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<10x2xf32>>
+          return
+        }
+      }
+    }
+  }
+  hal.executable private @main_graph$async_dispatch_116 {
+    hal.executable.variant public @embedded_elf_x86_64 target(#executable_target_embedded_elf_x86_64) {
+      hal.executable.export public @main_graph$async_dispatch_116_elementwise_broadcast_9x2_f32 ordinal(0) layout(#pipeline_layout1) count(%arg0: !hal.device) -> (index, index, index) {
+        %x, %y, %z = iree_tensor_ext.dispatch.workgroup_count_from_slice()
+        hal.return %x, %y, %z : index, index, index
+      }
+      builtin.module {
+        func.func @main_graph$async_dispatch_116_elementwise_broadcast_9x2_f32() {
+          %cst = arith.constant dense<[1.000000e+00, 0.888888895, 0.777777791, 0.666666627, 0.555555582, 0.444444418, 0.333333313, 0.222222209, 0.111111104, 0.000000e+00]> : tensor<10xf32>
+          %cst_0 = arith.constant dense<[0.000000e+00, -1.000000e-01]> : tensor<2xf32>
+          %cst_1 = arith.constant dense<[0.000000e+00, 0.111111112, 0.222222224, 0.333333343, 0.444444448, 0.555555582, 0.666666686, 0.777777791, 0.888888895, 1.000000e+00]> : tensor<10xf32>
+          %c64 = arith.constant 64 : index
+          %c144 = arith.constant 144 : index
+          %0 = hal.interface.binding.subspan layout(#pipeline_layout1) binding(0) alignment(64) offset(%c64) flags("ReadOnly|Indirect") : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>>
+          %1 = hal.interface.binding.subspan layout(#pipeline_layout1) binding(1) alignment(64) offset(%c144) flags(Indirect) : !iree_tensor_ext.dispatch.tensor<writeonly:tensor<9x2xf32>>
+          %2 = iree_tensor_ext.dispatch.tensor.load %0, offsets = [0], sizes = [2], strides = [1] : !iree_tensor_ext.dispatch.tensor<readonly:tensor<2xf32>> -> tensor<2xf32>
+          %3 = tensor.empty() : tensor<9x2xf32>
+          %extracted_slice = tensor.extract_slice %cst[1] [9] [1] : tensor<10xf32> to tensor<9xf32>
+          %extracted_slice_2 = tensor.extract_slice %cst_1[1] [9] [1] : tensor<10xf32> to tensor<9xf32>
+          %4 = linalg.generic {indexing_maps = [#map11, #map12, #map11, #map12, #map9], iterator_types = ["parallel", "parallel"]} ins(%2, %extracted_slice, %cst_0, %extracted_slice_2 : tensor<2xf32>, tensor<9xf32>, tensor<2xf32>, tensor<9xf32>) outs(%3 : tensor<9x2xf32>) {
+          ^bb0(%in: f32, %in_3: f32, %in_4: f32, %in_5: f32, %out: f32):
+            %5 = arith.addf %in, %in_4 : f32
+            %6 = arith.mulf %5, %in_5 : f32
+            %7 = arith.mulf %in, %in_3 : f32
+            %8 = arith.addf %7, %6 : f32
+            linalg.yield %8 : f32
+          } -> tensor<9x2xf32>
+          iree_tensor_ext.dispatch.tensor.store %4, %1, offsets = [0, 0], sizes = [9, 2], strides = [1, 1] : tensor<9x2xf32> -> !iree_tensor_ext.dispatch.tensor<writeonly:tensor<9x2xf32>>
+          return
+        }
+      }
+    }
+  }
+  util.global private @__constant_tensor_4x3x4x4xf32 : !stream.resource<constant>
+  util.initializer {
+    %c0 = arith.constant 0 : index
+    %c0_i64 = arith.constant 0 : i64
+    %c8960 = arith.constant 8960 : index
+    %0 = stream.timepoint.immediate => !stream.timepoint
+    %buffer_cst = util.buffer.constant {alignment = 64 : index} : !util.buffer = #composite_of_8960b
+    %did_map, %result = stream.resource.try_map on(#hal.device.affinity<@__device_0>) %buffer_cst[%c0] : !util.buffer -> i1, !stream.resource<constant>{%c8960}
+    cf.cond_br %did_map, ^bb2(%0, %result : !stream.timepoint, !stream.resource<constant>), ^bb1
+  ^bb1:  // pred: ^bb0
+    %1 = stream.resource.alloc uninitialized on(#hal.device.affinity<@__device_0>) : !stream.resource<constant>{%c8960}
+    %file = stream.file.constant on(#hal.device.affinity<@__device_0>) %buffer_cst[%c0 for %c8960] : !util.buffer{%c8960} -> !stream.file
+    %2 = stream.file.read on(#hal.device.affinity<@__device_0>) await(%0) => %file[%c0_i64], %1[%c0], %c8960 : !stream.file -> !stream.resource<constant>{%c8960} => !stream.timepoint
+    cf.br ^bb2(%2, %1 : !stream.timepoint, !stream.resource<constant>)
+  ^bb2(%3: !stream.timepoint, %4: !stream.resource<constant>):  // 2 preds: ^bb0, ^bb1
+    %5 = stream.timepoint.await sync %3 => %4 : !stream.resource<constant>{%c8960}
+    util.global.store %5, @__constant_tensor_4x3x4x4xf32 : !stream.resource<constant>
+    util.return
+  }
+  util.func public @main_graph$async(%arg0: !hal.buffer_view, %arg1: !hal.buffer_view, %arg2: !hal.buffer_view, %arg3: !hal.buffer_view, %arg4: !hal.fence, %arg5: !hal.fence) -> (!hal.buffer_view, !hal.buffer_view) attributes {inlining_policy = #util.inline.never, iree.abi.model = "coarse-fences", iree.abi.stub} {
+    %c152 = arith.constant 152 : index
+    %c1024 = arith.constant 1024 : index
+    %c52272 = arith.constant 52272 : index
+    %c4 = arith.constant 4 : index
+    %c8 = arith.constant 8 : index
+    %c12 = arith.constant 12 : index
+    %c49152 = arith.constant 49152 : index
+    %c1 = arith.constant 1 : index
+    %c2 = arith.constant 2 : index
+    %c3 = arith.constant 3 : index
+    %c64 = arith.constant 64 : index
+    %c0_i8 = arith.constant 0 : i8
+    %c256 = arith.constant 256 : index
+    %c1088 = arith.constant 1088 : index
+    %c128 = arith.constant 128 : index
+    %c192 = arith.constant 192 : index
+    %c320 = arith.constant 320 : index
+    %c384 = arith.constant 384 : index
+    %c448 = arith.constant 448 : index
+    %c56384 = arith.constant 56384 : index
+    %c136 = arith.constant 136 : index
+    %c260 = arith.constant 260 : index
+    %c264 = arith.constant 264 : index
+    %c0 = arith.constant 0 : index
+    %c8960 = arith.constant 8960 : index
+    %c0_i32 = arith.constant 0 : i32
+    %c4_i32 = arith.constant 4 : i32
+    %c1024_i32 = arith.constant 1024 : i32
+    %c1092_i32 = arith.constant 1092 : i32
+    %c1088_i32 = arith.constant 1088 : i32
+    %c128_i32 = arith.constant 128 : i32
+    %c192_i32 = arith.constant 192 : i32
+    %c68_i32 = arith.constant 68 : i32
+    %c64_i32 = arith.constant 64 : i32
+    %c256_i32 = arith.constant 256 : i32
+    %c324_i32 = arith.constant 324 : i32
+    %c384_i32 = arith.constant 384 : i32
+    %c388_i32 = arith.constant 388 : i32
+    %c320_i32 = arith.constant 320 : i32
+    %c448_i32 = arith.constant 448 : i32
+    %c452_i32 = arith.constant 452 : i32
+    %c196_i32 = arith.constant 196 : i32
+    %c260_i32 = arith.constant 260 : i32
+    %__constant_tensor_4x3x4x4xf32 = util.global.load immutable @__constant_tensor_4x3x4x4xf32 : !stream.resource<constant>
+    %element_type_f32 = hal.element_type<f32> : i32
+    %dense_row_major = hal.encoding_type<dense_row_major> : i32
+    hal.buffer_view.assert<%arg0 : !hal.buffer_view> message("tensor") shape([%c1, %c3, %c64, %c64]) type(%element_type_f32) encoding(%dense_row_major)
+    %0 = stream.tensor.import on(#hal.device.affinity<@__device_0>) %arg0 : !hal.buffer_view -> tensor<1x3x64x64xf32> in !stream.resource<external>{%c49152}
+    %1 = stream.timepoint.import on(#hal.device.affinity<@__device_0>) %arg4 : (!hal.fence) => !stream.timepoint
+    hal.buffer_view.assert<%arg1 : !hal.buffer_view> message("tensor") shape([%c3]) type(%element_type_f32) encoding(%dense_row_major)
+    %2 = stream.tensor.import on(#hal.device.affinity<@__device_0>) %arg1 : !hal.buffer_view -> tensor<3xf32> in !stream.resource<external>{%c12}
+    hal.buffer_view.assert<%arg2 : !hal.buffer_view> message("tensor") shape([%c2]) type(%element_type_f32) encoding(%dense_row_major)
+    %3 = stream.tensor.import on(#hal.device.affinity<@__device_0>) %arg2 : !hal.buffer_view -> tensor<2xf32> in !stream.resource<external>{%c8}
+    hal.buffer_view.assert<%arg3 : !hal.buffer_view> message("tensor") shape([%c2]) type(%element_type_f32) encoding(%dense_row_major)
+    %4 = stream.tensor.import on(#hal.device.affinity<@__device_0>) %arg3 : !hal.buffer_view -> tensor<2xf32> in !stream.resource<external>{%c8}
+    %result, %result_timepoint = stream.resource.alloca uninitialized on(#hal.device.affinity<@__device_0>) await(%1) => !stream.resource<external>{%c256} => !stream.timepoint
+    %5 = stream.resource.subview %result[%c0] : !stream.resource<external>{%c256} -> !stream.resource<external>{%c12}
+    %6 = stream.resource.subview %result[%c64] : !stream.resource<external>{%c256} -> !stream.resource<external>{%c152}
+    %result_0, %result_timepoint_1 = stream.resource.alloca uninitialized on(#hal.device.affinity<@__device_0>) await(%1) => !stream.resource<transient>{%c56384} => !stream.timepoint
+    %7 = stream.timepoint.join max(%result_timepoint, %result_timepoint_1) => !stream.timepoint
+    %8 = stream.cmd.execute on(#hal.device.affinity<@__device_0>) await(%7) => with(%4 as %arg6: !stream.resource<external>{%c8}, %2 as %arg7: !stream.resource<external>{%c12}, %0 as %arg8: !stream.resource<external>{%c49152}, %__constant_tensor_4x3x4x4xf32 as %arg9: !stream.resource<constant>{%c8960}, %3 as %arg10: !stream.resource<external>{%c8}, %result as %arg11: !stream.resource<external>{%c256}, %result_0 as %arg12: !stream.resource<transient>{%c56384}) {
+      stream.cmd.concurrent {
+        stream.cmd.dispatch @main_graph$async_dispatch_0::@embedded_elf_x86_64::@main_graph$async_dispatch_0_elementwise_broadcast {
+          ro %arg6[%c0 for %c8] : !stream.resource<external>{%c8},
+          ro %arg7[%c0 for %c12] : !stream.resource<external>{%c12},
+          rw %arg11[%c0 for %c256] : !stream.resource<external>{%c256},
+          rw %arg11[%c0 for %c256] : !stream.resource<external>{%c256},
+          rw %arg11[%c0 for %c256] : !stream.resource<external>{%c256}
+        }
+        stream.cmd.fill %c0_i8, %arg12[%c0 for %c52272] : i8 -> !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_1::@embedded_elf_x86_64::@main_graph$async_dispatch_1_slow_memcpy {
+        ro %arg8[%c0 for %c49152] : !stream.resource<external>{%c49152},
+        rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_2::@embedded_elf_x86_64::@main_graph$async_dispatch_2_conv_4x16x16x3x4x4_f32 {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        ro %arg9[%c0 for %c8960] : !stream.resource<constant>{%c8960},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_3::@embedded_elf_x86_64::@main_graph$async_dispatch_3_conv_4x8x8x2x2_f32 {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.concurrent {
+        stream.cmd.dispatch @main_graph$async_dispatch_4::@embedded_elf_x86_64::@main_graph$async_dispatch_4_mmt4d_1x1x256x1x8x1_f32 {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          ro %arg9[%c0 for %c8960] : !stream.resource<constant>{%c8960},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_5::@embedded_elf_x86_64::@main_graph$async_dispatch_5_elementwise_broadcast(%c0_i32, %c1024_i32, %c1092_i32, %c1088_i32 : i32, i32, i32, i32) {
+          ro %arg10[%c0 for %c8] : !stream.resource<external>{%c8},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.copy %arg12[%c1088], %arg12[%c0], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      stream.cmd.copy %arg12[%c1024], %arg12[%c4], %c4 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      stream.cmd.concurrent {
+        stream.cmd.dispatch @main_graph$async_dispatch_6::@embedded_elf_x86_64::@main_graph$async_dispatch_6_unpack_elementwise_1x2_f32 {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_7::@embedded_elf_x86_64::@main_graph$async_dispatch_7_elementwise_broadcast(%c0_i32, %c68_i32, %c64_i32 : i32, i32, i32) {
+          ro %arg10[%c0 for %c8] : !stream.resource<external>{%c8},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.concurrent {
+        stream.cmd.copy %arg12[%c64], %arg12[%c0], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+        stream.cmd.copy %arg12[%c1088], %arg12[%c8], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.concurrent {
+        stream.cmd.dispatch @main_graph$async_dispatch_8::@embedded_elf_x86_64::@main_graph$async_dispatch_8_elementwise_broadcast_2_f32(%c0_i32, %c64_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_10::@embedded_elf_x86_64::@main_graph$async_dispatch_10_elementwise_broadcast_2_f32(%c0_i32, %c256_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_13::@embedded_elf_x86_64::@main_graph$async_dispatch_13_elementwise_broadcast(%c256_i32, %c0_i32 : i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.concurrent {
+        stream.cmd.copy %arg12[%c0], %arg12[%c320], %c4 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+        stream.cmd.dispatch @main_graph$async_dispatch_9::@embedded_elf_x86_64::@main_graph$async_dispatch_9_elementwise_broadcast(%c64_i32, %c324_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_11::@embedded_elf_x86_64::@main_graph$async_dispatch_11_elementwise_broadcast(%c256_i32, %c384_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_12::@embedded_elf_x86_64::@main_graph$async_dispatch_12_elementwise_broadcast(%c64_i32, %c256_i32, %c388_i32 : i32, i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.concurrent {
+        stream.cmd.copy %arg12[%c384], %arg12[%c0], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+        stream.cmd.copy %arg12[%c320], %arg12[%c8], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_14::@embedded_elf_x86_64::@main_graph$async_dispatch_14_elementwise_2x2_f32_pack(%c64_i32, %c256_i32, %c0_i32, %c320_i32 : i32, i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_15::@embedded_elf_x86_64::@main_graph$async_dispatch_15_mmt4d_1x1x2x1x8x1_f32(%c192_i32, %c320_i32, %c256_i32 : i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_16::@embedded_elf_x86_64::@main_graph$async_dispatch_16_unpack_elementwise_2_f32(%c256_i32, %c0_i32, %c192_i32 : i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        ro %arg10[%c0 for %c8] : !stream.resource<external>{%c8},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_5::@embedded_elf_x86_64::@main_graph$async_dispatch_5_elementwise_broadcast(%c192_i32, %c0_i32, %c68_i32, %c64_i32 : i32, i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.copy %arg12[%c64], %arg12[%c256], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      stream.cmd.copy %arg12[%c0], %arg12[%c260], %c4 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      stream.cmd.concurrent {
+        stream.cmd.dispatch @main_graph$async_dispatch_18::@embedded_elf_x86_64::@main_graph$async_dispatch_18_elementwise_2_f32 {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_7::@embedded_elf_x86_64::@main_graph$async_dispatch_7_elementwise_broadcast(%c192_i32, %c4_i32, %c0_i32 : i32, i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.concurrent {
+        stream.cmd.copy %arg12[%c0], %arg12[%c256], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+        stream.cmd.copy %arg12[%c64], %arg12[%c264], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.concurrent {
+        stream.cmd.dispatch @main_graph$async_dispatch_8::@embedded_elf_x86_64::@main_graph$async_dispatch_8_elementwise_broadcast_2_f32(%c256_i32, %c0_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_10::@embedded_elf_x86_64::@main_graph$async_dispatch_10_elementwise_broadcast_2_f32(%c256_i32, %c64_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_13::@embedded_elf_x86_64::@main_graph$async_dispatch_13_elementwise_broadcast(%c64_i32, %c256_i32 : i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.concurrent {
+        stream.cmd.copy %arg12[%c256], %arg12[%c384], %c4 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+        stream.cmd.dispatch @main_graph$async_dispatch_9::@embedded_elf_x86_64::@main_graph$async_dispatch_9_elementwise_broadcast(%c0_i32, %c388_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_11::@embedded_elf_x86_64::@main_graph$async_dispatch_11_elementwise_broadcast(%c64_i32, %c448_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_12::@embedded_elf_x86_64::@main_graph$async_dispatch_12_elementwise_broadcast(%c0_i32, %c64_i32, %c452_i32 : i32, i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.concurrent {
+        stream.cmd.copy %arg12[%c448], %arg12[%c256], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+        stream.cmd.copy %arg12[%c384], %arg12[%c264], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_14::@embedded_elf_x86_64::@main_graph$async_dispatch_14_elementwise_2x2_f32_pack(%c0_i32, %c64_i32, %c256_i32, %c384_i32 : i32, i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_15::@embedded_elf_x86_64::@main_graph$async_dispatch_15_mmt4d_1x1x2x1x8x1_f32(%c320_i32, %c384_i32, %c256_i32 : i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_16::@embedded_elf_x86_64::@main_graph$async_dispatch_16_unpack_elementwise_2_f32(%c256_i32, %c192_i32, %c0_i32 : i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_5::@embedded_elf_x86_64::@main_graph$async_dispatch_5_elementwise_broadcast(%c0_i32, %c64_i32, %c196_i32, %c192_i32 : i32, i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.copy %arg12[%c192], %arg12[%c256], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      stream.cmd.copy %arg12[%c64], %arg12[%c260], %c4 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      stream.cmd.concurrent {
+        stream.cmd.dispatch @main_graph$async_dispatch_18::@embedded_elf_x86_64::@main_graph$async_dispatch_18_elementwise_2_f32 {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_7::@embedded_elf_x86_64::@main_graph$async_dispatch_7_elementwise_broadcast(%c0_i32, %c68_i32, %c64_i32 : i32, i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.concurrent {
+        stream.cmd.copy %arg12[%c64], %arg12[%c256], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+        stream.cmd.copy %arg12[%c192], %arg12[%c264], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.concurrent {
+        stream.cmd.dispatch @main_graph$async_dispatch_8::@embedded_elf_x86_64::@main_graph$async_dispatch_8_elementwise_broadcast_2_f32(%c256_i32, %c64_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_10::@embedded_elf_x86_64::@main_graph$async_dispatch_10_elementwise_broadcast_2_f32(%c256_i32, %c192_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_13::@embedded_elf_x86_64::@main_graph$async_dispatch_13_elementwise_broadcast(%c192_i32, %c256_i32 : i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.concurrent {
+        stream.cmd.copy %arg12[%c256], %arg12[%c384], %c4 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+        stream.cmd.dispatch @main_graph$async_dispatch_9::@embedded_elf_x86_64::@main_graph$async_dispatch_9_elementwise_broadcast(%c64_i32, %c388_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_11::@embedded_elf_x86_64::@main_graph$async_dispatch_11_elementwise_broadcast(%c192_i32, %c448_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_12::@embedded_elf_x86_64::@main_graph$async_dispatch_12_elementwise_broadcast(%c64_i32, %c192_i32, %c452_i32 : i32, i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.concurrent {
+        stream.cmd.copy %arg12[%c448], %arg12[%c256], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+        stream.cmd.copy %arg12[%c384], %arg12[%c264], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_14::@embedded_elf_x86_64::@main_graph$async_dispatch_14_elementwise_2x2_f32_pack(%c64_i32, %c192_i32, %c256_i32, %c384_i32 : i32, i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_15::@embedded_elf_x86_64::@main_graph$async_dispatch_15_mmt4d_1x1x2x1x8x1_f32(%c320_i32, %c384_i32, %c64_i32 : i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_16::@embedded_elf_x86_64::@main_graph$async_dispatch_16_unpack_elementwise_2_f32(%c64_i32, %c0_i32, %c192_i32 : i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_5::@embedded_elf_x86_64::@main_graph$async_dispatch_5_elementwise_broadcast(%c192_i32, %c0_i32, %c68_i32, %c64_i32 : i32, i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.copy %arg12[%c64], %arg12[%c256], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      stream.cmd.copy %arg12[%c0], %arg12[%c260], %c4 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      stream.cmd.concurrent {
+        stream.cmd.dispatch @main_graph$async_dispatch_18::@embedded_elf_x86_64::@main_graph$async_dispatch_18_elementwise_2_f32 {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_7::@embedded_elf_x86_64::@main_graph$async_dispatch_7_elementwise_broadcast(%c192_i32, %c4_i32, %c0_i32 : i32, i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.concurrent {
+        stream.cmd.copy %arg12[%c0], %arg12[%c256], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+        stream.cmd.copy %arg12[%c64], %arg12[%c264], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.concurrent {
+        stream.cmd.dispatch @main_graph$async_dispatch_8::@embedded_elf_x86_64::@main_graph$async_dispatch_8_elementwise_broadcast_2_f32(%c256_i32, %c0_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_10::@embedded_elf_x86_64::@main_graph$async_dispatch_10_elementwise_broadcast_2_f32(%c256_i32, %c64_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_13::@embedded_elf_x86_64::@main_graph$async_dispatch_13_elementwise_broadcast(%c64_i32, %c256_i32 : i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.concurrent {
+        stream.cmd.copy %arg12[%c256], %arg12[%c384], %c4 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+        stream.cmd.dispatch @main_graph$async_dispatch_9::@embedded_elf_x86_64::@main_graph$async_dispatch_9_elementwise_broadcast(%c0_i32, %c388_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_11::@embedded_elf_x86_64::@main_graph$async_dispatch_11_elementwise_broadcast(%c64_i32, %c448_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_12::@embedded_elf_x86_64::@main_graph$async_dispatch_12_elementwise_broadcast(%c0_i32, %c64_i32, %c452_i32 : i32, i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.concurrent {
+        stream.cmd.copy %arg12[%c448], %arg12[%c256], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+        stream.cmd.copy %arg12[%c384], %arg12[%c264], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_14::@embedded_elf_x86_64::@main_graph$async_dispatch_14_elementwise_2x2_f32_pack(%c0_i32, %c64_i32, %c256_i32, %c384_i32 : i32, i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_15::@embedded_elf_x86_64::@main_graph$async_dispatch_15_mmt4d_1x1x2x1x8x1_f32(%c320_i32, %c384_i32, %c256_i32 : i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_16::@embedded_elf_x86_64::@main_graph$async_dispatch_16_unpack_elementwise_2_f32(%c256_i32, %c192_i32, %c0_i32 : i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_5::@embedded_elf_x86_64::@main_graph$async_dispatch_5_elementwise_broadcast(%c0_i32, %c64_i32, %c196_i32, %c192_i32 : i32, i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.copy %arg12[%c192], %arg12[%c256], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      stream.cmd.copy %arg12[%c64], %arg12[%c260], %c4 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      stream.cmd.concurrent {
+        stream.cmd.dispatch @main_graph$async_dispatch_18::@embedded_elf_x86_64::@main_graph$async_dispatch_18_elementwise_2_f32 {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_7::@embedded_elf_x86_64::@main_graph$async_dispatch_7_elementwise_broadcast(%c0_i32, %c68_i32, %c64_i32 : i32, i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.concurrent {
+        stream.cmd.copy %arg12[%c64], %arg12[%c256], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+        stream.cmd.copy %arg12[%c192], %arg12[%c264], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.concurrent {
+        stream.cmd.dispatch @main_graph$async_dispatch_8::@embedded_elf_x86_64::@main_graph$async_dispatch_8_elementwise_broadcast_2_f32(%c256_i32, %c64_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_10::@embedded_elf_x86_64::@main_graph$async_dispatch_10_elementwise_broadcast_2_f32(%c256_i32, %c192_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_13::@embedded_elf_x86_64::@main_graph$async_dispatch_13_elementwise_broadcast(%c192_i32, %c256_i32 : i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.concurrent {
+        stream.cmd.copy %arg12[%c256], %arg12[%c384], %c4 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+        stream.cmd.dispatch @main_graph$async_dispatch_9::@embedded_elf_x86_64::@main_graph$async_dispatch_9_elementwise_broadcast(%c64_i32, %c388_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_11::@embedded_elf_x86_64::@main_graph$async_dispatch_11_elementwise_broadcast(%c192_i32, %c448_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_12::@embedded_elf_x86_64::@main_graph$async_dispatch_12_elementwise_broadcast(%c64_i32, %c192_i32, %c452_i32 : i32, i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.concurrent {
+        stream.cmd.copy %arg12[%c448], %arg12[%c256], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+        stream.cmd.copy %arg12[%c384], %arg12[%c264], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_14::@embedded_elf_x86_64::@main_graph$async_dispatch_14_elementwise_2x2_f32_pack(%c64_i32, %c192_i32, %c256_i32, %c384_i32 : i32, i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_15::@embedded_elf_x86_64::@main_graph$async_dispatch_15_mmt4d_1x1x2x1x8x1_f32(%c320_i32, %c384_i32, %c64_i32 : i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_16::@embedded_elf_x86_64::@main_graph$async_dispatch_16_unpack_elementwise_2_f32(%c64_i32, %c0_i32, %c192_i32 : i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_5::@embedded_elf_x86_64::@main_graph$async_dispatch_5_elementwise_broadcast(%c192_i32, %c0_i32, %c68_i32, %c64_i32 : i32, i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.copy %arg12[%c64], %arg12[%c256], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      stream.cmd.copy %arg12[%c0], %arg12[%c260], %c4 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      stream.cmd.concurrent {
+        stream.cmd.dispatch @main_graph$async_dispatch_18::@embedded_elf_x86_64::@main_graph$async_dispatch_18_elementwise_2_f32 {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_7::@embedded_elf_x86_64::@main_graph$async_dispatch_7_elementwise_broadcast(%c192_i32, %c4_i32, %c0_i32 : i32, i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.concurrent {
+        stream.cmd.copy %arg12[%c0], %arg12[%c256], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+        stream.cmd.copy %arg12[%c64], %arg12[%c264], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.concurrent {
+        stream.cmd.dispatch @main_graph$async_dispatch_8::@embedded_elf_x86_64::@main_graph$async_dispatch_8_elementwise_broadcast_2_f32(%c256_i32, %c0_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_10::@embedded_elf_x86_64::@main_graph$async_dispatch_10_elementwise_broadcast_2_f32(%c256_i32, %c64_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_13::@embedded_elf_x86_64::@main_graph$async_dispatch_13_elementwise_broadcast(%c64_i32, %c256_i32 : i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.concurrent {
+        stream.cmd.copy %arg12[%c256], %arg12[%c384], %c4 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+        stream.cmd.dispatch @main_graph$async_dispatch_9::@embedded_elf_x86_64::@main_graph$async_dispatch_9_elementwise_broadcast(%c0_i32, %c388_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_11::@embedded_elf_x86_64::@main_graph$async_dispatch_11_elementwise_broadcast(%c64_i32, %c448_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_12::@embedded_elf_x86_64::@main_graph$async_dispatch_12_elementwise_broadcast(%c0_i32, %c64_i32, %c452_i32 : i32, i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.concurrent {
+        stream.cmd.copy %arg12[%c448], %arg12[%c256], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+        stream.cmd.copy %arg12[%c384], %arg12[%c264], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_14::@embedded_elf_x86_64::@main_graph$async_dispatch_14_elementwise_2x2_f32_pack(%c0_i32, %c64_i32, %c256_i32, %c384_i32 : i32, i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_15::@embedded_elf_x86_64::@main_graph$async_dispatch_15_mmt4d_1x1x2x1x8x1_f32(%c320_i32, %c384_i32, %c256_i32 : i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_16::@embedded_elf_x86_64::@main_graph$async_dispatch_16_unpack_elementwise_2_f32(%c256_i32, %c192_i32, %c0_i32 : i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_5::@embedded_elf_x86_64::@main_graph$async_dispatch_5_elementwise_broadcast(%c0_i32, %c64_i32, %c196_i32, %c192_i32 : i32, i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.copy %arg12[%c192], %arg12[%c256], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      stream.cmd.copy %arg12[%c64], %arg12[%c260], %c4 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      stream.cmd.concurrent {
+        stream.cmd.dispatch @main_graph$async_dispatch_18::@embedded_elf_x86_64::@main_graph$async_dispatch_18_elementwise_2_f32 {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_7::@embedded_elf_x86_64::@main_graph$async_dispatch_7_elementwise_broadcast(%c0_i32, %c68_i32, %c64_i32 : i32, i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.concurrent {
+        stream.cmd.copy %arg12[%c64], %arg12[%c256], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+        stream.cmd.copy %arg12[%c192], %arg12[%c264], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.concurrent {
+        stream.cmd.dispatch @main_graph$async_dispatch_8::@embedded_elf_x86_64::@main_graph$async_dispatch_8_elementwise_broadcast_2_f32(%c256_i32, %c64_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_10::@embedded_elf_x86_64::@main_graph$async_dispatch_10_elementwise_broadcast_2_f32(%c256_i32, %c192_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_13::@embedded_elf_x86_64::@main_graph$async_dispatch_13_elementwise_broadcast(%c192_i32, %c256_i32 : i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.concurrent {
+        stream.cmd.copy %arg12[%c256], %arg12[%c384], %c4 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+        stream.cmd.dispatch @main_graph$async_dispatch_9::@embedded_elf_x86_64::@main_graph$async_dispatch_9_elementwise_broadcast(%c64_i32, %c388_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_11::@embedded_elf_x86_64::@main_graph$async_dispatch_11_elementwise_broadcast(%c192_i32, %c448_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_12::@embedded_elf_x86_64::@main_graph$async_dispatch_12_elementwise_broadcast(%c64_i32, %c192_i32, %c452_i32 : i32, i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.concurrent {
+        stream.cmd.copy %arg12[%c448], %arg12[%c256], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+        stream.cmd.copy %arg12[%c384], %arg12[%c264], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_14::@embedded_elf_x86_64::@main_graph$async_dispatch_14_elementwise_2x2_f32_pack(%c64_i32, %c192_i32, %c256_i32, %c384_i32 : i32, i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_15::@embedded_elf_x86_64::@main_graph$async_dispatch_15_mmt4d_1x1x2x1x8x1_f32(%c320_i32, %c384_i32, %c64_i32 : i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_16::@embedded_elf_x86_64::@main_graph$async_dispatch_16_unpack_elementwise_2_f32(%c64_i32, %c0_i32, %c192_i32 : i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_5::@embedded_elf_x86_64::@main_graph$async_dispatch_5_elementwise_broadcast(%c192_i32, %c0_i32, %c68_i32, %c64_i32 : i32, i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.copy %arg12[%c64], %arg12[%c256], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      stream.cmd.copy %arg12[%c0], %arg12[%c260], %c4 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      stream.cmd.concurrent {
+        stream.cmd.dispatch @main_graph$async_dispatch_18::@embedded_elf_x86_64::@main_graph$async_dispatch_18_elementwise_2_f32 {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_7::@embedded_elf_x86_64::@main_graph$async_dispatch_7_elementwise_broadcast(%c192_i32, %c4_i32, %c0_i32 : i32, i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.concurrent {
+        stream.cmd.copy %arg12[%c0], %arg12[%c256], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+        stream.cmd.copy %arg12[%c64], %arg12[%c264], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.concurrent {
+        stream.cmd.dispatch @main_graph$async_dispatch_8::@embedded_elf_x86_64::@main_graph$async_dispatch_8_elementwise_broadcast_2_f32(%c256_i32, %c0_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_10::@embedded_elf_x86_64::@main_graph$async_dispatch_10_elementwise_broadcast_2_f32(%c256_i32, %c64_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_13::@embedded_elf_x86_64::@main_graph$async_dispatch_13_elementwise_broadcast(%c64_i32, %c256_i32 : i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.concurrent {
+        stream.cmd.copy %arg12[%c256], %arg12[%c384], %c4 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+        stream.cmd.dispatch @main_graph$async_dispatch_9::@embedded_elf_x86_64::@main_graph$async_dispatch_9_elementwise_broadcast(%c0_i32, %c388_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_11::@embedded_elf_x86_64::@main_graph$async_dispatch_11_elementwise_broadcast(%c64_i32, %c448_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_12::@embedded_elf_x86_64::@main_graph$async_dispatch_12_elementwise_broadcast(%c0_i32, %c64_i32, %c452_i32 : i32, i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.concurrent {
+        stream.cmd.copy %arg12[%c448], %arg12[%c256], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+        stream.cmd.copy %arg12[%c384], %arg12[%c264], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_14::@embedded_elf_x86_64::@main_graph$async_dispatch_14_elementwise_2x2_f32_pack(%c0_i32, %c64_i32, %c256_i32, %c384_i32 : i32, i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_15::@embedded_elf_x86_64::@main_graph$async_dispatch_15_mmt4d_1x1x2x1x8x1_f32(%c320_i32, %c384_i32, %c256_i32 : i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_16::@embedded_elf_x86_64::@main_graph$async_dispatch_16_unpack_elementwise_2_f32(%c256_i32, %c192_i32, %c0_i32 : i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_5::@embedded_elf_x86_64::@main_graph$async_dispatch_5_elementwise_broadcast(%c0_i32, %c64_i32, %c196_i32, %c192_i32 : i32, i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.copy %arg12[%c192], %arg12[%c256], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      stream.cmd.copy %arg12[%c64], %arg12[%c260], %c4 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      stream.cmd.concurrent {
+        stream.cmd.dispatch @main_graph$async_dispatch_18::@embedded_elf_x86_64::@main_graph$async_dispatch_18_elementwise_2_f32 {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_7::@embedded_elf_x86_64::@main_graph$async_dispatch_7_elementwise_broadcast(%c0_i32, %c68_i32, %c64_i32 : i32, i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.concurrent {
+        stream.cmd.copy %arg12[%c64], %arg12[%c128], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+        stream.cmd.copy %arg12[%c192], %arg12[%c136], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.concurrent {
+        stream.cmd.dispatch @main_graph$async_dispatch_8::@embedded_elf_x86_64::@main_graph$async_dispatch_8_elementwise_broadcast_2_f32(%c128_i32, %c64_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_10::@embedded_elf_x86_64::@main_graph$async_dispatch_10_elementwise_broadcast_2_f32(%c128_i32, %c192_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_13::@embedded_elf_x86_64::@main_graph$async_dispatch_13_elementwise_broadcast(%c192_i32, %c128_i32 : i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.concurrent {
+        stream.cmd.copy %arg12[%c128], %arg12[%c256], %c4 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+        stream.cmd.dispatch @main_graph$async_dispatch_9::@embedded_elf_x86_64::@main_graph$async_dispatch_9_elementwise_broadcast(%c64_i32, %c260_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_11::@embedded_elf_x86_64::@main_graph$async_dispatch_11_elementwise_broadcast(%c192_i32, %c384_i32 : i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_12::@embedded_elf_x86_64::@main_graph$async_dispatch_12_elementwise_broadcast(%c64_i32, %c192_i32, %c388_i32 : i32, i32, i32) {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+        }
+      }
+      stream.cmd.concurrent {
+        stream.cmd.copy %arg12[%c384], %arg12[%c128], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+        stream.cmd.copy %arg12[%c256], %arg12[%c136], %c8 : !stream.resource<transient>{%c56384} -> !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_14::@embedded_elf_x86_64::@main_graph$async_dispatch_14_elementwise_2x2_f32_pack(%c64_i32, %c192_i32, %c128_i32, %c256_i32 : i32, i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_15::@embedded_elf_x86_64::@main_graph$async_dispatch_15_mmt4d_1x1x2x1x8x1_f32(%c320_i32, %c256_i32, %c64_i32 : i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_16::@embedded_elf_x86_64::@main_graph$async_dispatch_16_unpack_elementwise_2_f32(%c64_i32, %c0_i32, %c128_i32 : i32, i32, i32) {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_113::@embedded_elf_x86_64::@main_graph$async_dispatch_113_elementwise_broadcast {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        rw %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.dispatch @main_graph$async_dispatch_114::@embedded_elf_x86_64::@main_graph$async_dispatch_114_elementwise_2_f32 {
+        ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+        wo %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384}
+      }
+      stream.cmd.concurrent {
+        stream.cmd.dispatch @main_graph$async_dispatch_115::@embedded_elf_x86_64::@main_graph$async_dispatch_115_elementwise_broadcast_10x2_f32 {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg11[%c0 for %c256] : !stream.resource<external>{%c256}
+        }
+        stream.cmd.dispatch @main_graph$async_dispatch_116::@embedded_elf_x86_64::@main_graph$async_dispatch_116_elementwise_broadcast_9x2_f32 {
+          ro %arg12[%c0 for %c56384] : !stream.resource<transient>{%c56384},
+          rw %arg11[%c0 for %c256] : !stream.resource<external>{%c256}
+        }
+      }
+    } => !stream.timepoint
+    %9 = stream.resource.dealloca on(#hal.device.affinity<@__device_0>) await(%8) => %result_0 : !stream.resource<transient>{%c56384} => !stream.timepoint
+    stream.timepoint.chain_external on(#hal.device.affinity<@__device_0>) %9 => (%arg5 : !hal.fence)
+    %10 = stream.tensor.export on(#hal.device.affinity<@__device_0>) %6 : tensor<19x2xf32> in !stream.resource<external>{%c152} -> !hal.buffer_view
+    %11 = stream.tensor.export on(#hal.device.affinity<@__device_0>) %5 : tensor<3xf32> in !stream.resource<external>{%c12} -> !hal.buffer_view
+    util.return %10, %11 : !hal.buffer_view, !hal.buffer_view
+  }
+  util.func public @main_graph(%arg0: !hal.buffer_view, %arg1: !hal.buffer_view, %arg2: !hal.buffer_view, %arg3: !hal.buffer_view) -> (!hal.buffer_view, !hal.buffer_view) attributes {iree.abi.stub} {
+    %0 = util.null : !hal.fence
+    %c-1_i32 = arith.constant -1 : i32
+    %c0 = arith.constant 0 : index
+    %device_0 = hal.devices.get %c0 : !hal.device
+    %fence = hal.fence.create device(%device_0 : !hal.device) flags("None") : !hal.fence
+    %1:2 = util.call @main_graph$async(%arg0, %arg1, %arg2, %arg3, %0, %fence) : (!hal.buffer_view, !hal.buffer_view, !hal.buffer_view, !hal.buffer_view, !hal.fence, !hal.fence) -> (!hal.buffer_view, !hal.buffer_view)
+    %status = hal.fence.await until([%fence]) timeout_millis(%c-1_i32) flags("None") : i32
+    util.return %1#0, %1#1 : !hal.buffer_view, !hal.buffer_view
+  }
+}
