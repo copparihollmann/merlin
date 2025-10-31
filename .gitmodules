@@ -4,3 +4,15 @@
 [submodule "third_party/KernelBench"]
 	path = third_party/KernelBench
 	url = https://github.com/ScalingIntelligence/KernelBench.git
+[submodule "third_party/openpi"]
+	path = third_party/openpi
+	url = https://github.com/Physical-Intelligence/openpi.git
+[submodule "third_party/lerobot"]
+	path = third_party/lerobot
+	url = https://github.com/huggingface/lerobot.git
+[submodule "third_party/transformers"]
+	path = third_party/transformers
+	url = https://github.com/huggingface/transformers.git
+[submodule "third_party/TinyMPC"]
+	path = third_party/TinyMPC
+	url = https://github.com/TinyMPC/TinyMPC.git
