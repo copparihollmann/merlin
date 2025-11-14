@@ -116,7 +116,7 @@ elif args.model == "transformer":
 
 elif args.model == "fc":
     model = SimpleFCModel(input_size=1024, hidden_size=128, output_size=10).eval()
-    sample_inputs = (torch.randn(1, 1024),)  # (batch_size, input_size)
+    sample_inputs = (torch.randn(16, 1024),)  # (batch_size, input_size)
     
 elif args.model == "lstmvit":
     model = LSTMNetVIT().eval()
