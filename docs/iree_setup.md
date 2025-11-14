@@ -30,10 +30,10 @@ From the root of the repository, export the following variables. These paths are
 ```bash
 # Set the root directory for the entire project one level above than your iree repo
 export WORKSPACE_DIR=${PWD}
-export IREE_SRC=${WORKSPACE_DIR}/iree
+export IREE_SRC=${WORKSPACE_DIR}/third_party/iree_bar
 
 # Directories for the x86_64 host build
-export BUILD_HOST_DIR=${WORKSPACE_DIR}/build-iree-host
+export BUILD_HOST_DIR=${WORKSPACE_DIR}/build-bar-iree-host
 export INSTALL_HOST_DIR=${BUILD_HOST_DIR}/install
 
 # Directories for cross-compiled risc-v
@@ -75,11 +75,7 @@ cmake \
     -DCMAKE_C_COMPILER_LAUNCHER=ccache \
     -DCMAKE_CXX_COMPILER_LAUNCHER=ccache \
     -DIREE_BUILD_TESTS=ON \
-    -DIREE_BUILD_SAMPLES=ON \
-    -DCMAKE_C_FLAGS=-DIREE_VM_EXECUTION_TRACING_FORCE_ENABLE=1 \ 
-    -DIREE_ENABLE_RUNTIME_TRACING=ON \
-
-
+    -DIREE_BUILD_SAMPLES=ON 
 
 # Build and install the host tools
 cmake --build "${BUILD_HOST_DIR}" --target install
@@ -122,10 +118,7 @@ cmake \
   -DIREE_HAL_DRIVER_LOCAL_SYNC=ON \
   -DIREE_HAL_DRIVER_LOCAL_TASK=ON \
   -DIREE_BUILD_TESTS=OFF \
-  -DIREE_BUILD_SAMPLES=OFF \
-  -DIREE_ENABLE_RUNTIME_TRACING=ON \
-  -DIREE_TRACING_MODE=4
-
+  -DIREE_BUILD_SAMPLES=OFF
 
 # Build the cross-compiled runtime and tools
 cmake --build "${BUILD_RISCV_DIR}"
@@ -150,7 +143,7 @@ python -m pip install \
 For running a simple matmul example I can recommend just running the `pytorch_aot_simple.ipynb` notebook
 
 
-### Step 5: Activate Chipyard and prepare IREE files
+### Step 6: Activate Chipyard and prepare IREE files
 
 Source the env:
 ```bash
@@ -212,7 +205,7 @@ poweroff
 chmod +x ${WORKSPACE_DIR}/chipyard-workload/overlay/run_iree.sh
 ```
 
-### Step 6: Create the FireMarshal Workload Recipe
+### Step 7: Create the  shal Workload Recipe
 Create a file at `${WORKSPACE_DIR}/chipyard-workload/iree-workload.json`. This JSON file is the recipe for building the final disk image.
 ```json
 {
@@ -227,11 +220,11 @@ Create a file at `${WORKSPACE_DIR}/chipyard-workload/iree-workload.json`. This J
 ```
 **CRITICAL:** You must replace `/path/to/your/workspace/` with the hardcoded, absolute path to your `WORKSPACE_DIR`. FireMarshal may not correctly expand environment variables in this context.
 
-### Step 7: Simulation and Verification
+### Step 8: Simulation and Verification
 
 This phase executes the generated workload on two different Chipyard simulators.
 
-#### 7.1: Build Linux Image using FireMarshal
+#### 8.1: Build Linux Image using FireMarshal
 1. Activate the Chipyard environment:
 ```bash
 # Deactivate other conda environments if necessary
@@ -246,7 +239,7 @@ The `-d` (`--no-disk`) flag is required to generate the special `*-nodisk` binar
 marshal -d build ${WORKSPACE_DIR}/chipyard-workload/iree-workload.json
 ```
 
-#### 7.2: Functional Verification (Spike)
+#### 8.2: Functional Verification (Spike)
 This is the fastest method to verify that the software toolchain and Linux image are correct.
 1. Launch the Spike simulation:
 The `-s` (`--spike`) flag tells FireMarshal to use Spike.
@@ -261,7 +254,7 @@ After the simulation powers off, find the captured `output.txt` in the timestamp
 cat ./runOutput/iree-workload-launch-*/br-iree/output.txt
 ```
 
-#### 7.3: Cycle-Accurate Simulator (this step is not completely finished nor tested)
+#### 8.3: Cycle-Accurate Simulator (this step is not completely finished nor tested)
 This is the slower but more realistic test, running your workload on a C++ model of the actual `GemminiRocketConfig` hardware.
 1. Copy the Workload JSON to the default location:
 ```bash
@@ -289,61 +282,7 @@ After the simulation completes, the UART log containing the `output` from your s
 ```
 **CRITICAL:** You must replace `/path/to/your/workspace/` with the hardcoded, absolute path to your `WORKSPACE_DIR`. FireMarshal may not correctly expand environment variables in this context.
 
-### Step 7: Simulation and Verification
-
-This phase executes the generated workload on two different Chipyard simulators.
-
-#### 7.1: Build Linux Image using FireMarshal
-1. Activate the Chipyard environment:
-```bash
-# Deactivate other conda environments if necessary
-# conda deactivate
-cd /path/to/your/chipyard
-source ./env.sh
-```
-2. Build the Image:
-The `-d` (`--no-disk`) flag is required to generate the special `*-nodisk` binary needed for the Spike simulator.
-```bash
-# From the chipyard/software/firemarshal directory
-marshal -d build ${WORKSPACE_DIR}/chipyard-workload/iree-workload.json
-```
-
-#### 7.2: Functional Verification (Spike)
-This is the fastest method to verify that the software toolchain and Linux image are correct.
-1. Launch the Spike simulation:
-The `-s` (`--spike`) flag tells FireMarshal to use Spike.
-```bash
-# From the chipyard/software/firemarshal directory
-marshal -d launch -s ${WORKSPACE_DIR}/chipyard-workload/iree-workload.json
-```
-
-2. Inspect the output:
-After the simulation powers off, find the captured `output.txt` in the timestamped results directory.
-```bash
-cat ./runOutput/iree-workload-launch-*/br-iree/output.txt
-```
-
-#### 7.3: Cycle-Accurate Simulator (this step is not completely finished nor tested)
-This is the slower but more realistic test, running your workload on a C++ model of the actual `GemminiRocketConfig` hardware.
-1. Copy the Workload JSON to the default location:
-```bash
-cp ${WORKSPACE_DIR}/chipyard-workload/iree-workload.json /path/to/your/chipyard/software/firemarshal/workloads/
-```
-2. Clean, Build, and Run the Verilator Simulation:
-These steps must be run from the `sims/verilator` directory.
-```bash
-cd /path/to/your/chipyard/sims/verilator
-
-# Clean previous build artifacts to prevent errors
-make clean
-
-# Build the simulator and run the workload in a single command.
-# The NAME variable MUST match the "name" field from inside your JSON file.
-make CONFIG=GemminiRocketConfig NAME=br-iree run-workload
-```
-
 After the simulation completes, the UART log containing the `output` from your script will be available in the output directory within the `sims/verilator` folder.
-
 
 ## Extra random stuff
 
