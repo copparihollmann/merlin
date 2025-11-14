@@ -142,62 +142,59 @@ module attributes {transform.with_named_sequence} {
   ) -> (!transform.any_value, !transform.any_value) {
     %ins, %outs = transform.iree.match.cast_compatible_dag_from_root %root {
     ^bb0(%A: tensor<1x?xi8>, %B: tensor<?x?xi8>, %Bias_i32: tensor<?xi32>, 
-          %Scale_Matmul: f32, %Scale_Bias: f32):
+          %Scale_Matmul_tensor: tensor<f32>, %Scale_Bias_tensor: tensor<f32>):
       
-      %c0 = arith.constant 0 : index
-      %c1 = arith.constant 1 : index
-      %dim_0 = tensor.dim %A, %c0 : tensor<1x?xi8> // M (which is 1)
-      %dim_K = tensor.dim %A, %c1 : tensor<1x?xi8> // K
-      %dim_1 = tensor.dim %B, %c1 : tensor<?x?xi8> // N
+      //%c0 = arith.constant 0 : index
+      //%c1 = arith.constant 1 : index
+      //%dim_0 = tensor.dim %A, %c0 : tensor<1x?xi8> // M (which is 1)
+      //%dim_K = tensor.dim %A, %c1 : tensor<1x?xi8> // K
+      //%dim_1 = tensor.dim %B, %c1 : tensor<?x?xi8> // N
+
+      %cst_i8_max = arith.constant -1.280000e+02 : f32
+      %cst_i8_min = arith.constant 1.270000e+02 : f32
+
+      %cst_f32_0 = arith.constant 0.000000e+00 : f32
+
+      %cst_9 = arith.constant 0.0354968868 : f32
+
       
-      // 1. Matmul
-      %c0_i32 = arith.constant 0 : i32
-      %empty_i32 = tensor.empty(%dim_1) {"match.dynamic_dim_only"} : tensor<1x?xi32>
-      %fill = linalg.fill ins(%c0_i32 : i32) outs(%empty_i32 : tensor<1x?xi32>) -> tensor<1x?xi32>
-      %C_i32 = linalg.quantized_matmul
-        ins(%A, %B, %c0_i32, %c0_i32 : tensor<1x?xi8>, tensor<?x?xi8>, i32, i32)
-        outs(%fill : tensor<1x?xi32>) -> tensor<1x?xi32>
-
-
-      // 2. Dequant Matmul
-      %empty_f32_C = tensor.empty(%dim_1) {"match.dynamic_dim_only"} : tensor<1x?xf32>
-      %C_f32 = linalg.generic {
-        indexing_maps = [#map_2d, #map_scalar_in_2d, #map_2d],
-        iterator_types = ["parallel", "parallel"]
-      } 
-      ins(%C_i32, %Scale_Matmul : tensor<1x?xi32>, f32)
-      outs(%empty_f32_C : tensor<1x?xf32>) {
-      ^bb0(%in: i32, %scale: f32, %out: f32): // %scale is the new block argument
-        %f = arith.sitofp %in : i32 to f32
-        %s = arith.mulf %f, %scale : f32 // Use the block argument, not the typo %Scale
-        linalg.yield %s : f32
-      } -> tensor<1x?xf32>
-
-      // 3. Dequant Bias
-      %empty_f32_B = tensor.empty(%dim_1) {"match.dynamic_dim_only"} : tensor<?xf32>
-      %Bias_f32 = linalg.generic {
-        indexing_maps = [#map_1d, #map_scalar_in_1d, #map_1d],
-        iterator_types = ["parallel"]
-      } 
-      ins(%Bias_i32, %Scale_Bias : tensor<?xi32>, f32)
-      outs(%empty_f32_B : tensor<?xf32>) {
-      ^bb0(%in: i32, %scale: f32, %out: f32): // %scale is the new block argument
-        %f = arith.sitofp %in : i32 to f32
-        %s = arith.mulf %f, %scale : f32 // Use the block argument, not the typo %Scale
-        linalg.yield %s : f32
+      %2 = linalg.generic {indexing_maps = [#map, #map], iterator_types = ["parallel"]} ins(%Bias_i32 : tensor<?xi32>) outs(%1 : tensor<?xf32>) {
+      ^bb0(%in: i32, %out: f32):
+        %44 = arith.sitofp %in : i32 to f32
+        %45 = arith.mulf %44, %Scale_Bias_tensor : f32
+        linalg.yield %45 : f32
       } -> tensor<?xf32>
-
-      // 4. Add Bias 
-      %empty_f32_Out = tensor.empty(%dim_0) {"match.dynamic_dim_only"} : tensor<1x?xf32>
-      %Result_f32 = linalg.generic {
-        indexing_maps = [#map_2d, #map_broadcast_1d_in_2d, #map_2d],
-        iterator_types = ["parallel", "parallel"]
-      } ins(%C_f32, %Bias_f32 : tensor<1x?xf32>, tensor<?xf32>)
-        outs(%empty_f32_Out : tensor<1x?xf32>) {
-      ^bb0(%in_c: f32, %in_b: f32, %out: f32):
-        %add = arith.addf %in_c, %in_b : f32
-        linalg.yield %add : f32
+      %5 = tensor.empty() : tensor<1x?xi8>
+      %6 = linalg.generic {indexing_maps = [#map1, #map1], iterator_types = ["parallel", "parallel"]} ins(%0 : tensor<1x?xf32>) outs(%5 : tensor<1x?xi8>) {
+      ^bb0(%in: f32, %out: i8):
+        %44 = arith.divf %in, %cst_9 : f32
+        %45 = math.roundeven %44 : f32
+        %46 = arith.addf %45, %cst_f32_0 : f32
+        %47 = arith.maximumf %46, %cst_i8_max : f32
+        %48 = arith.minimumf %47, %cst_i8_min : f32
+        %49 = arith.fptosi %48 : f32 to i8
+        linalg.yield %49 : i8
+      } -> tensor<1x?xi8>
+      %7 = tensor.empty() : tensor<?x?xi8>
+      %transposed = linalg.transpose ins(%cst : tensor<?x?xi8>) outs(%7 : tensor<?x?xi8>) permutation = [1, 0] 
+      %8 = tensor.empty() : tensor<1x?xi32>
+      %9 = linalg.fill ins(%c0_i32 : i32) outs(%8 : tensor<1x?xi32>) -> tensor<1x?xi32>
+      %10 = linalg.quantized_matmul ins(%6, %transposed, %c0_i32, %c0_i32 : tensor<1x?xi8>, tensor<?x?xi8>, i32, i32) outs(%9 : tensor<1x?xi32>) -> tensor<1x?xi32>
+      %11 = tensor.empty() : tensor<1x?xf32>
+      %12 = linalg.generic {indexing_maps = [#map1, #map1], iterator_types = ["parallel", "parallel"]} ins(%10 : tensor<1x?xi32>) outs(%11 : tensor<1x?xf32>) {
+      ^bb0(%in: i32, %out: f32):
+        %44 = arith.sitofp %in : i32 to f32
+        %45 = arith.mulf %44, %cst_10 : f32
+        linalg.yield %45 : f32
       } -> tensor<1x?xf32>
+      %13 = linalg.generic {indexing_maps = [#map1, #map2, #map1], iterator_types = ["parallel", "parallel"]} ins(%12, %2 : tensor<1x?xf32>, tensor<?xf32>) outs(%11 : tensor<1x?xf32>) {
+      ^bb0(%in: f32, %in_16: f32, %out: f32):
+        %44 = arith.addf %in, %in_16 : f32
+        linalg.yield %44 : f32
+      } -> tensor<1x?xf32>
+      
+
+      
     } : (!transform.any_op) -> (!transform.any_value, !transform.any_value)
     transform.yield %ins, %outs : !transform.any_value, !transform.any_value
   }
