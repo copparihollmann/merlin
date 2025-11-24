@@ -1,10 +1,11 @@
-# IREE setup for HAL development (NEED TO UPDATE FOR PLUGIN)
+# IREE setup
 
 ### Step 1: Set Up a Self-Contained Conda Environment
 
 We will use Conda to install and manage the entire C++ toolchain and all Python dependencies. This avoids conflicts with system-wide packages.
 
 1. *Create and activate a new Conda environment:*
+
 ```bash
 # Create an environment named 'iree-dev' with Python
 conda create -n iree-dev python=3.11
@@ -15,10 +16,13 @@ conda activate iree-dev
 
 2. *Install the C++ toolchain and build tools:*
 This command installs a complete LLVM/Clang toolchain, including the `lld` linker, as well as `cmake` and `ninja`.
+
 ```bash
 conda install -c conda-forge cmake ninja clang clangxx gxx_linux-64 lld
 ```
+
 3. *Install required Python dependencies:*
+
 ```bash
 conda install -c conda-forge numpy
 ```
@@ -102,6 +106,7 @@ For the CMake configuration:
 ```bash
 # Unset any host-specific compiler flags from the environment to prevent contamination
 unset CFLAGS CXXFLAGS
+unset LIBRARY_PATH LD_LIBRARY_PATH C_INCLUDE_PATH CPLUS_INCLUDE_PATH
 
 # Configure the RISC-V build
 cmake \
@@ -129,10 +134,13 @@ cmake --build "${BUILD_RISCV_DIR}"
 Intalling the necessary dependencies.
 
 Pytorch:
+
 ```bash
 pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cpu
 ```
+
 IREE:
+
 ```bash
 python -m pip install \
     iree-turbine \
@@ -142,21 +150,23 @@ python -m pip install \
 
 For running a simple matmul example I can recommend just running the `pytorch_aot_simple.ipynb` notebook
 
-
 ### Step 6: Activate Chipyard and prepare IREE files
 
 Source the env:
+
 ```bash
 source env.sh
 ```
 
 1. Create the overlay directory:
+
 ```bash
 mkdir -p ${WORKSPACE_DIR}/chipyard-workload/overlay
 ```
 
 2. Compile a Test Model for RISC-V:
 Use the host compiler to generate a `.vmfb` file, specifying the correct target architecture and features to enable hardware floating-point support.
+
 ```bash
 ${INSTALL_HOST_DIR}/bin/iree-compile \
     --iree-hal-target-backends=llvm-cpu \
@@ -167,6 +177,7 @@ ${INSTALL_HOST_DIR}/bin/iree-compile \
 ```
 
 Or for tracing and debugging:
+
 ```bash
 ${INSTALL_HOST_DIR}/bin/iree-compile \
     --iree-hal-target-backends=llvm-cpu \
@@ -180,6 +191,7 @@ ${INSTALL_HOST_DIR}/bin/iree-compile \
 ```
 
 3. Copy the IREE Runtime into the Overlay:
+
 ```bash
 cp ${BUILD_RISCV_DIR}/tools/iree-run-module ${WORKSPACE_DIR}/chipyard-workload/overlay/
 ```
@@ -187,6 +199,7 @@ cp ${BUILD_RISCV_DIR}/tools/iree-run-module ${WORKSPACE_DIR}/chipyard-workload/o
 4. Create an Automation Script (`run_iree.sh`):
 This script will execute automatically upon booting the simulated machine. Create it at `${WORKSPACE_DIR}/chipyard-workload/overlay/run_iree.sh`.
 **IMPORTANT:** Use absolute paths for all files inside the script.
+
 ```bash
 #!/bin/bash
 echo "--- Running IREE Model ---"
@@ -201,12 +214,14 @@ poweroff
 ```
 
 5. Make the script executable:
+
 ```bash
 chmod +x ${WORKSPACE_DIR}/chipyard-workload/overlay/run_iree.sh
 ```
 
 ### Step 7: Create the  shal Workload Recipe
 Create a file at `${WORKSPACE_DIR}/chipyard-workload/iree-workload.json`. This JSON file is the recipe for building the final disk image.
+
 ```json
 {
     "name": "br-iree",
@@ -218,6 +233,7 @@ Create a file at `${WORKSPACE_DIR}/chipyard-workload/iree-workload.json`. This J
     ]
 }
 ```
+
 **CRITICAL:** You must replace `/path/to/your/workspace/` with the hardcoded, absolute path to your `WORKSPACE_DIR`. FireMarshal may not correctly expand environment variables in this context.
 
 ### Step 8: Simulation and Verification
@@ -226,14 +242,17 @@ This phase executes the generated workload on two different Chipyard simulators.
 
 #### 8.1: Build Linux Image using FireMarshal
 1. Activate the Chipyard environment:
+
 ```bash
 # Deactivate other conda environments if necessary
 # conda deactivate
 cd /path/to/your/chipyard
 source ./env.sh
 ```
+
 2. Build the Image:
 The `-d` (`--no-disk`) flag is required to generate the special `*-nodisk` binary needed for the Spike simulator.
+
 ```bash
 # From the chipyard/software/firemarshal directory
 marshal -d build ${WORKSPACE_DIR}/chipyard-workload/iree-workload.json
@@ -241,8 +260,10 @@ marshal -d build ${WORKSPACE_DIR}/chipyard-workload/iree-workload.json
 
 #### 8.2: Functional Verification (Spike)
 This is the fastest method to verify that the software toolchain and Linux image are correct.
+
 1. Launch the Spike simulation:
 The `-s` (`--spike`) flag tells FireMarshal to use Spike.
+
 ```bash
 # From the chipyard/software/firemarshal directory
 marshal -d launch -s ${WORKSPACE_DIR}/chipyard-workload/iree-workload.json
@@ -250,6 +271,7 @@ marshal -d launch -s ${WORKSPACE_DIR}/chipyard-workload/iree-workload.json
 
 2. Inspect the output:
 After the simulation powers off, find the captured `output.txt` in the timestamped results directory.
+
 ```bash
 cat ./runOutput/iree-workload-launch-*/br-iree/output.txt
 ```
@@ -257,11 +279,14 @@ cat ./runOutput/iree-workload-launch-*/br-iree/output.txt
 #### 8.3: Cycle-Accurate Simulator (this step is not completely finished nor tested)
 This is the slower but more realistic test, running your workload on a C++ model of the actual `GemminiRocketConfig` hardware.
 1. Copy the Workload JSON to the default location:
+
 ```bash
 cp ${WORKSPACE_DIR}/chipyard-workload/iree-workload.json /path/to/your/chipyard/software/firemarshal/workloads/
 ```
+
 2. Clean, Build, and Run the Verilator Simulation:
 These steps must be run from the `sims/verilator` directory.
+
 ```bash
 cd /path/to/your/chipyard/sims/verilator
 
@@ -279,7 +304,7 @@ After the simulation completes, the UART log containing the `output` from your s
 ## Extra random stuff
 
 - Sometimes my conda `env` will be overimpossed on top of another one, meaning I had to run `conda deactivate` until there was no `env` active. Then I was able to sucessfully call `source env.sh`
-```
+
 **CRITICAL:** You must replace `/path/to/your/workspace/` with the hardcoded, absolute path to your `WORKSPACE_DIR`. FireMarshal may not correctly expand environment variables in this context.
 
 After the simulation completes, the UART log containing the `output` from your script will be available in the output directory within the `sims/verilator` folder.
