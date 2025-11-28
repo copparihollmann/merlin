@@ -34,10 +34,10 @@ From the root of the repository, export the following variables. These paths are
 ```bash
 # Set the root directory for the entire project one level above than your iree repo
 export WORKSPACE_DIR=${PWD}
-export IREE_SRC=${WORKSPACE_DIR}/third_party/iree_bar
+export IREE_SRC=${WORKSPACE_DIR}/third_party/iree
 
 # Directories for the x86_64 host build
-export BUILD_HOST_DIR=${WORKSPACE_DIR}/build-bar-iree-host
+export BUILD_HOST_DIR=${WORKSPACE_DIR}/build-iree-host
 export INSTALL_HOST_DIR=${BUILD_HOST_DIR}/install
 
 # Directories for cross-compiled risc-v
@@ -63,7 +63,7 @@ cmake \
     -B "${BUILD_HOST_DIR}" \
     -S "${IREE_SRC}" \
     -DCMAKE_INSTALL_PREFIX="${INSTALL_HOST_DIR}" \
-    -DCMAKE_BUILD_TYPE=Debug \
+    -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DIREE_ENABLE_LLD=ON \
     -DPython3_EXECUTABLE="$(which python3)" \
     -DCMAKE_CXX_FLAGS="-Wno-error=cpp" \
@@ -72,7 +72,7 @@ cmake \
     -DIREE_HAL_DRIVER_DEFAULTS=OFF \
     -DIREE_HAL_DRIVER_LOCAL_SYNC=ON \
     -DIREE_HAL_DRIVER_LOCAL_TASK=ON \
-    -DIREE_BUILD_PYTHON_BINDINGS=ON \
+    -DIREE_BUILD_PYTHON_BINDINGS=OFF \
     -DIREE_ENABLE_ASSERTIONS=ON \
     -DIREE_ENABLE_SPLIT_DWARF=ON \
     -DIREE_ENABLE_THIN_ARCHIVES=ON \
@@ -127,6 +127,35 @@ cmake \
 
 # Build the cross-compiled runtime and tools
 cmake --build "${BUILD_RISCV_DIR}"
+```
+
+#### If we want to buld with Tracy we need the following:
+
+IREE requires `zstd` for tracing. We must cross-compile it and install it directly into the toolchain's sysroot so the compiler finds it automatically.
+
+```bash
+# 1. Clone Zstd
+cd ${WORKSPACE_DIR}
+git clone https://github.com/facebook/zstd.git
+cd zstd
+rm -rf build-riscv # Clean any previous attempts
+
+# 2. Configure & Install
+# We install to the toolchain's /usr directory to simplify linking
+cmake -G Ninja -B build-riscv \
+    -S build/cmake \
+    -DCMAKE_SYSTEM_NAME=Linux \
+    -DCMAKE_SYSTEM_PROCESSOR=riscv64 \
+    -DCMAKE_C_COMPILER="${RISCV_TOOLCHAIN_ROOT}/toolchain/clang/linux/RISCV/bin/clang" \
+    -DCMAKE_CXX_COMPILER="${RISCV_TOOLCHAIN_ROOT}/bin/clang++" \
+    -DCMAKE_C_FLAGS="--sysroot=${RISCV_TOOLCHAIN_ROOT}/toolchain/clang/linux/RISCV/sysroot -march=rv64gc -mabi=lp64d" \
+    -DCMAKE_CXX_FLAGS="--sysroot=${RISCV_TOOLCHAIN_ROOT}/toolchain/clang/linux/RISCV/sysroot -march=rv64gc -mabi=lp64d" \
+    -DCMAKE_INSTALL_PREFIX="${RISCV_TOOLCHAIN_ROOT}/toolchain/clang/linux/RISCV/sysroot/usr" \
+    -DZSTD_BUILD_PROGRAMS=OFF \
+    -DZSTD_BUILD_SHARED=OFF \
+    -DZSTD_BUILD_STATIC=ON
+
+cmake --build build-riscv --target install
 ```
 
 ### Step 5: Python and compilation of our model
