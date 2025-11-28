@@ -74,7 +74,7 @@ ${BUILD_HOST_DIR}/tools/iree-compile \
   --iree-dispatch-creation-data-tiling \
   --iree-llvmcpu-enable-ukernels="all" \
   --iree-flow-export-benchmark-funcs \
-  --iree-opt-level=O3
+  --iree-opt-level=O3 \
   --iree-hal-dump-executable-files-to=/scratch2/agustin/merlin/samples/custom_dispatch_ukernels_saturn/compilation_phases_fc/riscv/executables_opu
 
 # --- This creates the self-contained benchmark .mlir files ---
@@ -98,7 +98,7 @@ ${BUILD_HOST_DIR}/tools/iree-compile \
   --iree-llvmcpu-enable-ukernels="all" \
   --iree-llvmcpu-target-cpu-features="+m,+a,+f,+d,+v,+zvl128b,+zvfh,+zvbb" \
   --iree-llvmcpu-target-abi=lp64d \
-  --iree-opt-level=O3scv/executables_baseline
+  --iree-opt-level=O3
 ```
 
 2. Compile the Baseline (normal) Kernels
@@ -391,4 +391,22 @@ iree-compile model_quantized_ort.mlir -o model_quantized_ort_riscv.vmfb \
 --iree-opt-level=O3 \
 -mlir-disable-threading \
 -mlir-print-ir-after-all 2>log.mlir
+```
+
+# DUMP
+
+```bash
+(iree-dev) agustin@garden:/scratch2/agustin/merlin/samples/custom_dispatch_ukernels_saturn/compilation_phases_fc$ ${BUILD_HOST_DIR}-deb-tracy/tools/iree-compile   model_quantized_ort.mlir   -o /dev/null   --iree-hal-target-backends=llvm-cpu   --iree-llvmcpu-target-triple=riscv64-unknown-linux-gnu   --iree-llvmcpu-target-cpu-features="+m,+a,+f,+d,+v,+zvl128b,+zvfh,+zvbb"   --iree-llvmcpu-target-abi=lp64d   --iree-dispatch-creation-data-tiling   --iree-llvmcpu-enable-ukernels="none" --iree-opt-level=O3 --iree-hal-dump-executable-files-to=/scratch2/agustin/merlin/samples/custom_dispatch_ukernels_saturn/compilation_phases_fc/riscv/executables --iree-hal-executable-debug-level=3     --iree-llvmcpu-debug-symbols=true     --iree-llvmcpu-link-embedded=false     --iree-vm-bytecode-module-strip-source-map=false
+
+(iree-dev) agustin@garden:/scratch2/agustin/merlin/samples/custom_dispatch_ukernels_saturn/compilation_phases_fc$ ${BUILD_HOST_DIR}-deb-tracy/tools/iree-compile   model_quantized_ort.mlir   -o /dev/null   --iree-hal-target-backends=llvm-cpu   --iree-llvmcpu-target-triple=riscv64-unknown-linux-gnu   --iree-llvmcpu-target-cpu-features="+m,+a,+f,+d,+v,+zvl128b,+zvfh,+zvbb"   --iree-llvmcpu-target-abi=lp64d   --iree-dispatch-creation-data-tiling   --iree-llvmcpu-enable-ukernels="none" --iree-opt-level=O3 --iree-hal-dump-executable-files-to=/scratch2/agustin/merlin/samples/custom_dispatch_ukernels_saturn/compilation_phases_fc/riscv/executables --iree-hal-executable-debug-level=3 \
+    --iree-llvmcpu-debug-symbols=true \
+    --iree-llvmcpu-link-embedded=false \
+    --iree-vm-bytecode-module-strip-source-map=false
+
+(iree-dev) agustin@garden:/scratch2/agustin/merlin/samples/custom_dispatch_ukernels_saturn/compilation_phases_fc$ ${BUILD_HOST_DIR}-deb-tracy/tools/iree-compile   riscv/executables_opu/module_main_graph\$async_dispatch_1_system_elf_riscv_64_benchmark.mlir   -o ukernel_1_s.vmfb   --iree-hal-target-backends=llvm-cpu   --iree-llvmcpu-target-triple=riscv64-unknown-linux-gnu   --iree-llvmcpu-enable-ukernels="all"   --iree-llvmcpu-target-cpu-features="+m,+a,+f,+d,+v,+zvl128b,+zvfh,+zvbb"   --iree-llvmcpu-target-abi=lp64d--iree-opt-level=O3 --iree-hal-executable-debug-level=3     --iree-llvmcpu-debug-symbols=true     --iree-llvmcpu-link-embedded=false     --iree-vm-bytecode-module-strip-source-map=false
+(iree-dev) agustin@garden:/scratch2/agustin/merlin/samples/custom_dispatch_ukernels_saturn/compilation_phases_fc$ ${BUILD_HOST_DIR}-deb-tracy/tools/iree-compile   riscv/executables_opu/module_main_graph\$async_dispatch_2_system_elf_riscv_64_benchmark.mlir   -o ukernel_2_s.vmfb   --iree-hal-target-backends=llvm-cpu   --iree-llvmcpu-target-triple=riscv64-unknown-linux-gnu   --iree-llvmcpu-enable-ukernels="all"   --iree-llvmcpu-target-cpu-features="+m,+a,+f,+d,+v,+zvl128b,+zvfh,+zvbb"   --iree-llvmcpu-target-abi=lp64d --iree-opt-level=O3 --iree-hal-executable-debug-level=3     --iree-llvmcpu-debug-symbols=true     --iree-llvmcpu-link-embedded=false     --iree-vm-bytecode-module-strip-source-map=false
+
+(iree-dev) agustin@garden:/scratch2/agustin/merlin/samples/custom_dispatch_ukernels_saturn/compilation_phases_fc$ ${BUILD_HOST_DIR}-deb-tracy/tools/iree-compile   riscv/executables/module_main_graph\$async_dispatch_2_system_elf_riscv_64_benchmark.mlir   -o ukernel_2.vmfb   --iree-hal-target-backends=llvm-cpu   --iree-llvmcpu-target-triple=riscv64-unknown-linux-gnu   --iree-llvmcpu-enable-ukernels="none"   --iree-llvmcpu-target-cpu-features="+m,+a,+f,+d,+v,+zvl128b,+zvfh,+zvbb"   --iree-llvmcpu-target-abi=lp64d --iree-opt-level=O3 --iree-hal-executable-debug-level=3     --iree-llvmcpu-debug-symbols=true     --iree-llvmcpu-link-embedded=false     --iree-vm-bytecode-module-strip-source-map=false
+(iree-dev) agustin@garden:/scratch2/agustin/merlin/samples/custom_dispatch_ukernels_saturn/compilation_phases_fc$ ${BUILD_HOST_DIR}-deb-tracy/tools/iree-compile   riscv/executables/module_main_graph\$async_dispatch_1_system_elf_riscv_64_benchmark.mlir   -o ukernel_1.vmfb   --iree-hal-target-backends=llvm-cpu   --iree-llvmcpu-target-triple=riscv64-unknown-linux-gnu   --iree-llvmcpu-enable-ukernels="none"   --iree-llvmcpu-target-cpu-features="+m,+a,+f,+d,+v,+zvl128b,+zvfh,+zvbb"   --iree-llvmcpu-target-abi=lp64d --iree-opt-level=O3 --iree-hal-executable-debug-level=3     --iree-llvmcpu-debug-symbols=true     --iree-llvmcpu-link-embedded=false     --iree-vm-bytecode-module-strip-source-map=false
+
 ```

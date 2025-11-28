@@ -69,7 +69,7 @@ cmake \
     -G Ninja \
     -B "${BUILD_HOST_DIR}-deb-tracy" \
     -S "${IREE_SRC}" \
-    -DCMAKE_INSTALL_PREFIX="${INSTALL_HOST_DIR}" \
+    -DCMAKE_INSTALL_PREFIX="${INSTALL_HOST_DIR}-deb-tracy" \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DCMAKE_CXX_FLAGS="-Wno-error=cpp -fno-omit-frame-pointer" \
     -DCMAKE_C_FLAGS="-fno-omit-frame-pointer" \
