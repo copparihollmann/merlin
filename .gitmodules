@@ -13,3 +13,6 @@
 [submodule "third_party/iree_bar"]
 	path = third_party/iree_bar
 	url = https://github.com/copparihollmann/iree.git
+[submodule "third_party/KernelBench"]
+	path = third_party/KernelBench
+	url = https://github.com/ScalingIntelligence/KernelBench.git
