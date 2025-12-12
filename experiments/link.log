@@ -1,0 +1,16 @@
+/home/eecs/ashvin.verma/toolchains/riscv/bin/../lib/gcc/riscv64-unknown-elf/15.1.0/../../../../riscv64-unknown-elf/bin/ld: experiments/matmul.o: can't link soft-float modules with double-float modules
+/home/eecs/ashvin.verma/toolchains/riscv/bin/../lib/gcc/riscv64-unknown-elf/15.1.0/../../../../riscv64-unknown-elf/bin/ld: failed to merge target specific data of file experiments/matmul.o
+/home/eecs/ashvin.verma/toolchains/riscv/bin/../lib/gcc/riscv64-unknown-elf/15.1.0/../../../../riscv64-unknown-elf/bin/ld: experiments/matmul.o: in function `matmul':
+LLVMDialectModule:(.text+0x94): undefined reference to `llvm.riscv.config.ex'
+/home/eecs/ashvin.verma/toolchains/riscv/bin/../lib/gcc/riscv64-unknown-elf/15.1.0/../../../../riscv64-unknown-elf/bin/ld: LLVMDialectModule:(.text+0xa8): undefined reference to `llvm.riscv.config.st'
+/home/eecs/ashvin.verma/toolchains/riscv/bin/../lib/gcc/riscv64-unknown-elf/15.1.0/../../../../riscv64-unknown-elf/bin/ld: LLVMDialectModule:(.text+0xc4): undefined reference to `llvm.riscv.config.ld'
+/home/eecs/ashvin.verma/toolchains/riscv/bin/../lib/gcc/riscv64-unknown-elf/15.1.0/../../../../riscv64-unknown-elf/bin/ld: LLVMDialectModule:(.text+0xd4): undefined reference to `llvm.riscv.config.ld'
+/home/eecs/ashvin.verma/toolchains/riscv/bin/../lib/gcc/riscv64-unknown-elf/15.1.0/../../../../riscv64-unknown-elf/bin/ld: LLVMDialectModule:(.text+0xe4): undefined reference to `llvm.riscv.config.ld'
+/home/eecs/ashvin.verma/toolchains/riscv/bin/../lib/gcc/riscv64-unknown-elf/15.1.0/../../../../riscv64-unknown-elf/bin/ld: LLVMDialectModule:(.text+0xfc): undefined reference to `llvm.riscv.loop.ws.config.bounds'
+/home/eecs/ashvin.verma/toolchains/riscv/bin/../lib/gcc/riscv64-unknown-elf/15.1.0/../../../../riscv64-unknown-elf/bin/ld: LLVMDialectModule:(.text+0x10c): undefined reference to `llvm.riscv.loop.ws.config.addrs.ab'
+/home/eecs/ashvin.verma/toolchains/riscv/bin/../lib/gcc/riscv64-unknown-elf/15.1.0/../../../../riscv64-unknown-elf/bin/ld: LLVMDialectModule:(.text+0x11c): undefined reference to `llvm.riscv.loop.ws.config.addrs.dc'
+/home/eecs/ashvin.verma/toolchains/riscv/bin/../lib/gcc/riscv64-unknown-elf/15.1.0/../../../../riscv64-unknown-elf/bin/ld: LLVMDialectModule:(.text+0x12c): undefined reference to `llvm.riscv.loop.ws.config.strides.ab'
+/home/eecs/ashvin.verma/toolchains/riscv/bin/../lib/gcc/riscv64-unknown-elf/15.1.0/../../../../riscv64-unknown-elf/bin/ld: LLVMDialectModule:(.text+0x13c): undefined reference to `llvm.riscv.loop.ws.config.strides.dc'
+/home/eecs/ashvin.verma/toolchains/riscv/bin/../lib/gcc/riscv64-unknown-elf/15.1.0/../../../../riscv64-unknown-elf/bin/ld: LLVMDialectModule:(.text+0x14c): undefined reference to `llvm.riscv.loop.ws'
+/home/eecs/ashvin.verma/toolchains/riscv/bin/../lib/gcc/riscv64-unknown-elf/15.1.0/../../../../riscv64-unknown-elf/bin/ld: LLVMDialectModule:(.text+0x15c): undefined reference to `llvm.riscv.flush'
+collect2: error: ld returned 1 exit status
