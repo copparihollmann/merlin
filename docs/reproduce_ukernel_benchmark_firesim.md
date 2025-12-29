@@ -410,3 +410,26 @@ iree-compile model_quantized_ort.mlir -o model_quantized_ort_riscv.vmfb \
 (iree-dev) agustin@garden:/scratch2/agustin/merlin/samples/custom_dispatch_ukernels_saturn/compilation_phases_fc$ ${BUILD_HOST_DIR}-deb-tracy/tools/iree-compile   riscv/executables/module_main_graph\$async_dispatch_1_system_elf_riscv_64_benchmark.mlir   -o ukernel_1.vmfb   --iree-hal-target-backends=llvm-cpu   --iree-llvmcpu-target-triple=riscv64-unknown-linux-gnu   --iree-llvmcpu-enable-ukernels="none"   --iree-llvmcpu-target-cpu-features="+m,+a,+f,+d,+v,+zvl128b,+zvfh,+zvbb"   --iree-llvmcpu-target-abi=lp64d --iree-opt-level=O3 --iree-hal-executable-debug-level=3     --iree-llvmcpu-debug-symbols=true     --iree-llvmcpu-link-embedded=false     --iree-vm-bytecode-module-strip-source-map=false
 
 ```
+
+## Simple placeholder on last version compiled for Firesim
+```bash
+# 2. Compile
+${BUILD_HOST_DIR}/tools/iree-compile \
+  model_quantized_ort.mlir \
+  -o model_quantized_ort.vmfb \
+  --iree-hal-target-backends=llvm-cpu \
+  --iree-llvmcpu-target-triple=riscv64-pc-linux-elf \
+  --iree-llvmcpu-target-abi=lp64d \
+  --iree-opt-level=O3 \
+  \
+  --iree-llvmcpu-enable-ukernels="all" \
+  --iree-opt-data-tiling \
+  --iree-dispatch-creation-data-tiling \
+  \
+  --iree-llvmcpu-target-cpu-features="+m,+a,+f,+d,+c,+v,+zvl128b,+zvfh,+zvbb" \
+  --iree-llvmcpu-target-vector-width-in-bytes=  16 \
+  --riscv-v-fixed-length-vector-lmul-max=2 \
+  \
+  --iree-hal-dump-executable-files-to="$DUMP_DIR" \
+  --iree-llvmcpu-debug-symbols=false
+```
