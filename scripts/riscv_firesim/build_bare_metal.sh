@@ -26,7 +26,7 @@ cmake \
   -DIREE_BUILD_COMPILER=OFF \
   -DRISCV_TOOLCHAIN_ROOT="${RISCV_TOOLCHAIN_ROOT}" \
   -DIREE_ARCH=riscv_64 \
-  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DIREE_ENABLE_THREADING=OFF \
   -DIREE_HAL_DRIVER_DEFAULTS=OFF \
   -DIREE_HAL_DRIVER_LOCAL_SYNC=ON \
@@ -40,6 +40,7 @@ cmake \
   -DIREE_BUILD_TESTS=OFF
 
 echo "Configuration done. Building..."
+cmake --build "${BUILD_RISCV_DIR}" --target simple_embedding_embedded_sync --verbose
 cmake --build "${BUILD_RISCV_DIR}" --target simple_embedding_embedded_sync_fc
 cmake --build "${BUILD_RISCV_DIR}" --target simple_embedding_embedded_sync_vector_fc
 cmake --build "${BUILD_RISCV_DIR}" --target simple_embedding_embedded_sync_vmvx_fc
