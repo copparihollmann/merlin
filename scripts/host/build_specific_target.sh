@@ -8,7 +8,7 @@ export WORKSPACE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 export IREE_SRC=${IREE_SRC:-"${WORKSPACE_DIR}/third_party/iree_bar"}
 
 # Host Paths
-export BUILD_HOST_DIR=${WORKSPACE_DIR}/build-iree-host-release
+export BUILD_HOST_DIR=${WORKSPACE_DIR}/build-bar-iree-host-deb-tracy
 export INSTALL_HOST_DIR=${BUILD_HOST_DIR}/install
 
 echo "========================================================"
@@ -39,4 +39,4 @@ cmake \
     -DIREE_BUILD_TESTS=ON \
     -DIREE_BUILD_SAMPLES=ON
 
-cmake --build "${BUILD_HOST_DIR}" --target install
+cmake --build "${BUILD_HOST_DIR}" --target multi_core_runner
