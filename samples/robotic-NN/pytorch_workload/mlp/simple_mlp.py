@@ -31,6 +31,5 @@ if __name__ == "__main__":
         input_names=["input"],
         output_names=["output"],
         opset_version=17,
-        dynamic_axes={"input": {0: "batch_size"}, "output": {0: "batch_size"}}
     )
     print("Exported simple_mlp.onnx")

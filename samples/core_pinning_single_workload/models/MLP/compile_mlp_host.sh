@@ -13,17 +13,20 @@ BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 OUTPUT_DIR="$BASE_DIR/models"
 
 mkdir -p "$OUTPUT_DIR"
-TARGET_MODEL="mlp.onnx"
+TARGET_MODEL="simple_mlp.onnx"
 
 # Common flags for both main model and dispatches
 COMMON_FLAGS=(
     "--iree-hal-target-backends=llvm-cpu"
-    "--iree-llvmcpu-target-cpu=host"
+    "--iree-llvmcpu-target-triple=riscv64-unknown-linux-gnu"
+    "--iree-llvmcpu-target-abi=lp64d"
+    "--iree-llvmcpu-target-cpu-features="+m,+a,+f,+d,+c,+v,+zvl256b,+zba,+zbb,+zbc,+zbs,+zicbom,+zicboz,+zicbop,+zihintpause""
     "--iree-opt-level=O3"
     "--iree-hal-executable-debug-level=3"
     "--iree-llvmcpu-link-embedded=false"
     "--dump-compilation-phases-to=$OUTPUT_DIR/phases/"
     "--iree-flow-dump-dispatch-graph"
+    "--debug-only=iree-dump-executable-benchmarks"
 )
 
 # Flags for Host Target
