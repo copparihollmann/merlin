@@ -1,0 +1,1 @@
+kris@garden:/scratch2/merlin/samples/core_pinning_single_workload$ python3 models/script/dot_dispatch_parser.py models/dronet/models/dispatch_graphs/dronet_dispatch_graph.dot --json-out dronet_dispatch_deps.json --png dronet_dispatch_dag.png
