@@ -1,0 +1,47 @@
+digraph G {
+  compound = true;
+  subgraph cluster_1 {
+    v2 [shape = plain, label = " "];
+    label = "";
+    v3 [shape = box, label = "arg0"];
+    v4 [shape = box, label = "arg1"];
+    v5 [shape = box, label = "arg2"];
+    v6 [shape = ellipse, label = "%__constant_tensor_32x10xf32 = util.global.load\ntensor<32x10xf32>"];
+    v7 [shape = ellipse, label = "%__constant_tensor_32x32xf32 = util.global.load\ntensor<32x32xf32>"];
+    v8 [shape = ellipse, label = "%1 = hal.tensor.import\n<<NULL ATTRIBUTE>>\ntensor<?x10xf32>"];
+    v9 [shape = box, label = "%2 = flow.dispatch[%0]\n@main_graph$async_dispatch_0::@main_graph$async_dispatch_0_matmul_like_Dx32x10_f32(%1, %__constant_tensor_32x10xf32, %0)\n<<NULL ATTRIBUTE>>\ntensor<?x32xf32>"];
+    v10 [shape = box, label = "%3 = flow.dispatch[%0]\n@main_graph$async_dispatch_1::@main_graph$async_dispatch_1_matmul_like_Dx32x32_f32(%2, %__constant_tensor_32x32xf32, %0)\n<<NULL ATTRIBUTE>>\ntensor<?x32xf32>"];
+    v11 [shape = box, label = "%4 = flow.dispatch[%0]\n@main_graph$async_dispatch_2::@main_graph$async_dispatch_2_matmul_like_Dx2x32_f32(%3, %0)\n<<NULL ATTRIBUTE>>\ntensor<?x2xf32>"];
+    v12 [shape = ellipse, label = "%5 = hal.tensor.barrier\ntensor<?x2xf32>"];
+    v13 [shape = ellipse, label = "%6 = hal.tensor.export\n<<NULL ATTRIBUTE>>\n!hal.buffer_view"];
+    v14 [shape = ellipse, label = " = util.return\n"];
+  }
+  subgraph cluster_15 {
+    v16 [shape = plain, label = " "];
+    label = "";
+    v17 [shape = box, label = "arg0"];
+    v18 [shape = ellipse, label = "%0 = util.null\n!hal.fence"];
+    v19 [shape = ellipse, label = "%device_0 = hal.devices.get\n!hal.device"];
+    v20 [shape = ellipse, label = "%fence = hal.fence.create\n!hal.fence"];
+    v21 [shape = ellipse, label = "%1 = util.call\n!hal.buffer_view"];
+    v22 [shape = ellipse, label = "%status = hal.fence.await\ni32"];
+    v23 [shape = ellipse, label = " = util.return\n"];
+  }
+  v3 -> v8 [style = solid, label = "0"];
+  v4 -> v8 [style = solid, label = "2"];
+  v8 -> v9 [style = solid, label = "1"];
+  v6 -> v9 [style = solid, label = "2"];
+  v9 -> v10 [style = solid, label = "1"];
+  v7 -> v10 [style = solid, label = "2"];
+  v10 -> v11 [style = solid, label = "1"];
+  v11 -> v12 [style = solid, label = "0"];
+  v5 -> v12 [style = solid, label = "1"];
+  v12 -> v13 [style = solid, label = "0"];
+  v13 -> v14 [style = solid, label = ""];
+  v19 -> v20 [style = solid, label = ""];
+  v17 -> v21 [style = solid, label = "0"];
+  v18 -> v21 [style = solid, label = "1"];
+  v20 -> v21 [style = solid, label = "2"];
+  v20 -> v22 [style = solid, label = "1"];
+  v21 -> v23 [style = solid, label = ""];
+}
