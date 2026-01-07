@@ -87,6 +87,15 @@ SECTIONS
         *(.gnu.linkonce.d.*)
     }
 
+    /* IREE Static ELF Buffer Section */
+    .iree_elf_buffer ALIGN (4096) : {
+        PROVIDE_HIDDEN (__iree_elf_buffer_start = .);
+        *(.iree_elf_buffer .iree_elf_buffer.*)
+        . = ALIGN (4096);
+        PROVIDE_HIDDEN (__iree_elf_buffer_end = .);
+    }
+    PROVIDE (__iree_elf_buffer_size = __iree_elf_buffer_end - __iree_elf_buffer_start);
+
     .sdata : {
         PROVIDE (__global_pointer$ = . + 0x800);
         *(.sdata .sdata.*)
