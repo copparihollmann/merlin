@@ -49,6 +49,91 @@ Observed outputs in this environment:
   - `gemmini_fence` (completion)
 - Buddy’s `loop.ws` style lowering configures a “hardware loop” (bounds, addresses, strides) and then launches it (`llvm.riscv.loop.ws`), followed by `flush`.
 
+## Normalized Matmul Overhead Analysis
+
+To quantify the overhead of the MLIR/Buddy approach versus hand-written Gemmini C, we created a matched-size matmul (128×256×256, int8 inputs, int32 accumulator) and instrumented it with split timing.
+
+### Results
+
+**Buddy-generated matmul (from linalg dialect, via Gemmini lowering):**
+```
+init phase (malloc + zero): 623,014 cycles
+matmul call: 228,818 cycles
+check phase (output reduction): 131,078 cycles
+Total: 982,910 cycles
+```
+
+**Chipyard gemmini-rocc-tests `tiled_matmul_ws_perf`:**
+```
+Cycles taken: 60,337
+Ideal cycles: 32,768 (= total MACs / DIM²)
+Utilization: 54%
+```
+
+### Interpretation
+
+1. **Chipyard measurement region**: Times only the actual Gemmini work (`tiled_matmul_auto` and `fence`), starting/stopping `read_cycles()` around the accelerator launch.
+
+2. **Buddy Gemmini backend performance**: The Buddy-generated matmul call (228,818 cycles) includes:
+   - Hardware loop configuration (`llvm.riscv.loop.ws.config.*` intrinsics)
+   - Workspace acceleration launch (`llvm.riscv.loop.ws`)
+   - Flushing (`llvm.riscv.flush`)
+   - Any generated scalar loops or scalar setup
+
+3. **Overhead vs baseline**:
+   - Buddy matmul call cycles: **228,818**
+   - Chipyard reference cycles: **60,337**
+   - Ratio: **3.79× higher** than reference
+   - Absolute difference: **168,481 extra cycles**
+   - Ideal MAC rate (per 16×16 tile): **32,768** cycles for full matrix; Buddy achieves effective ~28% of reference utilization
+
+4. **Contributing factors**:
+   - Chipyard test uses optimized hand-written tiling and scheduling with explicit control over data movement.
+   - Buddy's lowering from high-level linalg dialect introduces scalar loop overhead for shape/stride handling, temporary buffer allocation, and implicit synchronization.
+   - The gap suggests either (a) suboptimal workspace loop generation or (b) additional scalar overhead not fully visible in the cycle count.
+
+### Commands for reproduction
+
+#### Build & run Buddy normalized matmul:
+```bash
+cd /scratch/ashvin/merlin
+RISCV=/home/eecs/ashvin.verma/toolchains/riscv
+BUDDY_OPT=/scratch/ashvin/buddy-mlir/build/bin/buddy-opt
+BUDDY_TRANSLATE=/scratch/ashvin/buddy-mlir/build/bin/buddy-translate
+BUDDY_LLC=/scratch/ashvin/buddy-mlir/build/bin/buddy-llc
+
+$BUDDY_OPT experiments/gemmini/inputs/matmul_128x256x256_i8_i32_fn.mlir \
+  --convert-linalg-to-gemmini="acc_t=i32" \
+  --lower-gemmini --expand-strided-metadata \
+  --convert-linalg-to-loops --lower-affine --convert-scf-to-cf \
+  --convert-cf-to-llvm --convert-arith-to-llvm --finalize-memref-to-llvm \
+  --convert-func-to-llvm --reconcile-unrealized-casts \
+  -o experiments/matmul_128x256x256_i8_i32.llvm.mlir
+
+$BUDDY_TRANSLATE experiments/matmul_128x256x256_i8_i32.llvm.mlir --buddy-to-llvmir \
+  -o experiments/matmul_128x256x256_i8_i32.ll
+
+$BUDDY_LLC -O3 -filetype=obj -mtriple=riscv64-unknown-elf -target-abi=lp64d \
+  -mattr=+buddyext,+m,+a,+f,+d,+c \
+  -o experiments/matmul_128x256x256_i8_i32.o experiments/matmul_128x256x256_i8_i32.ll
+
+$RISCV/bin/riscv64-unknown-elf-gcc -O2 -march=rv64gc -mabi=lp64d -static \
+  -o experiments/matmul_128x256x256_i8_i32.elf \
+  experiments/matmul_128x256x256_main.c experiments/matmul_128x256x256_i8_i32.o
+
+$RISCV/bin/spike --extension=gemmini $RISCV/riscv64-unknown-elf/bin/pk \
+  experiments/matmul_128x256x256_i8_i32.elf
+```
+
+#### Run Chipyard reference:
+```bash
+RISCV=/home/eecs/ashvin.verma/toolchains/riscv
+ROOT=/scratch/ashvin/chipyard/generators/gemmini/software/gemmini-rocc-tests
+
+$RISCV/bin/spike --extension=gemmini $RISCV/riscv64-unknown-elf/bin/pk \
+  $ROOT/build/bareMetalC/tiled_matmul_ws_perf-pk
+```
+
 ## Commands (copy/paste)
 
 ### Run Chipyard reference binaries
