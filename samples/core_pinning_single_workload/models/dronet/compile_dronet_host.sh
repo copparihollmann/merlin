@@ -96,42 +96,42 @@ PY
         continue
     fi
 
-    # Compile MLIR to VMFB
-    VMFB_OUTPUT="$OUTPUT_DIR/${model_name}_host.vmfb"
+    # # Compile MLIR to VMFB
+    # VMFB_OUTPUT="$OUTPUT_DIR/${model_name}_host.vmfb"
     
-    echo "  Compiling to VMFB..."
-    "$COMPILE_TOOL" "$MLIR_OUTPUT" \
-        -o "$VMFB_OUTPUT" \
-        "${HOST_FLAGS_WITH_GRAPH[@]}"
+    # echo "  Compiling to VMFB..."
+#     "$COMPILE_TOOL" "$MLIR_OUTPUT" \
+#         -o "$VMFB_OUTPUT" \
+#         "${HOST_FLAGS_WITH_GRAPH[@]}"
 
-    if [ $? -eq 0 ]; then
-        echo "✅ Successfully compiled: $VMFB_OUTPUT"
-        echo "✅ Dispatch graph saved to: $GRAPH_OUT"
-    else
-        echo "❌ Compilation failed for: $model_name"
-    fi
-done
+#     if [ $? -eq 0 ]; then
+#         echo "✅ Successfully compiled: $VMFB_OUTPUT"
+#         echo "✅ Dispatch graph saved to: $GRAPH_OUT"
+#     else
+#         echo "❌ Compilation failed for: $model_name"
+#     fi
+# done
 
-echo "=========================================="
-echo "Compiling individual dispatch sources..."
+# echo "=========================================="
+# echo "Compiling individual dispatch sources..."
 
-SOURCES_DIR="$OUTPUT_DIR/converted"
-VMFB_DIR="$OUTPUT_DIR/converted/vmfb"
+# SOURCES_DIR="$OUTPUT_DIR/converted"
+# VMFB_DIR="$OUTPUT_DIR/converted/vmfb"
 
-if [ -d "$SOURCES_DIR" ]; then
-    mkdir -p "$VMFB_DIR"
+# if [ -d "$SOURCES_DIR" ]; then
+#     mkdir -p "$VMFB_DIR"
     
-    find "$SOURCES_DIR" -name "module_main_graph\$async_dispatch_*.mlir" | sort -V | while read -r mlir_file; do
-        filename=$(basename -- "$mlir_file")
-        if [[ "$filename" =~ module_main_graph\$async_dispatch_([0-9]+)\.mlir ]]; then
-            dispatch_num="${BASH_REMATCH[1]}"
-            output_vmfb="$VMFB_DIR/dispatch_${dispatch_num}.vmfb"
+#     find "$SOURCES_DIR" -name "module_main_graph\$async_dispatch_*.mlir" | sort -V | while read -r mlir_file; do
+#         filename=$(basename -- "$mlir_file")
+#         if [[ "$filename" =~ module_main_graph\$async_dispatch_([0-9]+)\.mlir ]]; then
+#             dispatch_num="${BASH_REMATCH[1]}"
+#             output_vmfb="$VMFB_DIR/dispatch_${dispatch_num}.vmfb"
             
-            echo "  Compiling $filename -> dispatch_${dispatch_num}.vmfb"
-            "$COMPILE_TOOL" "$mlir_file" -o "$output_vmfb" "${COMMON_FLAGS[@]}"
-        fi
-    done
-fi
+#             echo "  Compiling $filename -> dispatch_${dispatch_num}.vmfb"
+#             "$COMPILE_TOOL" "$mlir_file" -o "$output_vmfb" "${COMMON_FLAGS[@]}"
+#         fi
+#     done
+# fi
 
 echo "=========================================="
 echo "Main Model Compilation Process Completed."

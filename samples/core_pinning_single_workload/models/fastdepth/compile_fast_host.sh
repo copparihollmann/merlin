@@ -1,9 +1,7 @@
 #!/bin/bash
 
-# Directory containing IREE tools
-# Using the same build directory as the reference script
-IREE_TOOL_DIR="/scratch2/agustin/merlin/build-iree-host-deb-tracy/tools"
-COMPILE_TOOL="$IREE_TOOL_DIR/iree-compile"
+# iree-compile binary path
+COMPILE_TOOL="/scratch2/merlin/build-iree-host/tools/iree-compile"
 
 # Assuming iree-import-onnx is in the path (e.g. from a python venv)
 IMPORT_TOOL="iree-import-onnx"
@@ -22,13 +20,29 @@ COMMON_FLAGS=(
     "--iree-llvmcpu-target-abi=lp64d"
     "--iree-llvmcpu-target-cpu-features="+m,+a,+f,+d,+c,+v,+zvl256b,+zba,+zbb,+zbc,+zbs,+zicbom,+zicboz,+zicbop,+zihintpause""
     "--iree-opt-level=O3"
-    "--iree-hal-executable-debug-level=3"
-    "--iree-llvmcpu-link-embedded=false"
+    "--iree-llvmcpu-target-cpu=spacemit-x60"
     "--dump-compilation-phases-to=$OUTPUT_DIR/phases/"
     "--iree-flow-dump-dispatch-graph"
+    "--iree-llvmcpu-target-vector-width-in-bytes=32"
+    "--iree-opt-data-tiling"
+    "--iree-dispatch-creation-data-tiling"
+    "--riscv-v-fixed-length-vector-lmul-max=8"
+    "--iree-llvmcpu-loop-vectorization=true"
+    # "--iree-global-opt-propagate-transposes=true"
 )
 
-# Flags for Host Target
+#     "--iree-hal-target-backends=llvm-cpu"
+#     "--iree-llvmcpu-target-triple=riscv64-unknown-linux-gnu"
+#     "--iree-opt-level=O3"
+#     "--iree-llvmcpu-target-abi=lp64d"
+#     # # "--iree-llvmcpu-target-cpu=spacemit-x60"
+#     "--iree-llvmcpu-target-cpu-features=+m,+a,+f,+d,+c,+v,+zvl256b"
+#     "--iree-llvmcpu-target-vector-width-in-bytes=32"
+#     "--iree-llvmcpu-loop-vectorization=true"
+#     "--iree-dispatch-creation-data-tiling=true"
+#     # "--riscv-v-fixed-length-vector-lmul-max=8"
+#     "--iree-global-opt-propagate-transposes=true"
+# # Flags for Host Target
 HOST_FLAGS=(
     "${COMMON_FLAGS[@]}"
     "--iree-hal-dump-executable-sources-to=$OUTPUT_DIR/sources/"
@@ -134,4 +148,21 @@ if [ -d "$SOURCES_DIR" ]; then
 fi
 
 echo "=========================================="
+echo "Compiling benchmark MLIRs..."
+
+BENCHMARK_DIR="$BASE_DIR/models/benchmarks"
+BENCHMARK_VMFB_DIR="$BENCHMARK_DIR/vmfb"
+mkdir -p "$BENCHMARK_VMFB_DIR"
+shopt -s nullglob
+
+for mlir_file in "$BENCHMARK_DIR"/*.mlir; do
+    filename=$(basename -- "$mlir_file")
+    base_name="${filename%.mlir}"
+    out_vmfb="$BENCHMARK_VMFB_DIR/${base_name}.vmfb"
+    echo "  Compiling benchmark $filename -> ${base_name}.vmfb"
+    "$COMPILE_TOOL" "$mlir_file" -o "$out_vmfb" "${COMMON_FLAGS[@]}"
+done
+
+echo "=========================================="
 echo "Main Model Compilation Process Completed."
+

@@ -1,5 +1,5 @@
 {
-  "dot_file": "samples/core_pinning_single_workload/models/dispatch_graphs/dronet_dispatch_graph.dot",
+  "dot_file": "models/dronet/models/dispatch_graphs/dronet_dispatch_graph.dot",
   "dispatches": {
     "dispatch_0": {
       "id": 0,
@@ -149,20 +149,20 @@
       "to": "dispatch_3"
     },
     {
-      "from": "dispatch_4",
-      "to": "dispatch_5"
-    },
-    {
       "from": "dispatch_3",
       "to": "dispatch_5"
     },
     {
-      "from": "dispatch_5",
-      "to": "dispatch_6"
+      "from": "dispatch_4",
+      "to": "dispatch_5"
     },
     {
       "from": "dispatch_5",
       "to": "dispatch_7"
+    },
+    {
+      "from": "dispatch_5",
+      "to": "dispatch_6"
     },
     {
       "from": "dispatch_7",
@@ -181,11 +181,11 @@
       "to": "dispatch_9"
     },
     {
-      "from": "dispatch_10",
+      "from": "dispatch_9",
       "to": "dispatch_11"
     },
     {
-      "from": "dispatch_9",
+      "from": "dispatch_10",
       "to": "dispatch_11"
     },
     {
