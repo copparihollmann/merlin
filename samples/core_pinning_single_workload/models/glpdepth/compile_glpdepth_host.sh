@@ -15,6 +15,18 @@ TARGET_MODEL="glpdepth.onnx"
 
 # Common flags for both main model and dispatches
 COMMON_FLAGS=(
+
+    # "--iree-hal-target-backends=llvm-cpu"
+    # "--iree-llvmcpu-target-triple=riscv64-unknown-linux-gnu"
+    # "--iree-opt-level=O3"
+    # "--iree-llvmcpu-target-abi=lp64d"
+    # "--iree-llvmcpu-target-cpu=spacemit-x60"
+    # "--iree-llvmcpu-target-cpu-features=+m,+a,+f,+d,+c"
+    # "--iree-llvmcpu-enable-ukernels=none"
+    # # "--iree-llvmcpu-target-vector-width-in-bytes=32"
+    # # "--iree-llvmcpu-loop-vectorization=true"
+    # "--iree-dispatch-creation-data-tiling=true"
+    # vector
     "--iree-hal-target-backends=llvm-cpu"
     "--iree-llvmcpu-target-triple=riscv64-unknown-linux-gnu"
     "--iree-llvmcpu-target-abi=lp64d"
