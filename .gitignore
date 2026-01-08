@@ -58,7 +58,11 @@ riscv-tools-*/
 # Ignore compilation phases and report
 compilation_phases_*
 report_pt_export
+compiled_models
+phases*
+compilation*
 
 # Temporary files
 tmp/*
 .vscode/
+
