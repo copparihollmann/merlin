@@ -66,3 +66,8 @@ compilation*
 tmp/*
 .vscode/
 
+# Ignore models if they can get compiled
+*.onnx
+*.onnx.data
+samples/models/*.mlir
+
