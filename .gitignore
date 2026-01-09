@@ -70,4 +70,5 @@ tmp/*
 *.onnx
 *.onnx.data
 samples/models/*.mlir
+*.vmfb
 
