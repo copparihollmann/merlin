@@ -8,7 +8,7 @@ export WORKSPACE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 export IREE_SRC=${IREE_SRC:-"${WORKSPACE_DIR}/third_party/iree_bar"}
 
 # Host Paths
-export BUILD_HOST_DIR=${WORKSPACE_DIR}/build-iree-host-release
+export BUILD_HOST_DIR=${WORKSPACE_DIR}/build-iree-BAR-host-release
 export INSTALL_HOST_DIR=${BUILD_HOST_DIR}/install
 
 echo "========================================================"
@@ -37,6 +37,12 @@ cmake \
     -DCMAKE_C_COMPILER_LAUNCHER=ccache \
     -DCMAKE_CXX_COMPILER_LAUNCHER=ccache \
     -DIREE_BUILD_TESTS=ON \
-    -DIREE_BUILD_SAMPLES=ON
+    -DIREE_BUILD_SAMPLES=OFF
 
 cmake --build "${BUILD_HOST_DIR}" --target install
+
+echo "========================================================"
+echo " IREE Host Build (Standard Release) Complete"
+echo " Build Dir:   ${BUILD_HOST_DIR}"
+echo " Install Dir: ${INSTALL_HOST_DIR}"
+echo "========================================================"
