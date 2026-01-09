@@ -1,6 +1,0 @@
-cd /scratch2/merlin/samples/core_pinning_single_workload
-bash models/dronet/compile_dronet_host.sh
-cd scratch2/merlin/samples/core_pinning_single_workload
-python3 models/script/dot_dispatch_parser.py models/dronet/models/dispatch_graphs/dronet_dispatch_graph.dot --json-out dronet_dispatch_deps.json --png dronet_dispatch_dag.png
-
-python3 models/script/dot_dispatch_parser.py models/glpdepth/models/dispatch_graphs/glpdepth_dispatch_graph.dot --json-out glpdepth_dispatch_deps.json --png glpdepth_dispatch_dag.png
