@@ -12,10 +12,16 @@ set -euo pipefail
 # ------------------------------------------------------------------------------
 
 # Models to process (folder names)
-TARGET_MODELS=("dronet" "glpdepth" "fastdepth" "MLP") 
+TARGET_MODELS=("mlp") 
 
 # Configurations to build (comment out the ones you don't want)
-TARGET_CONFIGS=("RVV" "SCALAR")
+# Options are "NPU", "RVV", "SCALAR"
+TARGET_CONFIGS=("RVV")
+
+# Global Quantization Switch
+# "true"  = Look for $MODEL.q.int8.onnx and append _quant to output folder
+# "false" = Use standard $MODEL.onnx
+USE_QUANTIZED="true"
 
 # ------------------------------------------------------------------------------
 # 2. Toolchain Setup
@@ -24,6 +30,7 @@ TARGET_CONFIGS=("RVV" "SCALAR")
 # Allow overriding IREE_TOOL_DIR via environment variable
 IREE_TOOL_DIR="${IREE_TOOL_DIR:-/scratch2/agustin/merlin/build-iree-host-deb-tracy/tools}"
 COMPILE_TOOL="$IREE_TOOL_DIR/iree-compile"
+IMPORT_TOOL="iree-import-onnx"
 
 # Check if tools exist
 if [ ! -f "$COMPILE_TOOL" ]; then
@@ -31,8 +38,6 @@ if [ ! -f "$COMPILE_TOOL" ]; then
     echo "   Please set IREE_TOOL_DIR environment variable to your build path."
     exit 1
 fi
-
-IMPORT_TOOL="iree-import-onnx"
 
 # Base directory is where this script is located
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -48,14 +53,17 @@ mkdir -p "$OUTPUT_ROOT"
 BASE_FLAGS=(
     "--iree-hal-target-device=local"
     "--iree-hal-local-target-device-backends=llvm-cpu"
-    "--iree-llvmcpu-target-cpu=spacemit-x60"
     "--iree-llvmcpu-target-triple=riscv64-unknown-linux-gnu"
-    "--iree-llvmcpu-target-cpu-features=+m,+a,+f,+d,+c,+v,+zvl256b"
     "--iree-llvmcpu-target-abi=lp64d"
-    "--iree-dispatch-creation-data-tiling=true"
-    "--iree-global-opt-propagate-transposes=true"
+    "--iree-dispatch-creation-data-tiling"
+    #"--iree-global-opt-propagate-transposes=true"
     "--iree-opt-level=O3"
-    "--iree-vm-bytecode-module-strip-source-map=true"
+    #"--iree-opt-data-tiling"
+    #"--iree-vm-bytecode-module-strip-source-map=true"
+)
+
+BASE_QUANT_FLAGS=(
+    "--iree-global-opt-enable-quantized-matmul-reassociation"
 )
 
 # --- Configuration Specific Flags ---
@@ -63,10 +71,11 @@ BASE_FLAGS=(
 # 1. NPU: Vectorized + Ukernels
 NPU_FLAGS=(
     "${BASE_FLAGS[@]}"
-    "--iree-llvmcpu-link-embedded=false"
+    "--iree-llvmcpu-target-cpu-features=+m,+a,+f,+d,+c,+v,+zvl256b,+zfh,+zba,+zbb,+zbc,+zbs,+zicbom,+zicboz,+zicbop,+zihintpause"
+    #"--iree-llvmcpu-link-embedded=false"
     "--iree-llvmcpu-target-vector-width-in-bytes=32"
     "--iree-llvmcpu-loop-vectorization=true"
-    "--riscv-v-fixed-length-vector-lmul-max=2"
+    #"--riscv-v-fixed-length-vector-lmul-max=8"
     "--iree-llvmcpu-enable-ukernels=all"
     "--iree-llvmcpu-link-ukernel-bitcode=true"
 )
@@ -74,16 +83,18 @@ NPU_FLAGS=(
 # 2. RVV: Vectorized + NO Ukernels
 RVV_FLAGS=(
     "${BASE_FLAGS[@]}"
-    "--iree-llvmcpu-link-embedded=false"
+    "--iree-llvmcpu-target-cpu-features=+m,+a,+f,+d,+c,+v,+zvl256b,+zfh,+zba,+zbb,+zbc,+zbs,+zicbom,+zicboz,+zicbop,+zihintpause"
+    #"--iree-llvmcpu-link-embedded=false"
     "--iree-llvmcpu-target-vector-width-in-bytes=32"
     "--iree-llvmcpu-loop-vectorization=true"
-    "--riscv-v-fixed-length-vector-lmul-max=2"
-    "--iree-llvmcpu-enable-ukernels=none"
+    #"--riscv-v-fixed-length-vector-lmul-max=8"
+    "--iree-llvmcpu-enable-ukernels=all"
 )
 
 # 3. SCALAR: Minimal Vectorization + NO Ukernels
 SCALAR_FLAGS=(
     "${BASE_FLAGS[@]}"
+    "--iree-llvmcpu-target-cpu-features=+m,+a,+f,+d,+c"
     "--iree-llvmcpu-enable-ukernels=none"
 )
 
@@ -92,38 +103,47 @@ SCALAR_FLAGS=(
 # ==============================================================================
 
 for MODEL in "${TARGET_MODELS[@]}"; do
+
+    # ----------------------------------------------------------------------
+    # Determine Input Files based on Quantization Switch
+    # ----------------------------------------------------------------------
+    if [ "$USE_QUANTIZED" == "true" ]; then
+        SOURCE_ONNX="$BASE_DIR/$MODEL/$MODEL.q.int8.onnx"
+        MODEL_SUFFIX="_quant"
+        MODE_MSG="Quantized (Int8)"
+    else
+        SOURCE_ONNX="$BASE_DIR/$MODEL/$MODEL.onnx"
+        MODEL_SUFFIX=""
+        MODE_MSG="Float (FP32)"
+    fi
+    
+    # Define source MLIR location (if skipping ONNX import)
+    SOURCE_MLIR="$BASE_DIR/${MODEL}/${MODEL}${MODEL_SUFFIX}.mlir"
+
     for CONFIG in "${TARGET_CONFIGS[@]}"; do
         
         echo "################################################################################"
-        echo "🚀 Processing Model: $MODEL | Config: spacemit_$CONFIG"
+        echo "🚀 Processing Model: $MODEL | Config: spacemit_$CONFIG | Mode: $MODE_MSG"
         echo "################################################################################"
 
         # ----------------------------------------------------------------------
         # Determine Flags for current Config
         # ----------------------------------------------------------------------
         case "$CONFIG" in
-            "NPU")
-                CURRENT_FLAGS=("${NPU_FLAGS[@]}")
-                ;;
-            "RVV")
-                CURRENT_FLAGS=("${RVV_FLAGS[@]}")
-                ;;
-            "SCALAR")
-                CURRENT_FLAGS=("${SCALAR_FLAGS[@]}")
-                ;;
-            *)
-                echo "❌ Error: Unknown configuration '$CONFIG'"
-                exit 1
-                ;;
+            "NPU")    CURRENT_FLAGS=("${NPU_FLAGS[@]}") ;;
+            "RVV")    CURRENT_FLAGS=("${RVV_FLAGS[@]}") ;;
+            "SCALAR") CURRENT_FLAGS=("${SCALAR_FLAGS[@]}") ;;
+            *)        echo "❌ Error: Unknown configuration '$CONFIG'"; exit 1 ;;
         esac
 
         # ----------------------------------------------------------------------
-        # Setup Output Directories
+        # Setup Output Directories (Must happen inside CONFIG loop)
         # ----------------------------------------------------------------------
-        # Structure now includes 'spacemit_' prefix
-        # Example: compiled_models/dronet/spacemit_NPU/
+        OUTPUT_DIR="$OUTPUT_ROOT/$MODEL/spacemit_${CONFIG}${MODEL_SUFFIX}"
+        MLIR_OUTPUT="$OUTPUT_DIR/${MODEL}${MODEL_SUFFIX}.mlir"
+        VMFB_OUTPUT="$OUTPUT_DIR/${MODEL}${MODEL_SUFFIX}.vmfb"
+        GRAPH_OUT="$OUTPUT_DIR/${MODEL}${MODEL_SUFFIX}_dispatch_graph.dot"
         
-        OUTPUT_DIR="$OUTPUT_ROOT/$MODEL/spacemit_$CONFIG"
         mkdir -p "$OUTPUT_DIR"
 
         # Host flags for dumping artifacts specific to this run
@@ -137,16 +157,9 @@ for MODEL in "${TARGET_MODELS[@]}"; do
             "--dump-compilation-phases-to=$OUTPUT_DIR/phases/"
         )
 
-        MLIR_OUTPUT="$OUTPUT_DIR/${MODEL}.mlir"
-        SOURCE_ONNX="$BASE_DIR/$MODEL/$MODEL.onnx"
-        SOURCE_MLIR="$BASE_DIR/$MODEL/$MODEL.mlir"
-        GRAPH_OUT="$OUTPUT_DIR/${MODEL}_dispatch_graph.dot"
-
         # ----------------------------------------------------------------------
         # 4. Input Handling (ONNX -> MLIR)
         # ----------------------------------------------------------------------
-        # We check/import specifically into this config folder to keep it self-contained
-        
         if [ -f "$MLIR_OUTPUT" ]; then
             echo "  ℹ️  MLIR file already exists at $MLIR_OUTPUT. Skipping import."
         elif [ -f "$SOURCE_ONNX" ]; then
@@ -171,7 +184,6 @@ for MODEL in "${TARGET_MODELS[@]}"; do
         # ----------------------------------------------------------------------
         # 5. Compile Main Model (VMFB)
         # ----------------------------------------------------------------------
-        VMFB_OUTPUT="$OUTPUT_DIR/${MODEL}.vmfb"
         
         # Add graph output flag specifically for this run
         COMPILE_FLAGS_WITH_GRAPH=(
@@ -198,37 +210,31 @@ for MODEL in "${TARGET_MODELS[@]}"; do
         if [ -d "$SOURCES_DIR" ]; then
             mkdir -p "$VMFB_DIR"
             
-            # Find files matching the pattern
-            find "$SOURCES_DIR" -name "module_main_graph*dispatch_*.mlir" | sort -V | while read -r mlir_file; do
+            # Use process substitution to avoid subshell variable issues if needed
+            find "$SOURCES_DIR" -name "*.mlir" | sort -V | while read -r mlir_file; do
                 filename=$(basename -- "$mlir_file")
                 
-                if [[ "$filename" =~ dispatch_([0-9]+) ]]; then
-                    dispatch_num="${BASH_REMATCH[1]}"
-                    output_vmfb="$VMFB_DIR/dispatch_${dispatch_num}.vmfb"
-                    
-                    echo "    Compiling $filename -> dispatch_${dispatch_num}.vmfb"
-                    # Use the specific configuration flags here
-                    "$COMPILE_TOOL" "$mlir_file" -o "$output_vmfb" "${CURRENT_FLAGS[@]}"
-                else 
-                    echo "    ⚠️ Skipping unrecognized file format: $filename"
-                fi
+                output_vmfb_name="${filename%.mlir}.vmfb"
+                output_vmfb_path="$VMFB_DIR/$output_vmfb_name"
+                
+                echo "    Compiling $filename -> $output_vmfb_name"
+                "$COMPILE_TOOL" "$mlir_file" -o "$output_vmfb_path" "${CURRENT_FLAGS[@]}"
             done
             
             # ------------------------------------------------------------------
-            # 7. Zip Results (Flattened & Config Specific)
+            # 7. Zip Results
             # ------------------------------------------------------------------
             echo "  Zipping benchmark artifacts for $CONFIG..."
             
-            # Naming convention: dronet_spacemit_NPU_benchmarks.zip
-            ZIP_NAME="${MODEL}_spacemit_${CONFIG}_benchmarks.zip"
+            ZIP_NAME="${MODEL}_spacemit_${CONFIG}${MODEL_SUFFIX}_benchmarks.zip"
             ZIP_PATH="$OUTPUT_DIR/$ZIP_NAME"
             
-            if ls "$SOURCES_DIR"/*.mlir >/dev/null 2>&1; then
-                # -j flattens the folder structure
+            # Check if VMFB files were actually created
+            if ls "$VMFB_DIR"/*.vmfb >/dev/null 2>&1; then
                 zip -j "$ZIP_PATH" "$SOURCES_DIR"/*.mlir "$VMFB_DIR"/*.vmfb
                 echo "✅ Created Flattened Archive: $ZIP_PATH"
             else
-                echo "⚠️  No MLIR files found to zip."
+                echo "⚠️  No VMFB files were generated to zip."
             fi
             
         else

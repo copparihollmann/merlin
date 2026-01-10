@@ -1,0 +1,22 @@
+{
+    "dronet": {
+        "source_path": "dronet/dronet.onnx",
+        "input_names": ["input_0"],
+        "input_shapes": [[1, 3, 112, 112]] 
+    },
+    "glpdepth": {
+        "source_path": "glpdepth/glpdepth.onnx",
+        "input_names": ["input"],
+        "input_shapes": [[1, 3, 480, 640]]
+    },
+    "fastdepth": {
+        "source_path": "fastdepth/fastdepth.onnx",
+        "input_names": ["input"],
+        "input_shapes": [[1, 3, 224, 224]]
+    },
+    "mlp": {
+        "source_path": "mlp/mlp.onnx",
+        "input_names": ["input"],
+        "input_shapes": [[1, 10]]
+    }
+}
