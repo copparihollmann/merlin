@@ -9,7 +9,7 @@ import torchvision
 from torch.nn.modules.utils import _pair    # utility to turn int → (int, int)
 # from torchinfo import summary
 
-SMALL = True
+# SMALL = True
 
 # dronet implementation in pytorch.
 class DronetTorch(nn.Module):
