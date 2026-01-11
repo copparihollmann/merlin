@@ -88,10 +88,13 @@ SECTIONS
     }
 
     /* IREE Static ELF Buffer Section */
+    scripts/riscv_firesim/build_bare_metal.shx100000) for the static ELF buffer */
     .iree_elf_buffer ALIGN (4096) : {
         PROVIDE_HIDDEN (__iree_elf_buffer_start = .);
         *(.iree_elf_buffer .iree_elf_buffer.*)
         . = ALIGN (4096);
+        /* Ensure section is at least 1MB */
+        . = __iree_elf_buffer_start + 0x100000;
         PROVIDE_HIDDEN (__iree_elf_buffer_end = .);
     }
     PROVIDE (__iree_elf_buffer_size = __iree_elf_buffer_end - __iree_elf_buffer_start);

@@ -42,7 +42,7 @@ cmake \
 
 echo "Configuration done. Building..."
 cmake --build "${BUILD_RISCV_DIR}" --target simple_embedding_embedded_sync --verbose
-# cmake --build "${BUILD_RISCV_DIR}" --target simple_embedding_embedded_sync_fc
+cmake --build "${BUILD_RISCV_DIR}" --target simple_embedding_embedded_sync_fc
 # cmake --build "${BUILD_RISCV_DIR}" --target simple_embedding_embedded_sync_vector_fc
 # cmake --build "${BUILD_RISCV_DIR}" --target simple_embedding_embedded_sync_vmvx_fc
 
