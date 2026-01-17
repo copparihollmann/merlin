@@ -12,7 +12,7 @@ set -euo pipefail
 # ------------------------------------------------------------------------------
 
 # Models to process (folder names)
-TARGET_MODELS=("mlp") 
+TARGET_MODELS=("diffusion") 
 
 # Configurations to build (comment out the ones you don't want)
 # Options are "NPU", "RVV", "SCALAR"
@@ -21,7 +21,7 @@ TARGET_CONFIGS=("RVV")
 # Global Quantization Switch
 # "true"  = Look for $MODEL.q.int8.onnx and append _quant to output folder
 # "false" = Use standard $MODEL.onnx
-USE_QUANTIZED="true"
+USE_QUANTIZED="false"
 
 # ------------------------------------------------------------------------------
 # 2. Toolchain Setup
@@ -58,12 +58,20 @@ BASE_FLAGS=(
     "--iree-dispatch-creation-data-tiling"
     #"--iree-global-opt-propagate-transposes=true"
     "--iree-opt-level=O3"
-    #"--iree-opt-data-tiling"
+    "--iree-opt-data-tiling"
     #"--iree-vm-bytecode-module-strip-source-map=true"
+
 )
 
+# NOT IN USE YET 
+# TODO: Integrate these into the compilation flags based on quantization
 BASE_QUANT_FLAGS=(
     "--iree-global-opt-enable-quantized-matmul-reassociation"
+    "--iree-global-opt-enable-quantized-matmul-reassociation"
+    "--iree-opt-generalize-matmul=true"
+    "--iree-llvmcpu-general-matmul-tile-bytes=262144"
+    "--iree-llvmcpu-narrow-matmul-tile-bytes=32768"
+    "--iree-llvmcpu-skip-intermediate-roundings"
 )
 
 # --- Configuration Specific Flags ---
@@ -242,7 +250,7 @@ for MODEL in "${TARGET_MODELS[@]}"; do
         fi
 
         echo "✅ Completed $MODEL [spacemit_$CONFIG]"
-        echo ""
+        echo "=========================================="
     done
 done
 
