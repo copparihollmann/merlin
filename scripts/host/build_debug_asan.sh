@@ -5,9 +5,10 @@ set -e
 # Get the workspace root (2 levels up from this script)
 export WORKSPACE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 export IREE_SRC=${IREE_SRC:-"${WORKSPACE_DIR}/third_party/iree_bar"}
+PURPOSE="OPU"
 
 # Host Paths
-export BUILD_HOST_DIR=${WORKSPACE_DIR}/build-bar-iree-host-debug
+export BUILD_HOST_DIR=${WORKSPACE_DIR}/build-BAR-iree-host-debug-${PURPOSE}
 export INSTALL_HOST_DIR=${BUILD_HOST_DIR}/install
 
 export REBUILD=${REBUILD:-"0"}
