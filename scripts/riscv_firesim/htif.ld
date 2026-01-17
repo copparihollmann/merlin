@@ -6,7 +6,7 @@ SECTIONS
     . = 0x80000000;
 
     /* Keep under a power of 2 to reserve space for TCB */
-    PROVIDE (__stack_size_min = 24K);
+    PROVIDE (__stack_size_min = 128M);
 
     .text : {
         *(.text.init)
@@ -114,7 +114,7 @@ SECTIONS
     PROVIDE (_end = .);
 
     /* Reserve heap space */
-    PROVIDE(__heap_size = 128M);
+    PROVIDE(__heap_size = 1024M);
     . += __heap_size;
     . = ALIGN (4K);
     PROVIDE (__heap_end = .);

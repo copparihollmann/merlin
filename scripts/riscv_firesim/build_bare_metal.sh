@@ -7,7 +7,7 @@ export WORKSPACE_DIR="$(dirname "$(dirname "$SCRIPT_DIR")")"
 export IREE_SRC=${WORKSPACE_DIR}/third_party/iree_bar
 # Update this path if necessary to match your friend's setup
 export RISCV_TOOLCHAIN_ROOT=${WORKSPACE_DIR}/riscv-tools-iree/toolchain/clang/linux/RISCV
-export INSTALL_HOST_DIR=${WORKSPACE_DIR}/build-bar-iree-host-deb-tracy/install
+export INSTALL_HOST_DIR=${WORKSPACE_DIR}/build-iree-BAR-host-release/install
 export BUILD_RISCV_DIR=${WORKSPACE_DIR}/build-iree-riscv-firesim-bare-metal
 
 echo "========================================================"
@@ -39,8 +39,9 @@ cmake \
   -DIREE_BUILD_SAMPLES=ON \
   -DIREE_BUILD_TESTS=OFF
 
-echo "Configuration done. Building..."
-cmake --build "${BUILD_RISCV_DIR}" --target simple_embedding_embedded_sync --verbose
+cmake --build "${BUILD_RISCV_DIR}" --target benchmark_suite --verbose
+#cmake --build "${BUILD_RISCV_DIR}" --target simple_embedding_embedded_sync --verbose
+#cmake --build "${BUILD_RISCV_DIR}" --target glpdepth_embedding_sync --verbose
 # cmake --build "${BUILD_RISCV_DIR}" --target simple_embedding_embedded_sync_fc
 # cmake --build "${BUILD_RISCV_DIR}" --target simple_embedding_embedded_sync_vector_fc
 # cmake --build "${BUILD_RISCV_DIR}" --target simple_embedding_embedded_sync_vmvx_fc
