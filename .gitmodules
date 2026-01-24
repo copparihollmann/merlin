@@ -25,3 +25,6 @@
 [submodule "samples/models/depth_anything_v2/Depth-Anything-V2"]
 	path = samples/models/depth_anything_v2/Depth-Anything-V2
 	url = https://github.com/DepthAnything/Depth-Anything-V2.git
+[submodule "mlirEvolve"]
+	path = mlirEvolve
+	url = https://github.com/copparihollmann/mlirEvolve.git
