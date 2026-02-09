@@ -3,6 +3,8 @@
 Performance evaluation of [Buddy-MLIR](https://github.com/buddy-compiler/buddy-mlir)'s Gemmini dialect backend,
 benchmarked against the Gemmini C reference implementation on Spike simulator.
 
+For the full lowering pipeline and setup instructions, see [WORKFLOW.md](WORKFLOW.md).
+
 ## Performance Results
 
 ### Matmul Workloads
