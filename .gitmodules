@@ -22,3 +22,6 @@
 [submodule "samples/models/depth_anything_v2/Depth-Anything-V2"]
 	path = samples/models/depth_anything_v2/Depth-Anything-V2
 	url = https://github.com/DepthAnything/Depth-Anything-V2.git
+[submodule "third_party/iree-turbine"]
+	path = third_party/iree-turbine
+	url = https://github.com/iree-org/iree-turbine.git
