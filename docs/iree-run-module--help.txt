@@ -1,0 +1,402 @@
+# ============================================================================
+# 👻 IREE: iree-run-module
+# ============================================================================
+
+Runs a function within a compiled IREE module and handles I/O parsing
+and optional expected value verification/output processing. Modules
+can be provided by file path (`--module=file.vmfb`) or read from stdin
+(`--module=-`) and the function to execute matches the original name
+provided to the compiler (`--function=foo` for `func.func @foo`).
+
+# ===----------------------------------------------------------------------===
+# Flags in c/runtime/src/iree/base/internal/flags.c
+# ===----------------------------------------------------------------------===
+
+# Displays command line usage information.
+# --help
+
+# Parses a newline-separated list of flags from a file.
+# Flags are parsed at the point where the flagfile is specified
+# and following flags may override the parsed values.
+# NOTE: this --help output is a flagfile! Pipe this to a file, tweak the
+# options from their defaults, and pass it back in using --flagfile=.
+# --flagfile=[path]
+
+# ===----------------------------------------------------------------------===
+# Flags in c/runtime/src/iree/hal/drivers/cuda/registration/driver_module.c
+# ===----------------------------------------------------------------------===
+
+# Use CUDA streams (instead of graphs) for executing command buffers.
+--cuda_use_streams=true
+
+# Allow command buffers to execute inline against CUDA streams when
+# possible.
+--cuda_allow_inline_execution=false
+
+# Enables CUDA asynchronous stream-ordered allocations when supported.
+--cuda_async_allocations=true
+
+# Controls the verbosity of tracing when Tracy instrumentation is enabled.
+# The impact to benchmark timing becomes more severe as the verbosity
+# increases, and thus should be only enabled when needed.
+# Permissible values are:
+#    0 : stream tracing disabled.
+#    1 : coarse command buffer level tracing enabled.
+#    2 : fine-grained kernel level tracing enabled.
+--cuda_tracing=2
+
+# Specifies the index of the default CUDA device to use
+--cuda_default_index=0
+
+# Infers the default CUDA device index from the PMI_RANK or
+# OMPI_COMM_WORLD_LOCAL_RANK environment variables when set
+--cuda_default_index_from_mpi=true
+
+# ===----------------------------------------------------------------------===
+# Flags in c/runtime/src/iree/hal/drivers/hip/registration/driver_module.c
+# ===----------------------------------------------------------------------===
+
+# Path to search for an appropriate libamdhip64.so / amdhip64.dll. If any 
+# paths are provided, then only the given paths are searched. Otherwise, 
+# system heuristics are used to find the dylib. By default, each path is 
+# treated as a directory name, but a distinct file can be given which 
+# must match exactly by prefixing with 'file:'.
+# --hip_dylib_path=...
+
+# Use HIP streams (instead of graphs) for executing command buffers.
+--hip_use_streams=true
+
+# Allow command buffers to execute inline against HIP streams when 
+# possible.
+--hip_allow_inline_execution=false
+
+# Enables HIP asynchronous stream-ordered allocations when supported.
+--hip_async_allocations=true
+
+# Enables caching for stream-ordered allocations
+--hip_async_caching=true
+
+# Controls the verbosity of tracing when Tracy instrumentation is enabled.
+# The impact to benchmark timing becomes more severe as the verbosity
+# increases, and thus should be only enabled when needed.
+# Permissible values are:
+#    0 : stream tracing disabled.
+#    1 : coarse command buffer level tracing enabled.
+#    2 : fine-grained kernel level tracing enabled.
+--hip_tracing=2
+
+# Specifies the index of the default HIP device to use
+--hip_default_index=0
+
+# ===----------------------------------------------------------------------===
+# Flags in c/runtime/src/iree/hal/drivers/local_task/registration/driver_module.c
+# ===----------------------------------------------------------------------===
+
+# Aborts the program on the first failure within a task system queue.
+--task_abort_on_failure=false
+
+# ===----------------------------------------------------------------------===
+# Flags in c/runtime/src/iree/hal/drivers/vulkan/registration/driver_module.cc
+# ===----------------------------------------------------------------------===
+
+# Enables standard Vulkan validation layers.
+--vulkan_validation_layers=false
+
+# Enables VK_EXT_debug_utils, records markers, and logs errors.
+--vulkan_debug_utils=false
+
+# Cutoff for debug output; 0=none, 1=errors, 2=warnings, 3=info, 4=debug.
+--vulkan_debug_verbosity=2
+
+# Enables Vulkan tracing (if IREE tracing is enabled).
+--vulkan_tracing=true
+
+# Enables the Vulkan 'robustBufferAccess' feature.
+--vulkan_robust_buffer_access=false
+
+# Enables the Vulkan 'sparseBinding' feature (and others) when available.
+--vulkan_sparse_binding=true
+
+# Enables the Vulkan 'sparseResidencyBuffer' feature (and others) when available.
+--vulkan_sparse_residency=true
+
+# Enables the Vulkan 'bufferDeviceAddress` feature and support for SPIR-V executables compiled to use it.
+--vulkan_buffer_device_addresses=true
+
+# Use a dedicated queue with VK_QUEUE_COMPUTE_BIT for dispatch workloads.
+--vulkan_dedicated_compute_queue=false
+
+# ===----------------------------------------------------------------------===
+# Flags in c/runtime/src/iree/hal/local/plugins/registration/init.c
+# ===----------------------------------------------------------------------===
+
+# Load a local HAL executable plugin to resolve imports.
+# See iree/hal/local/executable_plugin.h for the plugin API.
+# By default plugins load using the system library loader and accept
+# native system formats (.dll, .so, .dylib, etc).
+# For plugins compiled to standalone portable ELF files the embedded ELF
+# loader can be used even if OS support for dynamic linking is missing or
+# slow. Prefix the paths with `embedded:` or use the `.sos` extension.
+# If multiple plugins are specified they will be scanned for imports in
+# reverse registration order (last plugin checked first).
+# Examples:
+#   --executable_plugin=some/system.dll
+#   --executable_plugin=some/standalone.sos
+#   --executable_plugin=embedded:some/standalone.so
+# --executable_plugin=...
+
+# ===----------------------------------------------------------------------===
+# Flags in c/runtime/src/iree/task/api.c
+# ===----------------------------------------------------------------------===
+
+# Maximum duration in microseconds each worker should spin waiting for
+# additional work. In almost all cases this should be 0 as spinning is
+# often extremely harmful to system health. Only set to non-zero values
+# when latency is the #1 priority (vs. thermals, system-wide scheduling,
+# etc).
+--task_worker_spin_us=0
+
+# Minimum size in bytes of each worker thread stack.
+# The underlying platform may allocate more stack space but _should_
+# guarantee that the available stack space is near this amount. Note that
+# the task system will take some stack space and not all bytes should be
+# assumed usable. Note that as much as possible users should not rely on
+# the stack for storage over ~16-32KB and instead use local workgroup
+# memory.
+--task_worker_stack_size=131072
+
+# Overrides the bytes of per-worker local memory allocated for use by
+# dispatched tiles. Tiles may use less than this but will fail to dispatch
+# if they require more. Conceptually it is like a stack reservation and
+# should be treated the same way: the source programs must be built to
+# only use a specific maximum amount of local memory and the runtime must
+# be configured to make at least that amount of local memory available.
+# By default the CPU L2 cache size is used if such queries are supported.
+--task_worker_local_memory=0
+
+# Available modes:
+#  --task_topology_group_count=non-zero:
+#    Uses whatever the specified group count is and ignores the set mode.
+#    All threads will be unpinned and run on system-determined processors.
+#  --task_topology_cpu_ids=0,1,2 [+ --task_topology_cpu_ids=3,4,5]:
+#    Creates one executor per set of logical CPU IDs.
+#  'physical_cores':
+#    Creates one executor per NUMA node in --task_topology_nodes= and one
+#    group per physical core in each NUMA node up to the value specified
+#    by --task_topology_max_group_count=.
+--task_topology_mode="physical_cores"
+
+# Defines the total number of task system workers that will be created.
+# Workers will be distributed across cores. Specifying 0 will use a
+# heuristic defined by --task_topology_mode= to automatically select the
+# worker count and distribution.
+# WARNING: setting this flag directly is not recommended; use
+# --task_topology_max_group_count= instead.
+--task_topology_group_count=0
+
+# A list of absolute logical CPU IDs to use for a single topology. One
+# topology will be created for each repetition of the flag. CPU IDs match
+# the Linux logical CPU ID scheme (as used by lscpu/lstopo) or a flattened
+# [0, total_processor_count) range on Windows.
+# --task_topology_cpu_ids=...
+
+# Comma-separated list of NUMA nodes that topologies will be defined for.
+# Each node specified will be configured based on the other topology
+# flags. 'all' can be used to indicate all available NUMA nodes and
+# 'current' will inherit the node of the calling thread.
+--task_topology_nodes="current"
+
+# Sets a maximum value on the worker count that can be automatically
+# detected and used when --task_topology_group_count=0 and is ignored
+# otherwise.
+--task_topology_max_group_count=64
+
+# Selects only cores that match the specified performance level from
+# [`any`, `low` (or `efficiency`), `high` (or `performance`)].
+--task_topology_performance_level="any"
+
+# Strategy for distributing cores across cache domains (CCXs) within the
+# selected NUMA node(s) (use --task_topology_nodes to control NUMA locality):
+#   `compact` - Fill cache domains sequentially (better for compute).
+#   `scatter` - Round-robin across domains (better for memory bandwidth).
+--task_topology_distribution="scatter"
+
+# High-level preset for common deployment scenarios (overrides distribution and performance_level if specified):
+#   `latency`    - Minimize single-request latency (compact + high-perf).
+#   `throughput` - Maximize batch throughput (scatter + any-perf).
+#   `efficiency` - Minimize power consumption (compact + low-perf).
+--task_topology_favor=""
+
+# Dumps the flag-specified topology used for creating task executors.
+# --dump_task_topologies
+
+# ===----------------------------------------------------------------------===
+# Flags in c/runtime/src/iree/tooling/comparison.cc
+# ===----------------------------------------------------------------------===
+
+# Threshold under which two f16 values are considered equal.
+--expected_f16_threshold=0.001
+
+# Threshold under which two f32 values are considered equal.
+--expected_f32_threshold=0.0001
+
+# Threshold under which two f64 values are considered equal.
+--expected_f64_threshold=0.0001
+
+# Choose the type of comparison desired between buffers from [`absolute`, `relative`, `exact`].
+--equality_mode="absolute"
+
+# ===----------------------------------------------------------------------===
+# Flags in c/runtime/src/iree/tooling/context_util.c
+# ===----------------------------------------------------------------------===
+
+# A VM module to load; either a vmfb containing a compiled bytecode module
+# or a native system library containing a dynamic native module. Modules
+# are registered in the order defined by the flags with all dependencies
+# for a module needing to have been registered prior to the dependent
+# module. HAL modules are added automatically when required.
+# --module=...
+
+# A module I/O mode of ['preload', 'mmap'].
+#   preload: read entire module into wired memory on startup.
+#   mmap: maps the module file into discardable memory - can increase
+#         warm-up time and variance as mapped pages are swapped
+#         by the OS.
+--module_mode="preload"
+
+# Device ordinal of the lead device that will be used for allocations when more than one device is available. Only functions when there are selection requests including all devices and otherwise the first device in the list will be selected.
+--device_lead_allocator=0
+
+# Traces VM execution to stderr.
+--trace_execution=false
+
+# ===----------------------------------------------------------------------===
+# Flags in c/runtime/src/iree/tooling/device_util.c
+# ===----------------------------------------------------------------------===
+
+# Lists all available HAL drivers compiled into the binary.
+# --list_drivers
+
+# Lists all available HAL devices from all drivers or a specific driver.
+# Examples:
+#   Show all devices from all drivers: --list_devices
+#   Show all devices from a particular driver: --list_devices=vulkan
+# --list_devices
+
+# Dumps detailed information on all available HAL devices from all drivers
+#  or a specific driver.
+# Examples:
+#   Show all devices from all drivers: --dump_devices
+#   Show all devices from a particular driver: --dump_devices=vulkan
+# --dump_devices
+
+# Specifies one or more HAL device allocator specs to augment the base
+# device allocator. See each allocator type for supported configurations.
+# --device_allocator=...
+
+# Specifies one or more HAL devices to use for execution.
+# Use --list_devices/--dump_devices to see available devices and their
+# canonical URI used with this flag.
+# --device=...
+
+# HAL device profiling mode (one of ['queue', 'dispatch', 'executable'])
+# or empty to disable profiling. HAL implementations may require
+# additional flags in order to configure profiling support on their
+# devices.
+--device_profiling_mode=""
+
+# Optional file path/prefix for profiling file output. Some
+# implementations may require a file name in order to capture profiling
+# information.
+--device_profiling_file=""
+
+# ===----------------------------------------------------------------------===
+# Flags in c/runtime/src/iree/tooling/instrument_util.c
+# ===----------------------------------------------------------------------===
+
+# File to populate with instrument data from the program.
+--instrument_file=""
+
+# ===----------------------------------------------------------------------===
+# Flags in c/runtime/src/iree/tooling/parameter_util.c
+# ===----------------------------------------------------------------------===
+
+# A parameter I/O mode of ['preload', 'file'].
+#   preload: read entire parameter files into wired memory on startup.
+#   file: uses platform file APIs to read/write the file as needed.
+--parameter_mode="file"
+
+# Specifies a parameter file to make available to programs with either an
+# anonymous global scope (`some_file.gguf`) or a named scope like
+# `my_scope=some_file.gguf`.
+# Supported formats:
+# - .irpa (IREE parameter archive)
+# - .gguf (https://github.com/ggerganov/ggml/blob/master/docs/gguf.md)
+# - .safetensors (https://github.com/huggingface/safetensors)
+# --parameters=...
+
+# ===----------------------------------------------------------------------===
+# Flags in c/runtime/src/iree/tooling/run_module.c
+# ===----------------------------------------------------------------------===
+
+# Name of a function contained in the module specified by --module= to run.
+--function=""
+
+# An input (a) value or (b) buffer of the format:
+#   (a) scalar value
+#      value
+#      e.g.: --input="3.14"
+#   (b) buffer:
+#      [shape]xtype=[value]
+#      e.g.: --input="2x2xi32=1 2 3 4"
+# Optionally, brackets may be used to separate the element values:
+#   e.g.: --input="2x2xi32=[[1 2][3 4]]"
+# Raw binary files can be read to provide buffer contents:
+#   e.g.: --input=2x2xi32=@some/file.bin
+# Numpy npy files from numpy.save can be read to provide 1+ values:
+#   e.g.: --input=@some.npy
+# Each occurrence of the flag indicates an input in the order they were
+# specified on the command line.
+# --input=...
+
+# Specifies how to handle an output from the invocation:
+#   `` (empty): ignore output
+#      e.g.: --output=
+#   `-`: print textual form to stdout
+#      e.g.: --output=-
+#   `@file.npy`: create/overwrite a numpy npy file and write an ndarray
+#      e.g.: --output=@file.npy
+#   `+file.npy`: create/append a numpy npy file and write an ndarray
+#      e.g.: --output=+file.npy
+#   `@file.bin`: create/overwrite a binary file and write value contents
+#      e.g.: --output=@file.bin
+#   `+file.bin`: create/append a binary file and write value contents
+#      e.g.: --output=+file.bin
+# Numpy npy files can be read in Python using numpy.load, for example an
+# invocation producing two outputs can be concatenated as:
+#     --output=@file.npy --output=+file.npy
+# And then loaded in Python by reading from the same file:
+#   with open('file.npy', 'rb') as f:
+#     print(numpy.load(f))
+#     print(numpy.load(f))
+# Primitive values are written as shape=() ndarrays and buffers are
+# written as i8 arrays with the length of the buffer.
+# Binary files contain only the contents of the values/buffers provided
+# without metadata; users must know the shape/type of the output.
+# Each occurrence of the flag indicates an output in the order they were
+# specified on the command line.
+# --output=...
+
+# An expected function output following the same format as `--input=`.
+# When present the results of the invocation will be compared against
+# these values and the tool will return non-zero if any differ. If the
+# value of a particular output is not of interest provide `(ignored)`.
+# --expected_output=...
+
+# Prints up to the maximum number of elements of output tensors and elides
+# the remainder.
+--output_max_element_count=1024
+
+# Prints runtime statistics to stderr on exit.
+--print_statistics=false
+
