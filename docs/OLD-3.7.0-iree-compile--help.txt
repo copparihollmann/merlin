@@ -96,13 +96,13 @@ General options:
     =size-latency                                                          -   Code size and latency
     =all                                                                   -   Print all cost kinds
   --ctx-profile-force-is-specialized                                       - Treat the given module as-if it were containing the post-thinlink module containing the root
+  --debug-info-correlate                                                   - Use debug info to correlate profiles. (Deprecated, use -profile-correlate=debug-info)
   --debugify-atoms                                                         - 
   --debugify-func-limit=<ulong>                                            - Set max number of processed functions per pass.
   --debugify-level=<value>                                                 - Kind of debug info to add
     =locations                                                             -   Locations only
     =location+variables                                                    -   Locations and Variables
   --debugify-quiet                                                         - Suppress verbose debugify output
-  --devirtualize-speculatively                                             - Enable speculative devirtualization optimization
   --disable-auto-upgrade-debug-info                                        - Disable autoupgrade of debug info
   --disable-i2p-p2i-opt                                                    - Disables inttoptr/ptrtoint roundtrip optimization
   --disable-promote-alloca-to-lds                                          - Disable promote alloca to LDS
@@ -110,8 +110,6 @@ General options:
   --do-counter-promotion                                                   - Do counter register promotion
   --dot-cfg-mssa=<file name for generated dot file>                        - file name for generated dot file
   --dump-compilation-phases-to=<string>                                    - Dumps IR at the end of each compilation phase to the given directory.
-  --elide-all-zero-branch-weights                                          - 
-  --emit-bb-hash                                                           - Emit the hash of basic block in the SHT_LLVM_BB_ADDR_MAP section.
   --emit-mlir-bytecode                                                     - Emit bytecode when generating compile-to or VM MLIR output.
   --emit-mlir-bytecode-version=<value>                                     - Use specified bytecode version when generating compile-to or VM MLIR output.
   --emscripten-cxx-exceptions-allowed=<string>                             - The list of function names in which Emscripten-style exception handling is enabled (see emscripten EMSCRIPTEN_CATCHING_ALLOWED options)
@@ -172,15 +170,14 @@ General options:
   --iree-codegen-enable-default-tuning-specs                               - Whether to enable default tuning spec transform libraries shipped with the compiler
   --iree-codegen-linalg-max-constant-fold-elements=<long>                  - Maximum number of elements to try to constant fold.
   --iree-codegen-llvm-verbose-debug-info                                   - Emit verbose debug information in LLVM IR.
+  --iree-codegen-llvmgpu-early-tile-and-fuse-matmul                        - test the the tile and fuse pipeline for matmul
   --iree-codegen-llvmgpu-igemm-pad-convolution                             - enable pre-padding for convolutions in igemm path
   --iree-codegen-llvmgpu-matmul-c-matrix-threshold=<int>                   - matmul c matrix element count threshold to be considered as small vs. large when deciding MMA schedule
   --iree-codegen-llvmgpu-test-tile-and-fuse-vectorize                      - test the tile and fuse pipeline for all supported operations
-  --iree-codegen-llvmgpu-use-direct-convolution                            - Use direct convolution in tile and fuse pipeline
   --iree-codegen-llvmgpu-use-igemm                                         - Enable implicit gemm for convolutions.
   --iree-codegen-llvmgpu-use-mma-sync                                      - force use mma sync instead of wmma ops
   --iree-codegen-llvmgpu-use-reduction-vector-distribution                 - enable the usage of the reduction vector distribution pipeline
   --iree-codegen-llvmgpu-use-tile-and-fuse-convolution                     - enable the tile and fuse pipeline for supported convolutions
-  --iree-codegen-llvmgpu-use-tile-and-fuse-matmul                          - test the the tile and fuse pipeline for matmul
   --iree-codegen-llvmgpu-use-unaligned-gemm-vector-distribution            - enable the usage of the vector distribution pipeline for unaligned GEMMs when supported
   --iree-codegen-llvmgpu-use-vector-distribution                           - enable the usage of the vector distribution pipeline
   --iree-codegen-llvmgpu-use-wmma                                          - force use of wmma operations for tensorcore
@@ -195,15 +192,19 @@ General options:
   --iree-consteval-jit-debug                                               - Prints debugging information to stderr (useful since when consteval has issues, it is often in production on the largest models where we don't want to run a debug compiler).
   --iree-consteval-jit-target-device=<string>                              - Overrides the target device used for JIT'ing.
   --iree-dispatch-creation-element-wise-fuse-multi-reduction               - Enable element-wise fusion of multi-reduction loop ops.
+  --iree-dispatch-creation-enable-aggressive-fusion                        - Aggressive fusion opportunities that are behind a flag since all backends dont support it yet
+                                                                             At optimization level O0 the default is false
+                                                                             At optimization level O2 the default is true
   --iree-dispatch-creation-enable-detensoring                              - Enable changing of tensor operations into scalar operations.
   --iree-dispatch-creation-enable-early-trunc-fusion                       - Enable element-wise fusion of bit-truncate operation with their consumers before forming dispatch regions
   --iree-dispatch-creation-enable-fuse-horizontal-contractions             - Enables horizontal fusion of contractions with one common operand
   --iree-dispatch-creation-enable-fuse-padding-into-linalg-consumer-ops    - Enable fusing tensor.pad ops into Linalg consumer ops.
   --iree-dispatch-creation-enable-fuse-padding-into-linalg-producer-ops    - Enable fusing tensor.pad ops into Linalg consumer ops.
-  --iree-dispatch-creation-experimental-multi-use-encoding-fusion          - Enable encoding op fusion if the producer has more than one use
+  --iree-dispatch-creation-fuse-multi-use                                  - Fuse operations with multiple uses.
   --iree-dispatch-creation-propagate-collapse-across-expands               - Enables change to propagate collapse shapes across expand shapes. This flag is meant as a stop-gap solution before making this default due to codegen issues.
   --iree-dispatch-creation-set-encoding-strategy=<value>                   - Set the encoding strategy for operations.
     =generic                                                               -   Using EncodingAttr which encodes as much information as possible
+    =matmulk                                                               -   Only encodes the reduction dimenesions in the encoding.
     =padding                                                               -   Encode tensors that need to be padded
   --iree-dispatch-creation-split-argmax-threshold=<long>                   - Minimum size of the reduction dimension to trigger argmax split
   --iree-dispatch-creation-split-argmax-tile-size=<long>                   - Tile size of the reduction dimension after splitting (i.e., the chunk size)
@@ -214,7 +215,6 @@ General options:
   --iree-flow-dump-dispatch-graph                                          - Dump a dot graph for dispatches.
   --iree-flow-dump-dispatch-graph-output-file=<string>                     - Output file name for a dispatch graph dump.
   --iree-flow-enable-pad-handling                                          - Enable native handling of tensor.pad operations.
-  --iree-flow-experimental-replicate-globals-per-affinity                  - Replicates globals for each unique affinity they are used with.
   --iree-flow-export-benchmark-funcs                                       - Exports one function per original module entry point and unique flow.executable that dispatches with dummy arguments.
   --iree-flow-inline-constants-max-byte-length=<int>                       - Maximum byte-length of tensor constant that can be inlined into a dispatch region or 0 to disable inlining.
   --iree-flow-trace-dispatch=<string>                                      - Enables tracing tensors at specified dispatches. Supports two modes; tracing the dispatch by ordinal before deduplication (@function_name:<index>) and tracing all occurrences of the dispatch symbol.
@@ -229,11 +229,10 @@ General options:
   --iree-global-opt-enable-early-materialization                           - Enables early materialization on encodings. Note, this flag should be false eventually. This does not work for heterogeneous computing.
   --iree-global-opt-enable-quantized-matmul-reassociation                  - Enables reassociation of quantized matmul ops (experimental).
   --iree-global-opt-enable-warn-on-uninitialized-values                    - Warn on some classes of uses of uninitialized values.
-  --iree-global-opt-experimental-disable-conv-generalization               - Disable generalization for some conv ops (experimental).
-  --iree-global-opt-experimental-enable-edge-reshape-propagation           - Enables propagation of reshapes on the edges of the program in transpose propagation. This workaround for better performance and will be removed soon.
   --iree-global-opt-propagate-transposes                                   - Enables propagation of transpose ops to improve fusion chances.
   --iree-global-opt-set-encoding-strategy=<value>                          - Set the encoding strategy for operations.
     =generic                                                               -   Using EncodingAttr which encodes as much information as possible
+    =matmulk                                                               -   Only encodes the reduction dimenesions in the encoding.
   --iree-gpu-test-target=<string>                                          - The target for IR LIT tests. Format is '<arch>:<feature>@<api>', where <feature> and <api> are optional; e.g., 'gfx942:+sramecc,-xnack@hip'. If <api> is missing, it will be deduced from <arch>; e.g., 'gfx*' defaults to HIP, 'sm_*' defaults to CUDA
   --iree-hal-benchmark-dispatch-repeat-count=<uint>                        - The number of times to repeat each hal.command_buffer.dispatch op. This simply duplicates the dispatch op and inserts barriers. It's meant for command buffers having linear dispatch structures.
   --iree-hal-executable-object-search-path=<string>                        - Additional search paths for resolving #hal.executable.object file references.
@@ -293,7 +292,6 @@ General options:
   --iree-stream-affinity-solver-max-iterations=<int>                       - Maximum affinity analysis solver iteration count before it gives up. Roughly equivalent to operation chain depth.
   --iree-stream-annotate-input-affinities                                  - Annotates all tensor/resource affinities on the input to the pipeline for debugging.
   --iree-stream-emulate-memset                                             - Emulate all memset types with dispatches.
-  --iree-stream-experimental-transfer-to-replicate-globals                 - Use transfers to replicate globals for each unique affinity.
   --iree-stream-partitioning-favor=<value>                                 - Default stream partitioning favor configuration.
     =debug                                                                 -   Force debug partitioning (no concurrency or pipelining).
     =min-peak-memory                                                       -   Favor minimizing memory consumption at the cost of additional concurrency.
@@ -384,7 +382,6 @@ General options:
   --profcheck-default-function-entry-count=<long>                          - 
   --profcheck-default-select-false-weight=<uint>                           - When annotating `select` instructions, this value will be used for the second ('false') case.
   --profcheck-default-select-true-weight=<uint>                            - When annotating `select` instructions, this value will be used for the first ('true') case.
-  --profcheck-weights-for-test                                             - Generate weights with small values for tests.
   --profile-actions-to=<string>                                            - Profile action execution to a file, or stderr if  '-' is passed
   --profile-correlate=<value>                                              - Use debug info or binary file to correlate profiles.
     =<empty>                                                               -   No profile correlation
@@ -392,8 +389,6 @@ General options:
     =binary                                                                -   Use binary to correlate
   --promote-alloca-vector-loop-user-weight=<uint>                          - The bonus weight of users of allocas within loop when sorting profitable allocas
   --r600-ir-structurize                                                    - Use StructurizeCFG IR pass
-  --remarks-filter=<string>                                                - Emit all remarks whose category matches the given regex pattern. If empty, no remarks are emitted.
-  --remarks-output-file=<string>                                           - Output file for remarks in YAML format.
   --riscv-add-build-attributes                                             - 
   --riscv-use-aa                                                           - Enable the use of AA during codegen.
   --runtime-counter-relocation                                             - Enable relocating counters at runtime.
@@ -456,11 +451,6 @@ Generic Options:
 HIP HAL Target:
 
   --iree-hip-bc-dir=<string>                                               - Directory of HIP Bitcode.
-  --iree-hip-denormal-fp-math-f32=<value>                                  - Denormal floating point math mode for f32
-    =preserve-sign                                                         -   Convert denormals to zero while preserving sign
-    =positive-zero                                                         -   Convert denormals to positive zero
-  --iree-hip-emit-debug-info                                               - Generate and embed debug information (DWARF) for HIP.
-  --iree-hip-enable-register-spill-warning                                 - Report register spilling for AMD GPUs
   --iree-hip-enable-tensor-ukernels                                        - Enable MLIR-based ukernels.
   --iree-hip-enable-ukernels=<string>                                      - Enables microkernels in the HIP compiler backend. May be `default`, `none`, `all`, or a comma-separated list of specific unprefixed microkernels to enable, e.g. `mmt4d`.
   --iree-hip-encoding-layout-resolver=<string>                             - Selects the way that encodings will be resolved. Options are: `none` (resolve to identity layout), `pad` (additional padding on allocations to maximize cache bandwidth), and `data-tiling` (enable data tiled layouts)
@@ -545,30 +535,23 @@ IREE compiler plugin options:
 
 IREE global pipeline options controlling the entire compilation flow.:
 
-  --iree-opt-const-expr-hoisting                                           - Hoists the results of latent constant expressions into immutable global initializers for evaluation at program load.
-  --iree-opt-const-expr-max-size-increase-threshold=<long>                 - Maximum byte size increase allowed for constant expr hoisting policy to allow hoisting.
-  --iree-opt-data-tiling                                                   - Enables data tiling optimization. There are two data-tiling paths; it is the global flag that enables data-tiling with thesuggested path. You can choose one of them to enable explicitly, if you have a preference. See `iree-global-opt-data-tiling` and `iree-dispatch-creation-data-tiling` for details. Note that this flag will override the other two flags, because it has a higher priority.
   --iree-opt-level=<optimization level>                                    - Global optimization level to apply to the entire compilation flow.
 
 IREE options for controlling dispatch region creation.:
 
-  --iree-dispatch-creation-data-tiling                                     - Enables data tiling path starting from DispatchCreation phase.
-  --iree-dispatch-creation-enable-aggressive-fusion                        - Aggressive fusion opportunities that are behind a flag since all backends dont support it yet
-                                                                             At optimization level O0 the default is false
-                                                                             At optimization level O2 the default is true
-  --iree-dispatch-creation-enable-aggressive-reshape-movement              - Enable aggressive reshape movement (bubbling expand/collapse shapes across reduction ops).
-  --iree-dispatch-creation-enable-split-reduction                          - Enable split-reduction for certain reduction operations.
-  --iree-dispatch-creation-fuse-multi-use                                  - Fuse operations with multiple uses.
+  --iree-dispatch-creation-data-tiling                                     - Enables data tiling path.
   --iree-dispatch-creation-opt-level=<optimization level>                  - Optimization level for the this pipeline
 
 IREE options for controlling global optimizations.:
 
-  --iree-global-opt-data-tiling                                            - Enables data tiling path starting from GlobalOptimization phase.
   --iree-global-optimization-opt-level=<optimization level>                - Optimization level for the this pipeline
   --iree-opt-aggressively-propagate-transposes                             - Propagates transposes to named ops even when the resulting op will be a linalg.generic
                                                                              At optimization level O0 the default is false
                                                                              At optimization level O3 the default is true
   --iree-opt-const-eval                                                    - Enables eager evaluation of constants using the full compiler and runtime (on by default).
+  --iree-opt-const-expr-hoisting                                           - Hoists the results of latent constant expressions into immutable global initializers for evaluation at program load.
+  --iree-opt-const-expr-max-size-increase-threshold=<long>                 - Maximum byte size increase allowed for constant expr hoisting policy to allow hoisting.
+  --iree-opt-data-tiling                                                   - Enables data tiling path.
   --iree-opt-export-parameter-minimum-size=<long>                          - Minimum size of constants to export to the archive created in `iree-opt-export-parameter-archive-export-file`.
   --iree-opt-export-parameters=<string>                                    - File path to an archive to export parameters to with an optional `scope=` prefix.
   --iree-opt-generalize-matmul                                             - Convert named matmul ops to linalg generic ops during global optimization to enable better fusion.
@@ -653,15 +636,6 @@ LLVMCPU HAL Target:
   --iree-llvmcpu-target-triple=<string>                                    - LLVM target machine triple.
   --iree-llvmcpu-target-vector-width-in-bytes=<uint>                       - Overrides the native vector register width (in bytes) of the target.
   --iree-llvmcpu-wasm-linker-path=<string>                                 - Tool used to link WebAssembly modules produced by IREE (for --iree-llvmcpu-target-triple=wasm32-*).
-
-MIR2Vec Options:
-
-  --mir2vec-common-operand-weight=<number>                                 - Weight for common operand embeddings
-  --mir2vec-kind=<value>                                                   - MIR2Vec embedding kind
-    =symbolic                                                              -   Generate symbolic embeddings for MIR
-  --mir2vec-opc-weight=<number>                                            - Weight for machine opcode embeddings
-  --mir2vec-reg-operand-weight=<number>                                    - Weight for register operand embeddings
-  --mir2vec-vocab-path=<string>                                            - Path to the vocabulary file for MIR2Vec
 
 MetalSPIRV HAL Target:
 
